@@ -1,0 +1,62 @@
+{
+
+  "button.action.create" : "Create",
+  "button.action.save" : "Save",
+  "button.action.discard" : "Disacrd",
+  "button.action.amend" : "Amend",
+  "button.action.delete" : "Delete",
+
+  "page.initiate.title":  "Initialization Data",
+  "page.citizenship.resident.index.title": "Resident | Citizenship",
+
+  "form.village.name": "Village Name",
+  "form.village.code": "Village Code",
+
+  "side.menu.dashboard": "Dashboard",
+  "side.menu.analytic": "Analytics",
+  "side.menu.population-and-attendance": "Population and Attendance",
+  "side.menu.population-and-attendance.population": "Population",
+  "side.menu.population-and-attendance.population.resident": "Resident",
+
+  "general.new-born": "New Born",
+  "general.people-come-in": "People Come In",
+  "general.gender": "Gender",
+  "general.religion": "Religion",
+  "general.action": "Action",
+
+  "table-column.citizenship.resident.name": "Name",
+  "table-column.citizenship.resident.national-id": "National ID",
+  "table-column.citizenship.resident.relationship-status": "Relationship Status",
+  "table-column.citizenship.resident.record-status": "Relationship Status",
+  "table-column.citizenship.resident.registration-type": "Registration Type",
+  "table-column.citizenship.resident.temporary-national-id": "Temporary National ID",
+  "table-column.citizenship.resident.report-date": "Report Date",
+  "table-column.citizenship.resident.birth": "Birth",
+  "table-column.citizenship.resident.birth.certificate-number": "Certificate Number",
+  "table-column.citizenship.resident.birth.type": "Report Date",
+  "table-column.citizenship.resident.birth.assistant": "Assistant",
+  "table-column.citizenship.resident.birth.location": "Location",
+  "table-column.citizenship.resident.birth.place": "Place",
+  "table-column.citizenship.resident.birth.child-order": "Child Order",
+  "table-column.citizenship.resident.birth.height": "Height",
+  "table-column.citizenship.resident.birth.weight": "Weight",
+  "table-column.citizenship.resident.birth.date": "Date",
+  "table-column.citizenship.resident.birth.time": "Time",
+
+  "tab.information": "Information",
+  "tab.family": "Family",
+  "tab.document": "Document",
+  "tab.government-assistance-programs": "Assistance Programs",
+
+  "family": "Family",
+  "detail": "Detail",
+  "amend": "Amend",
+  "delete": "Delete",
+  "new-born": "New Born",
+  "come-in": "Come In",
+  "citizenship": "Citizenship",
+  "population": "Population",
+  "resident": "Resident",
+
+  "electronic_identity": "Identitas Elektronik"
+}
