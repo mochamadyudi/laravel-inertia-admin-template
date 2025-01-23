@@ -1,17 +1,16 @@
 import React from 'react';
-import {Button, Divider, Flex, Layout, Switch, Typography} from "antd";
-import {useDispatch, useSelector} from "react-redux";
+import {Divider, Flex, Layout, Typography} from "antd";
+import {useSelector} from "react-redux";
 import LangDropdown from './components/lang.dropdown';
-import {Icons} from "@/Components/general/Icons";
 import NavProfileComponent from "@/Components/layouts/Dashboard/components/NavProfile.component";
 import SettingDropdown from "@/Components/layouts/Dashboard/components/Setting.dropdown";
 import NotificationComponent from "@/Components/layouts/Dashboard/components/Notification.component";
 import ThemeModeComponent from "@/Components/layouts/Dashboard/components/ThemeMode.component";
 import SiderCollapseComponent from "@/Components/layouts/Dashboard/components/SiderCollapse.component";
+import {Utils} from "@/Utils";
 
 const TheHeader: React.FC<any> = (props) => {
-  const dispatch = useDispatch();
-  const {navCollapsed,currentTheme}:any = useSelector(({Theme}: any) => Theme);
+  const {navCollapsed}:any = useSelector(({Theme}: any) => Theme);
   return (
     <Layout.Header
       className={`app-header ${navCollapsed ? 'sider-collapsed' : ''}`}
@@ -21,7 +20,7 @@ const TheHeader: React.FC<any> = (props) => {
           <div
             className={`w-full ${!navCollapsed ? 'px-6' : 'flex items-center justify-center'}`}
           >
-            <Typography.Title level={1} className={'!text-xl !m-0 !p-0'}>App</Typography.Title>
+            <h1 className={'!text-md !m-0 !p-0'}>{navCollapsed ? Utils.getNameInitial('Clonesia') : 'Clonesia'}</h1>
           </div>
         </div>
         <div className="nav-right flex justify-between items-center">

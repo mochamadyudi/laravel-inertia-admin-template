@@ -1,9 +1,9 @@
 $typography_size : (
-  h1: $font-size-3xl,
-  h2:$font-size-2xl,
-  h3:$font-size-xl,
-  h4:$font-size-lg,
-  h5:$font-size-base,
+  h1: $font-size-4xl,
+  h2:$font-size-3xl,
+  h3:$font-size-2xl,
+  h4:$font-size-xl,
+  h5:$font-size-lg,
   h6:$font-size-base,
   div: $font-size-base,
   article: $font-size-base,
@@ -21,13 +21,14 @@ $typography_color : (
   p: 'paragraph',
 );
 
-//.ant {
-//  &-typography {
-//    @include themify($themes) {
-//      color: themed('text') ;
-//    }
-//  }
-//}
+
+div, p, article, a,span {
+  &.ant {
+    &-typography {
+      font-weight: 400;
+    }
+  }
+}
 
 @each $el, $value in $typography_size{
   #{$el}{

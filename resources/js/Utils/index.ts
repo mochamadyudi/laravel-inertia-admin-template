@@ -18,4 +18,9 @@ export class Utils {
     }
     return breakpoints;
   }
+
+  static getNameInitial(name: string) {
+    let initials = name.match(/\b\w/g) || [];
+    return ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
+  }
 }

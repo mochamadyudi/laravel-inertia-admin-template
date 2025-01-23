@@ -257,3 +257,7 @@ video {
 [hidden] {
 	display: none !important;
 }
+
+p,span,a,div {
+  font-size: $font-size-base;
+}

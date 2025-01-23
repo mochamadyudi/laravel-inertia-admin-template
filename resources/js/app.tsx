@@ -1,6 +1,6 @@
 import '../css/app.css';
 import './bootstrap';
-import 'highlight.js/styles/agate.css';
+import 'highlight.js/styles/atom-one-dark-reasonable.css';
 
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
@@ -22,6 +22,7 @@ createInertiaApp({
             hydrateRoot(el, <App {...props} />);
             return;
         }
+
         createRoot(el).render(<App {...props} />);
     },
     progress: {
