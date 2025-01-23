@@ -12,12 +12,12 @@ const TheSidebar: React.FC<TheSidebarAttr> = (props) => {
   const navCollapsed:boolean = useSelector(({Theme}: any) => Theme?.navCollapsed ?? false)
   return (
     <Layout.Sider
-      className={'app-sider'}
-      width={SIDE_NAV_WIDTH}
+      className={`app-sider hidden md:block ${navCollapsed ? 'collapsed' : ''}`}
+      // width={SIDE_NAV_WIDTH}
       collapsed={navCollapsed}
 
     >
-      <Scrollbars autoHide>
+      <Scrollbars autoHide className={'!m-0'}>
         <MenuContent
           type={NAV_TYPE_SIDE}
           {...props}

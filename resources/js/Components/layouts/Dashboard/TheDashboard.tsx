@@ -13,6 +13,7 @@ interface TheDashboardInterface {
   showMenuBar?: boolean;
   [k:string]: any;
 }
+
 const TheDashboard: React.FC<TheDashboardInterface> = (props)=> {
     return (
         <BaseLayout>

@@ -1,5 +1,6 @@
 import '../css/app.css';
 import './bootstrap';
+import 'highlight.js/styles/agate.css';
 
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
@@ -8,7 +9,9 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+  title: title => {
+    return title.length > 0 ? title : appName;
+  },
     resolve: (name) =>
         resolvePageComponent(
             `./Pages/${name}.tsx`,
@@ -19,7 +22,6 @@ createInertiaApp({
             hydrateRoot(el, <App {...props} />);
             return;
         }
-
         createRoot(el).render(<App {...props} />);
     },
     progress: {
