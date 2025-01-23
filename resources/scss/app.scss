@@ -1,0 +1,61 @@
+/**
+ * MOCHAMAD YUDI SOBARI
+ */
+@import 'settings';
+@import 'normalize';
+@import 'apps';
+@import 'components';
+@import 'externals';
+
+body{
+  &.dark{
+    background: $bg-body-dark !important;
+    .app{
+      &-main{
+        background: $bg-body-dark !important;
+      }
+    }
+  }
+  &.light{
+    background: $bg-layout !important;
+    .app{
+      &-main{
+        background: $bg-layout !important;
+      }
+    }
+  }
+}
+
+.menu-builder{
+  .indicator{
+    .TreeItem{
+      div{
+        border: none !important;
+      }
+      border-radius: var(--ant-border-radius) !important;
+    }
+
+    div {
+      &:where(.TreeItem){
+        border:none !important;
+        >div {
+          margin: 0 !important;
+          background: transparent !important;
+        }
+      }
+      border: none !important;
+      >div {
+        border-radius: var(--ant-border-radius);
+        margin-top: 10px;
+        border:1px dashed var(--ant-color-primary) !important;
+        p,span, label{
+          color: #fff !important;
+        }
+        > div {
+          border: none !important;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,18 @@
+.ant{
+  &-dropdown{
+    &-menu{
+      @include themify($themes){
+        background: themed('sider-background') !important;
+
+      }
+      &-item{
+        &:not(&.ant-dropdown-menu-item-danger){
+          @include themify($themes){
+            color: themed('text') !important;
+          }
+        }
+
+      }
+    }
+  }
+}

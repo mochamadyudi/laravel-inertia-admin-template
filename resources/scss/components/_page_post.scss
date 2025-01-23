@@ -1,0 +1,24 @@
+.post{
+  &-header{
+    @include themify($themes){
+      background: themed('page-header-alt-background') !important;
+    }
+  }
+  &-content, &-sider{
+    @include themify($themes){
+      background: themed('post-bg') !important;
+    }
+  }
+  &-content{
+    .ql{
+      &-toolbar{
+        *{
+          @include themify($themes){
+            color: themed('text') !important;
+            stroke: themed('text') !important;
+          }
+        }
+      }
+    }
+  }
+}

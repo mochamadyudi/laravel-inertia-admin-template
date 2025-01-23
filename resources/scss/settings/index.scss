@@ -1,1 +1,86 @@
-@import "variable";
+@import 'font';
+@import 'variables';
+@import 'mixin';
+@import 'function';
+
+
+$themes: (
+  light: (
+    divider: rgba(241, 241, 241, 0.37),
+    post-bg: #fff,
+    text: $text-color,
+    paragraph: lighten($text-color, 15),
+    text-placeholder: $text-color-placeholder,
+    text-label: lighten($text-color, 40),
+    text-label-value: $text-color,
+    body: $bg-layout,
+    border-dashboard: lighten($text-color, 80%),
+    header-background: $bg-header,
+    sider-background:$bg-sider,
+    menu-sub: transparent,
+    footer-background: $bg-footer,
+    background-drawer: $bg-drawer,
+    btn-background: #fff,
+    btn-border: #d4d4d4,
+    page-header-alt-background: #fff,
+    quil-base: #fff,
+    card-background: #fff,
+    card-border: #e5e5e5,
+    card-table-border: rgba(231, 231, 231, 0.64),
+    input-background:$bg-input,
+    input-background-disabled: #F5F5F5,
+    input-text-disabled: $text-color-placeholder,
+    table-header: $bg-table-header,
+    table-bordered: $table-bordered,
+    bcrumb-color:#b8b8b8,
+
+    bcrumb-color-link: #1B2531,
+    success: $color-table-row-success,
+    danger: $color-table-row-error,
+    info: $color-table-row-info,
+    warning: $color-table-row-warning,
+
+    btn-disabled: $button-disabled,
+    btn-disabled-border: $button-disabled-border,
+    btn-disabled-color: $button-disabled-color,
+  ),
+  dark: (
+    divider: lighten($bg-header-dark, 10),
+    border-dashboard: darken($bg-header-dark, 2),
+    paragraph: lighten($text-color-placeholder-dark, 40),
+    text: $text-color-dark,
+    text-placeholder: $text-color-placeholder-dark,
+    text-label: lighten($text-color-placeholder-dark, 20),
+    text-label-value: lighten($text-color-placeholder-dark, 40),
+    body: $bg-body-dark,
+    post-bg: $bg-body-dark,
+    header-background: darken($bg-header-dark, 2),
+    sider-background:$bg-sider-dark,
+    menu-sub:darken($bg-sider-dark,5),
+    footer-background: $bg-footer-dark,
+    background-drawer: $bg-drawer-dark,
+    btn-background: $bg-body-dark,
+    btn-border: lighten($bg-body-dark, 5),
+    page-header-alt-background: $bg-sider-dark,
+    card-background: $bg-card-dark,
+    quil-base: darken($bg-card-dark, 5),
+    table-header: $bg-table-header-dark,
+    table-bordered: $table-bordered-dark,
+    card-border: $bg-card-dark,
+    card-table-border: $bg-input-dark,
+    input-background: $bg-input-dark,
+    input-background-disabled: #34465b,
+    input-text-disabled: #58718f,
+    bcrumb-color: #52688d,
+    bcrumb-color-link: #87a1cd,
+
+    success: darken($color-table-row-success, 20),
+    danger: darken($color-table-row-error, 20),
+    info: darken($color-table-row-info, 20),
+    warning: darken($color-table-row-warning, 20),
+
+    btn-disabled: $button-disabled-dark,
+    btn-disabled-border: $button-disabled-dark-border,
+    btn-disabled-color: $button-disabled-dark-color,
+  )
+)

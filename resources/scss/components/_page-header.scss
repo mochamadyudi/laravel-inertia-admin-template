@@ -1,0 +1,13 @@
+$padding-page-header: 2.25rem;
+
+.page {
+  &-header {
+    &-alt{
+      padding-top: $padding-page-header;
+      padding-bottom: $padding-page-header;
+      @include themify($themes) {
+        background: themed('page-header-alt-background') !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import 'antd';
+@import 'tailwind';
+@import 'quil';
+@import "quil.smoke";
+.leaflet-control-attribution.leaflet-control{
+  display: none;
+}

@@ -1,0 +1,29 @@
+.ant{
+  &-popconfirm{
+
+    &-message{
+      margin-bottom: 16px !important;
+      min-height: 30px;
+    }
+    &-buttons{
+      min-height: 24px;;
+
+      button{
+        height: 28px !important;
+        padding: 8px 12px;
+        font-size: 12px !important;
+      }
+    }
+  }
+  &-popover{
+    min-width: 250px;
+
+    &-inner{
+      padding: 12px;
+      &-content{
+      }
+    }
+    &-content{
+    }
+  }
+}

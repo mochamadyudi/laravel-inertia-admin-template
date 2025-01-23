@@ -1,0 +1,21 @@
+.ant{
+  &-statistic {
+    &-title{
+      font-weight: 600;
+      margin-bottom: .625em !important;
+      font-size: $font-size-lg !important;
+    }
+    &-content{
+      font-weight: 700;
+      @include themify($themes){
+        color: lighten(themed('text'), 10);
+      }
+    }
+    &-title{
+      @include themify($themes){
+        color: lighten(themed('text'), 10) !important;
+      }
+    }
+
+  }
+}

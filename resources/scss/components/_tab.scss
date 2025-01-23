@@ -1,0 +1,18 @@
+.ant {
+  &-tabs {
+    &-nav{
+      &:before{
+        @include themify($themes){
+          border-bottom: var(--ant-line-width) var(--ant-line-type) lighten(themed('table-bordered'), 20);
+        }
+      }
+    }
+    &-tab {
+      &-btn {
+        @include themify($themes) {
+          color: themed('text');
+        }
+      }
+    }
+  }
+}

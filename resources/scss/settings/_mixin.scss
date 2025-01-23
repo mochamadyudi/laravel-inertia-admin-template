@@ -1,0 +1,78 @@
+@mixin divider{
+  &-divider{
+    @include themify($themes){
+      background: themed('divider') !important;
+      color: themed('divider') !important;
+    }
+  }
+}
+@mixin core($pref: $prefix) {
+  .#{$pref} {
+    @content;
+  }
+}
+
+@mixin _Block($block) {
+  @include core() {
+    &#{$separator-block}#{$block} {
+      @content;
+    }
+  }
+}
+
+@mixin Block($block) {
+  .#{$block} {
+    @content;
+  }
+}
+
+@mixin _Element($block, $element) {
+  @include _Block($block) {
+    &#{$separator-element}#{$element} {
+      @content;
+    }
+  }
+}
+
+@mixin Element($block, $elements...) {
+  $selector: '.#{$block}';
+  @each $element in $elements {
+    $selector: '#{$selector}-#{$element}';
+  }
+  #{$selector} {
+    @content;
+  }
+}
+
+@mixin NestedElement($block, $elements...) {
+  $selector: '&.#{$block}';
+  @each $element in $elements {
+    $selector: '#{$selector}-#{$element}';
+  }
+  #{$selector} {
+    @content;
+  }
+}
+
+@mixin _Modifier($block, $element, $modifier) {
+  @include _Element($block, $element) {
+    &#{$separator-modifier}#{$modifier} {
+      @content;
+    }
+  }
+}
+
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}

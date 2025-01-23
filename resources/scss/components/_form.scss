@@ -1,0 +1,175 @@
+.ant {
+  &-form {
+    &-item {
+      &-label {
+        label {
+          @include themify($themes) {
+            color: themed('text') !important;
+          }
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+.ant{
+}
+
+.ant {
+  &-input {
+
+    &-suffix, &-prefix {
+      @include themify($themes) {
+        color: themed('text') !important;
+        svg {
+          fill: themed('text') !important;
+        }
+      }
+    }
+
+    &-bordered, &-outlined {
+      //@include themify($themes) {
+      //  border: 1px solid darken(themed('input-background'), 10) !important;
+      //}
+    }
+    &-affix {
+      &-wrapper {
+        &-disabled{
+          @include themify($themes) {
+            background: themed('input-background-disabled') !important;
+            color: themed('input-text-disabled') !important;
+          }
+          user-select: none !important;
+        }
+        @include themify($themes) {
+          background: themed('input-background') ;
+          color: themed('text') ;
+
+          &::placeholder {
+            color: themed('text-placeholder');
+          }
+        }
+
+        &-focused {
+          //border: inherit ;
+        }
+      }
+    }
+
+    &-disabled{
+      @include themify($themes) {
+        background: themed('input-background-disabled') !important;
+        color: themed('input-text-disabled') !important;
+      }
+      user-select: none !important;
+    }
+    @include themify($themes) {
+      background: themed('input-background');
+      color: themed('text');
+
+      &::placeholder {
+        color: themed('text-placeholder');
+      }
+    }
+  }
+
+  &-select {
+    &-selection{
+      &-placeholder{
+        @include themify($themes) {
+          color: themed('text-placeholder') !important;
+        }
+      }
+    }
+    &-disabled{
+      .ant{
+        &-select{
+          &-selector{
+            @include themify($themes) {
+              background: themed('input-background-disabled') !important;
+              color: themed('input-text-disabled') !important;
+            }
+          }
+        }
+      }
+      user-select: none !important;
+    }
+
+    &-item {
+      &-option {
+        &-selected {
+          @include themify($themes) {
+            color: themed('text') !important;
+          }
+        }
+      }
+
+      @include themify($themes) {
+        color: themed('text') !important;
+      }
+    }
+
+    &-dropdown {
+      [role="listbox"] {
+      }
+
+      @include themify($themes) {
+        background: themed('input-background') !important;
+        color: themed('text') !important;
+      }
+    }
+
+    &-selector {
+      &:where(:not(.ant-select-focus)) {
+        @include themify($themes) {
+          //border: 1px solid darken(themed('input-background'), 10) !important;
+        }
+      }
+    }
+
+    &-selection {
+      &-search {
+        &-input {
+          @include themify($themes) {
+            color: themed('text') !important;
+            &::placeholder {
+              color: themed('text-placeholder') !important;
+            }
+          }
+        }
+      }
+    }
+
+    &-arrow {
+      @include themify($themes) {
+        color: themed('text') !important;
+      }
+    }
+
+    &-selector {
+
+      @include themify($themes) {
+        background: themed('input-background') !important;
+        color: themed('text') !important;
+
+        &::placeholder {
+          color: themed('text-placeholder');
+        }
+      }
+    }
+  }
+}
+
+.dark {
+  .ant {
+    &-select {
+      &-item {
+        &-option {
+          &-selected {
+            background: var(--ant-color-primary) !important;
+          }
+        }
+      }
+    }
+  }
+}
