@@ -300,22 +300,54 @@ $btn-variant: ("outlined", "dashed", "solid", "filled", "text", "link");
 
 .ant {
   &-btn {
-    &-link, &-dashed, &-default {
+    &-link, &-dashed, &-default{
       box-shadow: none !important;
 
       &.ant-btn {
         &-dangerous {
           color: var(--ant-color-error) !important;
-
           &:hover {
             color: var(--ant-color-error-hover) !important;
           }
         }
       }
     }
+
+    &-disabled{
+      @include themify($themes) {
+        background: themed('btn-disabled') !important;
+        color: themed('btn-disabled-color') !important;
+        border-width: 1px;
+        border-color: themed('btn-disabled-border') !important;
+
+        &:hover{
+          //background: inherit !important;
+           color: darken(themed('btn-disabled-color'), 0) !important;
+          border-color: themed('btn-disabled-border') !important;
+        }
+      }
+    }
+    // disabled
+    &-link, &-text, &-default, &-primary, &-dashed{
+      &:disabled{
+        @include themify($themes) {
+
+          color: themed('btn-disabled-color') !important;
+          border-width: 1px;
+          border-color: themed('btn-disabled-border') !important;
+
+          &:hover{
+            //background: themed('btn-disabled') !important;
+            background: transparent !important;
+            color: darken(themed('btn-disabled-color'), 0) !important;
+            border-color: themed('btn-disabled-border') !important;
+          }
+        }
+      }
+    }
+
     &-link {
       color: var(--ant-color-primary) !important;
-
       &:hover {
         color: var(--ant-color-primary-hover) !important;
       }
@@ -505,16 +537,18 @@ $btn-variant: ("outlined", "dashed", "solid", "filled", "text", "link");
       &.ant-btn {
         &-dangerous {
           color: var(--ant-color-error);
-
-          &:hover {
-            color: var(--ant-color-error-hover) !important;
-            background: var(--ant-color-error-bg-hover) !important;
-          }
         }
       }
 
       &:hover {
-        color: darken($text-color-dark, 10) !important;
+        //color: darken($text-color-dark, 10) !important;
+        background: transparent !important;
+      }
+    }
+
+    &-text, &-link{
+      &:hover {
+        background: transparent !important;
       }
     }
   }

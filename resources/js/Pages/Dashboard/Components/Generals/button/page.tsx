@@ -1,6 +1,6 @@
 import React from 'react';
 import TheDashboard from "@/Components/layouts/Dashboard/TheDashboard";
-import {Col, Row, Card, Typography, Descriptions, message, Button, Tooltip} from "antd";
+import {Col, Row, Card, Typography, Descriptions, message, Button, Tooltip, Tag} from "antd";
 import PageHeaderAlt from "@/Components/general/PageHeaderAlt";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 // @ts-ignore
@@ -11,11 +11,25 @@ import WithIconButton, {attributes as AttrWithIconButton} from "./markdown/Butto
 import ButtonDanger, {attributes as AttrButtonDanger} from "./markdown/ButtonDanger.md";
 // @ts-ignore
 import ButtonSize, {attributes as AttrButtonSize} from "./markdown/Sizes.md";
+// @ts-ignore
+import ButtonPrimaryPartial from "./markdown/ButtonPrimaryPartial.md";
+// @ts-ignore
+import ButtonPrimaryVariantEquivalentPartial from "./markdown/ButtonPrimaryVariantEquivalentPartial.md";
+// @ts-ignore
+import WaveEffect from "./markdown/WaveEffect.md";
+
 
 import DemoCard from "@/Components/util-component/DemoCard";
 import {Icons} from "@/Components/general/Icons";
 import ButtonSizePartial from "@/Pages/Dashboard/Components/Generals/button/partials/button-size.partial";
 import ButtonVariantPartial from "@/Pages/Dashboard/Components/Generals/button/partials/button-variant.partial";
+import FooterLayout from "@/Components/layouts/footer.layout";
+import TheContainer from "@/Components/general/TheContainer";
+import ApiPartial from "@/Pages/Dashboard/Components/Generals/button/partials/api.partial";
+import ButtonDisabledPartial from "@/Pages/Dashboard/Components/Generals/button/partials/button-disabled.partial";
+import ButtonIconPosition from "@/Pages/Dashboard/Components/Generals/button/partials/button-icon-posiiton.partial";
+import ButtonLoadingPartial from "@/Pages/Dashboard/Components/Generals/button/partials/button-loading.partial";
+import {PreContainer} from "@/Components/util-component/code-style";
 
 const Page = () => {
   return (
@@ -77,6 +91,7 @@ const Page = () => {
               </div>
             </DemoCard>
             <ButtonSizePartial/>
+            <ButtonDisabledPartial/>
           </Col>
           <Col
             xs={{
@@ -120,11 +135,39 @@ const Page = () => {
               </div>
 
             </DemoCard>
-
             <ButtonVariantPartial />
+            <ButtonIconPosition/>
+            <ButtonLoadingPartial/>
+
           </Col>
         </Row>
       </PageHeaderAlt>
+      <FooterLayout>
+        <TheContainer>
+          <ApiPartial/>
+
+          <Typography.Title level={3}>FAQ</Typography.Title>
+          <Typography.Title level={4}>How to choose type and color & variant?</Typography.Title>
+          <Typography>
+            Type is essentially syntactic sugar for colors and variants. It internally provides a set of mapping relationships between colors and variants for the type. If both exist at the same time, the colors and variants will be used first.
+          </Typography>
+
+          <PreContainer>
+            <ButtonPrimaryPartial/>
+          </PreContainer>
+          <Typography>Equivalent</Typography>
+          <PreContainer>
+            <ButtonPrimaryVariantEquivalentPartial/>
+          </PreContainer>
+          <div className="mt-4">
+            <Typography.Title level={3}>How to close the click wave effect?</Typography.Title>
+            <Typography.Paragraph>If you don't need this feature, you can set <Tag>disabled</Tag> of wave in <Tag color={'cyan'}>ConfigProvider</Tag> as true.</Typography.Paragraph>
+            <PreContainer>
+              <WaveEffect/>
+            </PreContainer>
+          </div>
+        </TheContainer>
+      </FooterLayout>
     </React.Fragment>
   )
 }

@@ -9,7 +9,7 @@ $themes: (
     divider: rgba(241, 241, 241, 0.37),
     post-bg: #fff,
     text: $text-color,
-    paragraph: lighten($text-color, 15),
+    paragraph: $text-paragraph,
     text-placeholder: $text-color-placeholder,
     text-label: lighten($text-color, 40),
     text-label-value: $text-color,
@@ -47,7 +47,7 @@ $themes: (
   dark: (
     divider: lighten($bg-header-dark, 10),
     border-dashboard: darken($bg-header-dark, 2),
-    paragraph: lighten($text-color-placeholder-dark, 40),
+    paragraph: $text-paragraph-dark,
     text: $text-color-dark,
     text-placeholder: $text-color-placeholder-dark,
     text-label: lighten($text-color-placeholder-dark, 20),

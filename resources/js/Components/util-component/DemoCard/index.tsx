@@ -62,7 +62,6 @@ const DemoCard: React.FC<DemoCardAttr> = ({children, source, attributes}) => {
               <PreContainer>
                 <CodeContainer>
                   <TokenSpan>
-
                     {source}
                   </TokenSpan>
                 </CodeContainer>

@@ -1,23 +1,6 @@
 ---
 title: Size
-md_string: '
-import React from "react";
-import { Button } from "antd";
-import { SearchOutlined } from "@ant-design/icons"
-
-const App: React.FC<any> = ()=> {
-  return (
-  <React.Fragment>
-<Button type="primary" size={size}>Primary</Button>
-<Button size={size}>Default</Button>
-<Button type="dashed" size={size}>Dashed</Button>
-<Button type="link" size={size}>Link</Button>
-<Button type="text" size={size}>Text</Button>
-  </React.Fragment>
-  )
-}
-
-  export default App;'
+md_string: ''
 ---
 ```typescript jsx
 import React from "react";

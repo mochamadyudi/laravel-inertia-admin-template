@@ -4,7 +4,7 @@ return [
   'antd' => [
     'cssVar' => true,
     'token' => [
-      'colorPrimary' => '#0F69E6',
+      'colorPrimary' => '#722ED1',
       "colorInfo" => "#5398f7",
       "colorSuccess" => "#4eb71a",
       "colorWarning" => "#eca619",

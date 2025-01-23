@@ -3,7 +3,6 @@ import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 import Markdown from "vite-plugin-react-markdown";
 import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css'; // Atau gaya lain yang Anda inginkan
 
 export default defineConfig({
   plugins: [
