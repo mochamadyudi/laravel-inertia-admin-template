@@ -1,0 +1,56 @@
+
+$font_size_ql: (
+  small: 12px,
+  large: 20px,
+  huge: 26px,
+);
+
+.app{
+  &-post{
+    &-content{
+      .ql{
+        &-video{
+          margin-bottom: 20px;
+          width: 100%;
+          min-height: 420px;
+          border-radius:12px;
+        }
+      }
+      img{
+        width: 100%;
+        //min-height: 420px;
+        border-radius:12px;
+      }
+      p, span, strong, i, ol ,li {
+        @include themify($themes){
+          color: themed('text');
+        }
+        font-size: 16px;
+      }
+      a{
+        color: var(--ant-color-primary) !important;
+      }
+
+      .ql{
+        &-size{
+          @each $key, $value in $font_size_ql{
+            &-#{$key}{
+              font-size: $value !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.ql{
+  &-size{
+    @each $key, $value in $font_size_ql{
+      &-#{$key}{
+        font-size: $value !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.ant {
+  &-drawer {
+    &-content {
+      @include themify($themes) {
+        background: themed('background-drawer');
+      }
+
+      &-wrapper {
+
+      }
+    }
+  }
+}

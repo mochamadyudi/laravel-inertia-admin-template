@@ -1,0 +1,8 @@
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

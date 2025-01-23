@@ -1,0 +1,521 @@
+$color-btn: ('blue', 'purple', 'cyan', 'green', 'magenta', 'pink', 'red', 'orange', 'yellow', 'volcano', 'geekblue', 'lime', 'gold');
+$btn-variant: ("outlined", "dashed", "solid", "filled", "text", "link");
+
+
+.ant {
+  &-btn {
+    @each $val in $btn-variant{
+      &-default, &-variant {
+        &-#{$val}{
+          @each $key in $color-btn {
+            &.ant-btn {
+              &-color {
+                &-#{$key} {
+                  &:disabled{
+                    @include themify($themes) {
+                      background: themed('btn-disabled') !important;
+                      color: themed('btn-disabled-color') !important;
+                      border-width: 1px;
+                      border-color: themed('btn-disabled-border') !important;
+
+                      &:hover{
+                        background: darken(themed('btn-disabled'), 10) !important;
+                        color: darken(themed('btn-disabled-color'), 10) !important;
+                        border-color: darken(themed('btn-disabled-border'), 10) !important;
+                      }
+                    }
+                  }
+                  .ant {
+                    &-wave {
+                      background: var(--ant-#{$key}-1) !important;
+                    }
+                  }
+
+                  &:hover {
+                    color: var(--ant-#{$key}-4) !important;
+                    background: var(--ant-#{$key}-6) !important;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        &:disabled {
+          @include themify($themes) {
+            background: themed('btn-disabled') !important;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.ant {
+  &-btn {
+    &-icon {
+      &-only {
+        font-size: var(--ant-font-size) !important;
+      }
+    }
+
+    &-text, &-dangerous, &-default, &-dashed, &-link, &-circle, &-round {
+      box-shadow: none !important;
+    }
+
+    &-dashed {
+      background: transparent !important;
+      //border-color: $button-border-default !important;
+    }
+  }
+}
+
+.dark {
+  .ant {
+    &-btn {
+      &-dashed, &-text{
+        color: $text-color-dark;
+      }
+      &-default {
+        &.ant-btn-variant {
+          &-outlined, &-dashed, &-link, &-text, &-filled {
+            background: transparent !important;
+          }
+        }
+      }
+
+      &-variant {
+        &-outlined, &-dashed, &-text, &-link {
+          background: transparent !important;
+        }
+
+        &-link, &-text, &-filled {
+          border: transparent !important;
+        }
+
+        &-dashed {
+          border-style: dashed !important;
+          @each $key in $color-btn {
+            &.ant-btn {
+              &-color {
+                &-#{$key} {
+                  //background: var(--ant-#{$key}-7) !important;
+                  color: var(--ant-#{$key}-2) !important;
+                  border-color: var(--ant-#{$key}-4) !important;
+                  box-shadow: none !important;
+
+                  .ant {
+                    &-wave {
+                      background: var(--ant-#{$key}-1) !important;
+                    }
+                  }
+
+                  &:hover {
+                    color: var(--ant-#{$key}-4) !important;
+                    border-color: var(--ant-#{$key}-4) !important;
+                    background: transparent !important;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        &-link {
+          @each $key in $color-btn {
+            &.ant-btn {
+              &-color {
+                &-#{$key} {
+                  //background: var(--ant-#{$key}-6) !important;
+                  color: var(--ant-#{$key}-6) !important;
+                  //border-color: var(--ant-#{$key}-4) !important;
+                  box-shadow: none !important;
+
+                  .ant {
+                    &-wave {
+                      background: var(--ant-#{$key}-1) !important;
+                    }
+                  }
+
+                  &:hover {
+                    color: var(--ant-#{$key}-2) !important;
+                    background: transparent !important;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        &-text {
+          @each $key in $color-btn {
+            &.ant-btn {
+              &-color {
+                &-#{$key} {
+                  //background: var(--ant-#{$key}-6) !important;
+                  color: var(--ant-#{$key}-4) !important;
+                  //border-color: var(--ant-#{$key}-4) !important;
+                  box-shadow: none !important;
+
+                  .ant {
+                    &-wave {
+                      background: var(--ant-#{$key}-1) !important;
+                    }
+                  }
+
+                  &:hover {
+                    color: var(--ant-#{$key}-8) !important;
+                    background: var(--ant-#{$key}-2) !important;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        &-filled {
+          @each $key in $color-btn {
+            &.ant-btn {
+              &-color {
+                &-#{$key} {
+                  background: var(--ant-#{$key}-1) !important;
+                  color: var(--ant-#{$key}-6) !important;
+                  border-color: var(--ant-#{$key}-2) !important;
+                  box-shadow: none !important;
+
+                  .ant {
+                    &-wave {
+                      background: var(--ant-#{$key}-1) !important;
+                    }
+                  }
+
+                  &:hover {
+                    color: var(--ant-#{$key}-5) !important;
+                    //background: var(--ant-#{$key}-6) !important;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        &-solid {
+          @each $key in $color-btn {
+            &.ant-btn {
+              &-color {
+                &-#{$key} {
+                  background: var(--ant-#{$key}-5) !important;
+                  color: var(--ant-#{$key}-2) !important;
+                  border-color: var(--ant-#{$key}-5) !important;
+                  box-shadow: none !important;
+
+                  :disabled {
+
+                  }
+
+                  .ant {
+                    &-wave {
+                      background: var(--ant-#{$key}-1) !important;
+                    }
+                  }
+
+                  &:hover {
+                    color: var(--ant-#{$key}-4) !important;
+                    background: var(--ant-#{$key}-6) !important;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        &-outlined {
+          @each $key in $color-btn {
+            &.ant-btn {
+              &-color {
+                &-#{$key} {
+                  //background: var(--ant-#{$key}-7) !important;
+                  color: var(--ant-#{$key}-2) !important;
+                  border-color: var(--ant-#{$key}-4) !important;
+                  box-shadow: none !important;
+
+                  .ant {
+                    &-wave {
+                      background: var(--ant-#{$key}-1) !important;
+                    }
+                  }
+
+                  &:hover {
+                    color: var(--ant-#{$key}-4) !important;
+                    border-color: var(--ant-#{$key}-4) !important;
+                    background: transparent !important;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-text {
+        &.ant-btn {
+          &-dangerous {
+            color: var(--ant-color-error);
+
+            &:hover {
+              color: var(--ant-color-error-hover) !important;
+              background: var(--ant-color-error-bg-hover) !important;
+            }
+          }
+        }
+
+        &:hover {
+          color: darken($text-color-dark, 10) !important;
+        }
+      }
+
+      &-default {
+        background: transparent;
+        color: $text-color-dark;
+        &:where(.ant-btn-danger){
+          border-color: lighten($button-border-default, 30);
+
+          &:hover {
+            background: darken($button-border-default, 20) !important;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.ant {
+  &-btn {
+    &-link, &-dashed, &-default {
+      box-shadow: none !important;
+
+      &.ant-btn {
+        &-dangerous {
+          color: var(--ant-color-error) !important;
+
+          &:hover {
+            color: var(--ant-color-error-hover) !important;
+          }
+        }
+      }
+    }
+    &-link {
+      color: var(--ant-color-primary) !important;
+
+      &:hover {
+        color: var(--ant-color-primary-hover) !important;
+      }
+    }
+  }
+}
+
+
+.ant {
+  &-btn {
+    &-variant {
+
+      &-link, &-text, &-filled {
+        border: transparent !important;
+      }
+
+      &-dashed {
+        border-style: dashed !important;
+        @each $key in $color-btn {
+          &.ant-btn {
+            &-color {
+              &-#{$key} {
+                //background: var(--ant-#{$key}-7) !important;
+                color: var(--ant-#{$key}-4) !important;
+                border-color: var(--ant-#{$key}-6) !important;
+                box-shadow: none !important;
+
+                .ant {
+                  &-wave {
+                    background: var(--ant-#{$key}-1) !important;
+                  }
+                }
+
+                &:hover {
+                  color: var(--ant-#{$key}-6) !important;
+                  border-color: var(--ant-#{$key}-6) !important;
+                  background: transparent !important;
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      &-link {
+        @each $key in $color-btn {
+          &.ant-btn {
+            &-color {
+              &-#{$key} {
+                color: var(--ant-#{$key}-6) !important;
+                //border-color: var(--ant-#{$key}-4) !important;
+                box-shadow: none !important;
+
+                .ant {
+                  &-wave {
+                    background: var(--ant-#{$key}-1) !important;
+                  }
+                }
+
+                &:hover {
+                  color: var(--ant-#{$key}-7) !important;
+                  background: transparent !important;
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      &-text {
+        @each $key in $color-btn {
+          &.ant-btn {
+            &-color {
+              &-#{$key} {
+                //background: var(--ant-#{$key}-6) !important;
+                color: var(--ant-#{$key}-4) !important;
+                //border-color: var(--ant-#{$key}-4) !important;
+                box-shadow: none !important;
+
+                .ant {
+                  &-wave {
+                    background: var(--ant-#{$key}-1) !important;
+                  }
+                }
+
+                &:hover {
+                  color: var(--ant-#{$key}-8) !important;
+                  background: var(--ant-#{$key}-2) !important;
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      &-filled {
+        @each $key in $color-btn {
+          &.ant-btn {
+            &-color {
+              &-#{$key} {
+                background: var(--ant-#{$key}-1) !important;
+                color: var(--ant-#{$key}-6) !important;
+                border-color: var(--ant-#{$key}-4) !important;
+                box-shadow: none !important;
+
+                .ant {
+                  &-wave {
+                    background: var(--ant-#{$key}-1) !important;
+                  }
+                }
+
+                &:hover {
+                  color: var(--ant-#{$key}-6) !important;
+                  background: var(--ant-#{$key}-2) !important;
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      &-solid {
+        @each $key in $color-btn {
+          &.ant-btn {
+            &-color {
+              &-#{$key} {
+                background: var(--ant-#{$key}-6) !important;
+                color: var(--ant-#{$key}-2) !important;
+                border-color: var(--ant-#{$key}-6) !important;
+                box-shadow: none !important;
+
+                :disabled {
+
+                }
+
+                .ant {
+                  &-wave {
+                    background: var(--ant-#{$key}-1) !important;
+                  }
+                }
+
+                &:hover {
+                  color: var(--ant-#{$key}-2) !important;
+                  background: var(--ant-#{$key}-6) !important;
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      &-outlined {
+        @each $key in $color-btn {
+          &.ant-btn {
+            &-color {
+              &-#{$key} {
+                //background: var(--ant-#{$key}-7) !important;
+                color: var(--ant-#{$key}-5) !important;
+                border-color: var(--ant-#{$key}-4) !important;
+                box-shadow: none !important;
+
+                .ant {
+                  &-wave {
+                    background: var(--ant-#{$key}-1) !important;
+                  }
+                }
+
+                &:hover {
+                  color: var(--ant-#{$key}-4) !important;
+                  border-color: var(--ant-#{$key}-4) !important;
+                  background: transparent !important;
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-text {
+      &.ant-btn {
+        &-dangerous {
+          color: var(--ant-color-error);
+
+          &:hover {
+            color: var(--ant-color-error-hover) !important;
+            background: var(--ant-color-error-bg-hover) !important;
+          }
+        }
+      }
+
+      &:hover {
+        color: darken($text-color-dark, 10) !important;
+      }
+    }
+  }
+}

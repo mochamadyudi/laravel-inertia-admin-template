@@ -1,0 +1,78 @@
+%ant-table-card {
+  @include ant-spin {
+    &-blur {
+      @include themify($themes) {
+        //background: themed('card-table-border') !important;
+
+        &:after {
+          background: themed('card-background') !important;
+
+        }
+      }
+    }
+    &-container {
+      background: inherit !important;
+    }
+  }
+
+  .ant {
+    &-table {
+      &-cell {
+        @include themify($themes) {
+          color: themed('text') !important;
+          border-bottom: .5px solid themed('card-table-border') !important;
+        }
+      }
+
+      &-thead {
+        tr {
+          th {
+            @include themify($themes) {
+              border-bottom: .5px solid themed('card-table-border') !important;
+            }
+
+            &:before {
+              @include themify($themes) {
+                background: themed('card-table-border') !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.ant {
+  &-card {
+    margin-bottom: $margin-default;
+    &-head{
+      border: none !important;
+
+      &-title{
+        //font-family: Roboto, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+        //line-height: $line-height-xl !important;
+        letter-spacing: -.0259em;
+        //font-weight: 700 !important;
+        font-size: $font-size-lg !important;
+        @include themify($themes) {
+          color: themed('text');
+        }
+
+      }
+    }
+    @include themify($themes) {
+      background: themed('card-background');
+    }
+    &-bordered {
+      @include themify($themes) {
+        border: 1px solid themed('card-border');
+      }
+    }
+
+    &-body {
+      @extend %ant-table-card;
+    }
+  }
+}

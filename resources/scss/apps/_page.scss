@@ -1,0 +1,26 @@
+$header-height-page: 70px;
+
+@include _Block('app') {
+	&--header {
+		padding: 0 !important;
+		height: $header-height-page;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1001;
+		transition: 0.2s;
+		background: transparent;
+		&.active {
+			transition: 0.2s;
+			background: white !important;
+			border-bottom: 1px solid #e5e5e5;
+		}
+	}
+
+	&--main {
+		padding-top: $header-height-page;
+		min-height: calc(100vh - $header-height-page);
+		background: $bg-layout !important;
+	}
+}

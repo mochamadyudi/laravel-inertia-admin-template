@@ -1,0 +1,66 @@
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+$group_hover: (
+  transform: (
+    scale: (
+      0: scale(0),
+      10: scale(.1),
+      20: scale(.2),
+      30: scale(.3),
+      40: scale(.4),
+      50: scale(.5),
+      60: scale(.6),
+      70: scale(.7),
+      80: scale(.8),
+      90: scale(.9),
+      100: scale(1),
+      110: scale(1.1),
+    ),
+  ),
+);
+
+$scale: (
+  0: scale(0),
+  10: scale(.1),
+  20: scale(.2),
+  30: scale(.3),
+  40: scale(.4),
+  50: scale(.5),
+  60: scale(.6),
+  70: scale(.7),
+  80: scale(.8),
+  90: scale(.9),
+  100: scale(1),
+  110: scale(1.1),
+);
+.scale{
+  @each $key, $values in $scale{
+    &-#{$key} {
+      transform: $values !important;
+    }
+  }
+}
+
+.group-hover {
+
+  @each $key, $values in $group_hover{
+    @each $k2, $v2 in $values{
+      @each $k3, $v3 in $v2 {
+        &\:#{$k2}-#{$k3}{
+          &:hover{
+            #{$key}: $v3 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.transition {
+  transition: ease-in-out !important;
+}
+.duration-200{
+  transition-duration: .2s !important;
+}

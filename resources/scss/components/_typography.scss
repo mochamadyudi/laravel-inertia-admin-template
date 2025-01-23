@@ -1,0 +1,53 @@
+$typography_size : (
+  h1: $font-size-3xl,
+  h2:$font-size-2xl,
+  h3:$font-size-xl,
+  h4:$font-size-lg,
+  h5:$font-size-base,
+  h6:$font-size-base,
+  div: $font-size-base,
+  article: $font-size-base,
+  p: $font-size-base,
+);
+$typography_color : (
+  h1: 'text',
+  h2:'text',
+  h3:'text',
+  h4:'text',
+  h5:'text',
+  h6:'text',
+  div: 'paragraph',
+  article: 'paragraph',
+  p: 'paragraph',
+);
+
+//.ant {
+//  &-typography {
+//    @include themify($themes) {
+//      color: themed('text') ;
+//    }
+//  }
+//}
+
+@each $el, $value in $typography_size{
+  #{$el}{
+    &.ant {
+      &-typography {
+        font-size: $value !important;
+      }
+    }
+
+  }
+}
+@each $el, $value in $typography_color{
+  #{$el}{
+    &.ant {
+      &-typography {
+        @include themify($themes){
+          color: themed($value) !important;
+        }
+      }
+    }
+
+  }
+}

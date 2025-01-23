@@ -1,0 +1,38 @@
+@mixin ant-input-suffix($color){
+  .ant{
+    &-input{
+      &-suffix{
+        svg{
+          fill:$color !important;
+          color:$color !important;
+        }
+
+        @content;
+      }
+    }
+  }
+}
+$status: ('success','error','warning','error','info','link','primary');
+
+.ant{
+  &-input{
+    &-textarea{
+      &-affix{
+        &-wrapper{
+          overflow: hidden;
+        }
+      }
+
+    }
+    &-status{
+      @each $val in $status{
+        &-#{$val}{
+          @include ant-input-suffix(var(--ant-color-#{$val})){
+
+          }
+        }
+      }
+
+    }
+  }
+}

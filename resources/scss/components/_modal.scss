@@ -1,0 +1,22 @@
+.ant{
+  &-modal{
+
+    &-header, &-body, &-footer{
+      padding: var(--ant-modal-content-padding) !important;
+      @include themify($themes){
+        background: themed('card-background') !important;
+        div {
+          color: themed('text') !important;
+        }
+      }
+    }
+    &-content{
+      padding: 5px !important;
+      overflow: hidden;
+      border-radius: 14px !important;
+      @include themify($themes){
+        background: themed('card-background') !important;
+      }
+    }
+  }
+}
