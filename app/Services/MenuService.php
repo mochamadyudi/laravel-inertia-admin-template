@@ -170,6 +170,18 @@ class MenuService
                 'permissions' => [],
                 'roles' => []
               ],
+              [
+                'type' => 'item',
+                'key' => route('dashboard.components.icon'),
+                'label' => 'Icon',
+                'permissions' => [],
+                'el_extra'=> [
+                  'component' => 'icon',
+//                  'color' => 'red',
+                  'icon' => 'InfoCircleOutlined'
+                ],
+                'roles' => []
+              ],
             ]
           ],
         ]

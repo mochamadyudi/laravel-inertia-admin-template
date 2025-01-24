@@ -1,0 +1,12 @@
+.ant{
+  &-switch{
+    &-inner{
+      &-checked, &-unchecked{
+        span{
+          font-size: $font-size-sm;
+        }
+
+      }
+    }
+  }
+}

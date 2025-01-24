@@ -34,7 +34,7 @@ div, p, article, a,span {
   #{$el}{
     &.ant {
       &-typography {
-        font-size: $value !important;
+        font-size: $value;
       }
     }
 
@@ -45,7 +45,7 @@ div, p, article, a,span {
     &.ant {
       &-typography {
         @include themify($themes){
-          color: themed($value) !important;
+          color: themed($value);
         }
       }
     }

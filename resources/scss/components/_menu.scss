@@ -8,3 +8,78 @@
     }
   }
 }
+
+
+@mixin ant-menus{
+  .ant {
+    &-menu {
+      &-item, &-submenu-title{
+        border-radius: 0 !important;
+        margin: 0 !important;
+        margin-bottom: 5px !important;
+        width: 100%;
+      }
+      &-root{
+        padding: 5px 0;
+      }
+      &-item{
+        &:where(&.ant-menu-item-active){
+          .ant-menu{
+            &-submenu-title,&-item-icon, &-title-content{
+              @include themify($themes){
+                color: themed('menu-active') !important;
+                font-weight: 500 !important;
+              }
+            }
+          }
+          @include themify($themes){
+            background: themed('menu-active-bg') !important;
+          }
+
+          &:hover{
+            @include themify($themes){
+              background: themed('menu-active-bg-hover') !important;
+            }
+          }
+          &:before{
+            content: '';
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 2px;
+
+            @include themify($themes){
+              background: themed('menu-active-before') !important;
+            }
+          }
+        }
+
+        &-selected{
+          &:not(.ant-menu-item-active){
+            @include themify($themes){
+              background: themed('menu-active-selected-only') !important;
+              color: themed('menu-active-selected-color-only') !important;
+            }
+
+          }
+        }
+      }
+      &-item {
+        &-icon {
+          font-size: 16px !important;
+        }
+
+        &-group {
+          margin-bottom: 15px;
+
+          &-title {
+            padding-left: 23px;
+            //padding-left: var(--ant-menu-icon-margin-inline-end) !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+          }
+        }
+      }
+    }
+  }
+}

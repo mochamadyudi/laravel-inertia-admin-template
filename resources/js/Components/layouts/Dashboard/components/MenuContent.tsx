@@ -55,6 +55,13 @@ const SideMenu: React.FC<any> = ()=> {
                     </Tag>
                   );
                   break;
+                case 'icon':
+                  Reflect.set(
+                    formattedChild,
+                    'extra',
+                    <Icons type={child?.el_extra?.icon} />
+                  );
+                  break;
                 default:
                   Reflect.set(
                     formattedChild,
@@ -70,7 +77,7 @@ const SideMenu: React.FC<any> = ()=> {
           Reflect.set(
             formattedChild,
             'label',
-            <Flex gap={12}>
+            <Flex gap={11}>
               {child?.icon && <Icons type={child?.icon as string} />}
               <span>{setLocale(true, child?.label)}</span>
             </Flex>
