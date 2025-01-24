@@ -8,6 +8,7 @@ Route::prefix('components')
 
     Route::prefix('general')
       ->group(function () {
+        Route::get('/icon', [Dashboard\Components\GeneralController::class,'icon'])->name('dashboard.components.icon');
         Route::get('/button', [Dashboard\Components\GeneralController::class,'button'])->name('dashboard.components.button');
         Route::get('/', [Dashboard\Components\GeneralController::class,'button'])->name('dashboard.components.general');
       });

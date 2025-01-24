@@ -19,4 +19,14 @@ class GeneralController extends Controller
     $state->setState([]);
     return Inertia::render('Dashboard/Components/Generals/button/page', $state->go());
   }
+  public function icon(){
+    $seo = $this->seo()
+      ->setTitle('General Icon | Components')
+      ->go();
+    $state = $this->state();
+    $state->setCollections([]);
+    $state->setMeta($seo);
+    $state->setState([]);
+    return Inertia::render('Dashboard/Components/Generals/icon/page', $state->go());
+  }
 }
