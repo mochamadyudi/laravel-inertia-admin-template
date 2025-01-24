@@ -1,6 +1,6 @@
 import React from 'react';
 import TheDashboard from "@/Components/layouts/Dashboard/TheDashboard";
-import {Col, Row, Card, Typography, Descriptions, message, Button, Tooltip, Tag} from "antd";
+import {Col, Row, Typography, Descriptions, message, Button, Tooltip, Tag} from "antd";
 import PageHeaderAlt from "@/Components/general/PageHeaderAlt";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 // @ts-ignore
