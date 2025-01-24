@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import React from "react";
+import {useSelector} from "react-redux";
 
 export const CodeContainer = styled.code`
   color: #a9b7c6;
@@ -28,8 +30,22 @@ export const CodeContainer = styled.code`
   }
 `;
 
-export const PreContainer = styled.pre`
-  color: #a9b7c6;
+
+export const Pre = styled.pre`
+
+  color: ${
+  //@ts-ignore
+  function ({theme}: { theme: string }) {
+    console.log(theme)
+    return theme === 'dark' ? '#a9b7c6' : '#67749A';
+  }};
+  border-radius: 7px;
+  background: ${
+    //@ts-ignore
+    function ({theme}: { theme: string }) {
+      console.log(theme)
+      return theme === 'dark' ? 'rgba(27,37,49,0.28)' : 'rgba(66,82,105,0.06)';
+    }};
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   direction: ltr;
   text-align: left;
@@ -45,7 +61,7 @@ export const PreContainer = styled.pre`
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
-  background: #2b2b2b;
+
 
   ::-moz-selection,
   ::selection {
@@ -54,6 +70,14 @@ export const PreContainer = styled.pre`
   }
 `;
 
+export const PreContainer = ({ children }: {children: React.ReactNode})=> {
+  const {currentTheme} = useSelector(({Theme}: any) => Theme)
+  return (
+    <Pre theme={currentTheme}>
+      {children}
+    </Pre>
+  )
+}
 export const TokenSpan = styled.span`
   &.comment,
   &.prolog,
