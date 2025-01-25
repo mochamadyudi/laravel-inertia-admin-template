@@ -45,7 +45,6 @@ position: relative;
                 span {
                   @include themify($themes){
                     color: themed('menu-sub-title-active') !important;
-                    font-weight: 500 !important;
                   }
                 }
               }
@@ -67,6 +66,7 @@ position: relative;
 @mixin sider_direction($type, $value) {
   #{$type}: $value !important;
 }
+
 
 .ant {
   &-layout {
@@ -95,6 +95,7 @@ position: relative;
 .app {
   position: relative;
   min-height: 100vh;
+  height: 100%;
 
   &-page {
     .app {
@@ -193,6 +194,7 @@ position: relative;
   }
 
   &-main {
+
     &.without-header {
       min-height: 100vh !important;
       height: 100vh !important;
@@ -200,7 +202,7 @@ position: relative;
     }
 
     min-height: calc(100vh - $top-height) !important;
-    height: calc(100vh - $top-height) !important;
+    //height: calc(100vh - $top-height) !important;
     padding-top: $top-height !important;
   }
 

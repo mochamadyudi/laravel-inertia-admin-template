@@ -39,7 +39,7 @@ const Page = () => {
         addonAfter={
           <div>
             <Typography.Paragraph>To trigger an operation.</Typography.Paragraph>
-            <Descriptions colon={false} className={'w-[320px]'}>
+            <Descriptions colon={false} className={'w-full'}>
               <Descriptions.Item label="Import" span={4}>
                 <CopyToClipboard text={"import react from 'react'"} onCopy={() => {
                   message.success("Successfully copied")

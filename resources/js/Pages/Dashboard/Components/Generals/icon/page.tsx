@@ -56,7 +56,7 @@ const Page = () => {
           <div className="space-y-6">
             <Typography.Title level={3}>List of Icons</Typography.Title>
             <Affix offsetTop={60} key={'affix-page-icons'}>
-              <Flex justify={'space-between'} align={'center'} gap={40} className={'bg-white dark:bg-slate-700 border-b border-slate-200 dark:border-slate-800 p-4'}>
+              <Flex justify={'space-between'} align={'center'} gap={40} className={'bg-card dark:bg-card-dark border-b border-slate-200 dark:border-slate-800 p-4'}>
                 <Segmented size={'large'} options={options} value={active} onChange={_onChange}/>
 
                 <Input prefix={<Icons type={'SearchOutlined'}/> } value={search as string} onChange={_onSearch} placeholder="Search icon..."/>
@@ -77,7 +77,7 @@ const Page = () => {
                   .map((item: { type: string; data: Array<string>; category: string; }, index: number) => {
                     return (
                       <div className="space-y-4">
-                        <Typography.Title level={3} className={'capitalize'}>{item.category}</Typography.Title>
+                        <Typography.Title level={3} className={'capitalize !text-xl'}>{item.category}</Typography.Title>
                         <div className={'grid grid-cols-2 sm:grid-cols-3  xl:grid-cols-5 gap-4'}>
 
                           {

@@ -4,6 +4,7 @@ import TheContainer from "@/Components/general/TheContainer";
 
 interface PageHeaderAltAttr {
   type?: 'default' | 'tab'
+  className?: string;
   addonAfter?: string | React.ReactNode;
   addonBefore?: string | React.ReactNode;
   title: string | React.ReactNode;
@@ -15,7 +16,7 @@ interface PageHeaderAltAttr {
 const PageHeaderAlt: React.FC<PageHeaderAltAttr> = ({ title, container, ...props })=> {
   return (
     <div className="page-header">
-      <div className="page-header-alt">
+      <div className={`page-header-alt ${props?.className}`}>
         {
           container ?
             <TheContainer>

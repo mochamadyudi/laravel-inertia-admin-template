@@ -20,10 +20,10 @@ $bg-sider-main: darken($bg-layout, 40);
 
 $bg-chat-list-item-active: #2e333d;
 
-$text-paragraph: lighten(#3e465d, 20);
+$text-paragraph: lighten(#3e465d, 10);
 $text-paragraph-dark: #afb8d4;
 
-$text-color: #242424;
+$text-color: #1B2531;
 
 $text-color-placeholder: #b5b5b5;
 $text-color-placeholder-dark: #2d3c4f;
@@ -44,7 +44,7 @@ $bg-drawer: $color-white;
 $bg-drawer-dark: $bg-body-dark;
 
 $bg-card: $color-white;
-$bg-card-dark: #333f53;
+$bg-card-dark: $bg-sider-layout;
 
 $bg-table-header: #ffffff;
 $table-bordered: rgba(198, 198, 198, 0.33);
@@ -60,5 +60,7 @@ $button-disabled-dark: #48556e;
 $button-disabled-dark-border: #6c7a91;
 $button-disabled-dark-color: #6c7a91;
 
-$menu-color: #445472;
+$menu-color: #5a6a8a;
 $menu-color-dark: #b2c3d9;
+$menu-color-group-title: #8d9dae;
+$menu-color-group-title-dark: #445472;

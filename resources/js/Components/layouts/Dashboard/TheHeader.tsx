@@ -20,7 +20,7 @@ const TheHeader: React.FC<any> = (props) => {
           <div
             className={`w-full ${!navCollapsed ? 'px-6' : 'flex items-center justify-center'}`}
           >
-            <h1 className={'!text-md !m-0 !p-0'}>{navCollapsed ? Utils.getNameInitial('Clonesia') : 'Clonesia'}</h1>
+            <Typography.Title level={1} className={'!text-2xl !m-0 !p-0'}>{navCollapsed ? Utils.getNameInitial('Clonesia') : 'Clonesia'}</Typography.Title>
           </div>
         </div>
         <div className="nav-right flex justify-between items-center">

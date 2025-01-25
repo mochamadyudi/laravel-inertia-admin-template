@@ -1,9 +1,9 @@
 $typography_size : (
-  h1: $font-size-4xl,
-  h2:$font-size-3xl,
-  h3:$font-size-2xl,
-  h4:$font-size-xl,
-  h5:$font-size-lg,
+  h1: $font-size-3xl,
+  h2:$font-size-2xl,
+  h3:$font-size-xl,
+  h4:$font-size-lg,
+  h5:$font-size-base,
   h6:$font-size-base,
   div: $font-size-base,
   article: $font-size-base,
@@ -25,16 +25,18 @@ $typography_color : (
 div, p, article, a,span {
   &.ant {
     &-typography {
-      font-weight: 400;
+      font-weight: 500;
     }
   }
 }
 
 @each $el, $value in $typography_size{
   #{$el}{
+    font-family:  'sf-pro-regular',"sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
     &.ant {
       &-typography {
         font-size: $value;
+        font-family:  'sf-pro-regular',"sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
       }
     }
 
@@ -44,6 +46,7 @@ div, p, article, a,span {
   #{$el}{
     &.ant {
       &-typography {
+        font-family:  'sf-pro-regular',"sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
         @include themify($themes){
           color: themed($value);
         }

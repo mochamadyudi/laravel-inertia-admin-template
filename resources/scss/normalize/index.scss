@@ -20,6 +20,7 @@ html {
 	line-height: 1.5;
 	-webkit-text-size-adjust: 100%;
 	font-family:
+    sf-pro-medium,
 		ui-sans-serif,
 		system-ui,
 		sans-serif,
@@ -30,9 +31,12 @@ html {
 	font-feature-settings: normal;
 	font-variation-settings: normal;
 	tab-size: 4;
+  letter-spacing: .04rem;
 	-webkit-tap-highlight-color: transparent;
 }
-
+*{
+  font-family:  sf-pro-regular,"sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+}
 body {
 	line-height: inherit;
 	margin: 0;
@@ -74,7 +78,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family:
+	font-family: sf-pro-medium,
 		ui-monospace,
 		SFMono-Regular,
 		Menlo,
@@ -83,9 +87,9 @@ samp {
 		Liberation Mono,
 		Courier New,
 		monospace;
-	font-feature-settings: normal;
-	font-size: 1em;
-	font-variation-settings: normal;
+	//font-feature-settings: normal;
+	//font-size: 1em;
+	//font-variation-settings: normal;
 }
 
 small {
@@ -120,12 +124,12 @@ optgroup,
 select,
 textarea {
 	color: inherit;
-	font-family: inherit;
+  font-family:  'sf-pro-regul``ar', system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" ;
 	font-feature-settings: inherit;
 	font-size: 100%;
 	font-variation-settings: inherit;
 	font-weight: inherit;
-	letter-spacing: inherit;
+	//letter-spacing: inherit;
 	line-height: inherit;
 	margin: 0;
 	padding: 0;

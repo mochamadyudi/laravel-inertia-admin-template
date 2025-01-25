@@ -6,7 +6,7 @@ interface FooterLayoutAttr {
 }
 const FooterLayout: React.FC<FooterLayoutAttr> = ({ children })=> {
   return (
-    <Layout.Footer className={'!w-[calc(100%+40px)] -ml-[20px] bg-white dark:bg-slate-700'}>
+    <Layout.Footer className={'!w-[calc(100%+40px)] -ml-[20px] -mb-[20px] bg-white dark:bg-slate-700'}>
       {children}
     </Layout.Footer>
   )

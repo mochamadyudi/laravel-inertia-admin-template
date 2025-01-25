@@ -14,9 +14,11 @@ $row-color: (
     &-bordered{
       .ant{
         &-table{
+
           &-thead{
             tr{
               th{
+                font-family:  'sf-pro-regular',"sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
                 @include themify($themes) {
                   background: darken(themed('table-header'),2) !important;
                 }
@@ -48,6 +50,15 @@ $row-color: (
     }
 
     &-row{
+      .ant{
+        &-table{
+          &-cell {
+            @include themify($themes) {
+              color: themed('paragraph') !important;
+            }
+          }
+        }
+      }
       @each $key, $color in $row-color {
         &.#{$key}{
           transition: .2s;
@@ -110,11 +121,6 @@ $row-color: (
 
       }
     }
-    &-cell {
-      @include themify($themes) {
-        color: themed('text') !important;
-      }
-    }
 
     &-row{
       @include themify($themes) {
@@ -144,6 +150,15 @@ $row-color: (
 
       tr {
         th {
+          &.ant{
+            &-table{
+              &-cell {
+                @include themify($themes) {
+                  color: themed('text') !important;
+                }
+              }
+            }
+          }
           @include themify($themes) {
             background: darken(themed('table-header'),2) !important;
           }

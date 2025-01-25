@@ -25,6 +25,7 @@ $themes: (
     menu-active-bg-hover: var(--ant-color-primary-bg-hover),
     menu-active-before: var(--ant-color-primary),
     menu-item: $menu-color,
+    menu-group: $menu-color-group-title,
     menu-sub: transparent,
     menu-sub-title-active: var(--ant-color-primary),
 
@@ -74,6 +75,7 @@ $themes: (
     menu-active-bg-hover: var(--ant-color-primary-hover),
     menu-active-before: var(--ant-color-primary-border),
     menu-item: $menu-color-dark,
+    menu-group: $menu-color-group-title-dark,
     menu-sub:darken($bg-sider-dark,5),
     menu-sub-title-active: var(--ant-color-primary-border-hover),
 

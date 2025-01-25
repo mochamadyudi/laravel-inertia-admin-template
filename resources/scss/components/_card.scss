@@ -51,11 +51,11 @@
       border: none !important;
 
       &-title{
-        //font-family: Roboto, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+        //font-family: Ro/**/boto, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
         //line-height: $line-height-xl !important;
-        letter-spacing: -.0259em;
-        //font-weight: 700 !important;
-        font-size: $font-size-lg !important;
+        //letter-spacing: -.0159em;
+        //font-weight: $font-weight-semibold !important;
+        font-size: $font-size-xl !important;
         @include themify($themes) {
           color: themed('text');
         }

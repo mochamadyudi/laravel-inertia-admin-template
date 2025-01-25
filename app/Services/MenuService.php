@@ -172,16 +172,30 @@ class MenuService
               ],
               [
                 'type' => 'item',
-                'key' => route('dashboard.components.icon'),
-                'label' => 'Icon',
+                'key' => route('dashboard.components.float-button'),
+                'label' => 'FloatButton',
                 'permissions' => [],
                 'el_extra'=> [
-                  'component' => 'icon',
-//                  'color' => 'red',
-                  'icon' => 'InfoCircleOutlined'
+                  'component' => 'tag',
+                  'children'=> '5.0.0'
                 ],
                 'roles' => []
               ],
+              [
+                'type' => 'item',
+                'key' => route('dashboard.components.icon'),
+                'label' => 'Icon',
+                'permissions' => [],
+                'roles' => []
+              ],
+              [
+                'type' => 'item',
+                'key' => route('dashboard.components.typography'),
+                'label' => 'Typography',
+                'permissions' => [],
+                'roles' => []
+              ],
+
             ]
           ],
         ]

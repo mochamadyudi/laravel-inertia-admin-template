@@ -29,4 +29,24 @@ class GeneralController extends Controller
     $state->setState([]);
     return Inertia::render('Dashboard/Components/Generals/icon/page', $state->go());
   }
+  public function float_button(){
+    $seo = $this->seo()
+      ->setTitle('Float Button | Components')
+      ->go();
+    $state = $this->state();
+    $state->setCollections([]);
+    $state->setMeta($seo);
+    $state->setState([]);
+    return Inertia::render('Dashboard/Components/Generals/icon/page', $state->go());
+  }
+  public function typography(){
+    $seo = $this->seo()
+      ->setTitle('General Typography | Components')
+      ->go();
+    $state = $this->state();
+    $state->setCollections([]);
+    $state->setMeta($seo);
+    $state->setState([]);
+    return Inertia::render('Dashboard/Components/Generals/typography/page', $state->go());
+  }
 }
