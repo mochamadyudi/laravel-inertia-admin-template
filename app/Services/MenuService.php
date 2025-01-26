@@ -18,7 +18,7 @@ class MenuService
       [
         'type' => 'item',
         'key' => '@analytics',
-        'label' => 'Analytics',
+        'label' => 'side.menu.analytic',
         'icon' => 'DotChartOutlined',
         'permissions' => [],
         'roles' => []

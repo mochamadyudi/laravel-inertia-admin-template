@@ -12,8 +12,7 @@
       }
     }
 
-    //font-weight: $font-weight-medium;
-    letter-spacing: -.2px;
+    //letter-spacing: -.2px;
     font-size: $font-size-base;
     @include themify($themes) {
       color: themed('bcrumb-color') !important;

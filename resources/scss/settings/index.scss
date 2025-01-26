@@ -55,6 +55,7 @@ $themes: (
     btn-disabled-border: $button-disabled-border,
     btn-disabled-color: $button-disabled-color,
   ),
+
   dark: (
     divider: lighten($bg-header-dark, 15),
     border-dashboard: darken($bg-header-dark, 2),

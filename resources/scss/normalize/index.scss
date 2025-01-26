@@ -1,3 +1,4 @@
+@import "typography";
 /*! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com*/
 *,
 :after,
@@ -10,33 +11,7 @@
 :before {
 	--tw-content: '';
 }
-.container {
-	width: 100% !important;
-	max-width: 1280px !important;
-}
 
-:host,
-html {
-	line-height: 1.5;
-	-webkit-text-size-adjust: 100%;
-	font-family:
-    sf-pro-medium,
-		ui-sans-serif,
-		system-ui,
-		sans-serif,
-		Apple Color Emoji,
-		Segoe UI Emoji,
-		Segoe UI Symbol,
-		Noto Color Emoji;
-	font-feature-settings: normal;
-	font-variation-settings: normal;
-	tab-size: 4;
-  letter-spacing: .04rem;
-	-webkit-tap-highlight-color: transparent;
-}
-*{
-  font-family:  sf-pro-regular,"sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
-}
 body {
 	line-height: inherit;
 	margin: 0;
@@ -50,35 +25,14 @@ hr {
 
 abbr:where([title]) {
 	text-decoration: underline;
-	-webkit-text-decoration: underline dotted;
-	text-decoration: underline dotted;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: $line-height-xl;
-	font-weight: inherit;
-}
-
-a {
-	color: inherit;
-	text-decoration: inherit;
-}
-
-b,
-strong {
-	font-weight: bolder;
-}
 
 code,
 kbd,
 pre,
 samp {
-	font-family: sf-pro-medium,
+	font-family: 'sf-pro-regular',
 		ui-monospace,
 		SFMono-Regular,
 		Menlo,
@@ -87,13 +41,9 @@ samp {
 		Liberation Mono,
 		Courier New,
 		monospace;
-	//font-feature-settings: normal;
-	//font-size: 1em;
-	//font-variation-settings: normal;
-}
-
-small {
-	font-size: 80%;
+	font-feature-settings: normal;
+	font-size: 1em;
+	font-variation-settings: normal;
 }
 
 sub,
@@ -124,12 +74,10 @@ optgroup,
 select,
 textarea {
 	color: inherit;
-  font-family:  'sf-pro-regul``ar', system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" ;
+  font-family:  'sf-pro-regular', system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
 	font-feature-settings: inherit;
-	font-size: 100%;
 	font-variation-settings: inherit;
 	font-weight: inherit;
-	//letter-spacing: inherit;
 	line-height: inherit;
 	margin: 0;
 	padding: 0;
@@ -262,6 +210,7 @@ video {
 	display: none !important;
 }
 
-p,span,a,div {
+p,span,a,div, strong {
   font-size: $font-size-base;
 }
+

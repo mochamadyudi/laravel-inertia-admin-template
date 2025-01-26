@@ -41,6 +41,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'sf-pro': ['sf-pro-regular', ...defaultTheme.fontFamily.sans],
         sans: ['sf-pro-regular', ...defaultTheme.fontFamily.sans],
         Figtree: ['Figtree', ...defaultTheme.fontFamily.sans],
         poppins: ['Poppins', ...defaultTheme.fontFamily.sans],

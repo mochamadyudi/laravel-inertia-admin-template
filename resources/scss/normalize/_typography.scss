@@ -1,0 +1,7 @@
+strong{
+  letter-spacing: 0.01rem;
+  font-weight: 600 !important;
+  @include themify($themes){
+    color: darken(themed('text'),0) !important;
+  }
+}

@@ -9,9 +9,10 @@
 
 
 %font-default{
-  font-family:  sf-pro-medium, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji"  !important;
-  font-weight: $font-weight-medium !important;
-  //letter-spacing: -0.0025rem !important;
+  font-family:  'sf-pro-medium', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+  font-weight: $font-weight-semibold !important;
+  letter-spacing: 0.022rem !important;
+  font-size: $font-size-base;
 }
 %menu-color-default{
   @extend %font-default;

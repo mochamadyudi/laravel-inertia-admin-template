@@ -23,7 +23,7 @@ $font_size_ql: (
       }
       p, span, strong, i, ol ,li {
         @include themify($themes){
-          color: themed('text');
+          //color: themed('text');
         }
         font-size: 16px;
       }
