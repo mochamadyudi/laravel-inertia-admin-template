@@ -3,6 +3,8 @@ import {CodeContainer, PreContainer, TokenSpan} from "@/Components/util-componen
 import {Button, Card, Divider, Flex, message} from 'antd';
 import {Icons} from "@/Components/general/Icons";
 import {CopyToClipboard} from "react-copy-to-clipboard";
+import {Utils} from "@/Utils";
+
 interface DemoCardAttr {
   children?: React.ReactNode;
   source: React.ReactNode;
@@ -21,9 +23,9 @@ const DemoCard: React.FC<DemoCardAttr> = ({children, source, attributes}) => {
 
   useEffect(() => {
     if (ref && ref.current) {
-      if(open){
+      if (open) {
         ref.current.style.height = `${height}px`
-      }else{
+      } else {
         ref.current.style.height = '0px'
       }
 
@@ -35,30 +37,33 @@ const DemoCard: React.FC<DemoCardAttr> = ({children, source, attributes}) => {
     setOpen((prev: boolean) => !prev)
   }
 
-  console.log(attributes,'attr')
+  console.log(source)
   return (
     <React.Fragment>
       <Card bordered={false} title={attributes?.title ?? ''}>
-        <div className="yid-code-box space-y-6">
+        <div className="yid-code-box space-y-2">
           <section className="yid-code-box-demo">
             {children}
           </section>
           <section className="yid-code-box-content">
-            <Divider/>
             <Flex justify={'space-between'} className={''}>
               <div/>
-              <Flex gap={10}>
-                <Button onClick={_onClick} type={'text'} icon={<Icons type={'CodeOutlined'} className={'!text-lg'}/>}
-                        shape={'circle'}/>
+              <Flex gap={4}>
+                <CopyToClipboard text={attributes?.md_string ?? ''} onCopy={() => message.success('Successfully copy')}>
+                  <Button icon={<Icons type={'CopyOutlined'} className={'!text-xl'}/>} type={'text'}/>
+                </CopyToClipboard>
+                <Button
+                  onClick={_onClick}
+                  type={'text'}
+                  icon={
+                    <Icons
+                      type={!open ? 'DownSquareOutlined' : 'UpSquareOutlined'}
+                      className={'!text-xl'}
+                    />}
+                  shape={'circle'}/>
               </Flex>
             </Flex>
             <div ref={ref} className={'overflow-hidden transition duration-200 relative'}>
-              <div className="absolute top-4 right-4">
-                <CopyToClipboard text={attributes?.md_string ?? ''} onCopy={()=> message.success('Successfully copy')}>
-                  <Button icon={<Icons type={'CopyOutlined'}/> } shape={'circle'}/>
-                </CopyToClipboard>
-              </div>
-
               <PreContainer>
                 <CodeContainer>
                   <TokenSpan>

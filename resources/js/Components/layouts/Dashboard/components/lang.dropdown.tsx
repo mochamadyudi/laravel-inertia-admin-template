@@ -22,6 +22,11 @@ const LangDropdown: React.FC<any> = (props) => {
       icon: '/assets/img/flag/en.png',
       label: 'English'
     },
+    {
+      key: 'jp',
+      icon: '/assets/img/flag/jp.png',
+      label: 'Japan'
+    },
 
   ])
   const _lang = first(lang.filter(({key}: any)=> key === locale))
@@ -43,13 +48,13 @@ const LangDropdown: React.FC<any> = (props) => {
                   icon={
                     <div
                       className={
-                        'h-[25px] w-[25px] rounded-full overflow-hidden border flex justtify-center'
+                        'h-[25px] w-[25px] rounded-full relative overflow-hidden border flex justify-center'
                       }
                     >
                       <img
                         src={child?.icon}
                         alt={child?.icon}
-                        className={'w-[40px] h-[40px] rounded-full'}
+                        className={'!w-[30px] !h-[30px] !object-cover absolute top-1/2 left-1/2 transform translate -translate-x-1/2 -translate-y-1/2'}
                       />
                     </div>
                   }
@@ -79,13 +84,13 @@ const LangDropdown: React.FC<any> = (props) => {
           icon={
             <div
               className={
-                'h-[25px] w-[25px]  rounded-full overflow-hidden border flex justify-center border-slate-300'
+                'h-[25px] w-[25px]  rounded-full relative overflow-hidden border flex justify-center border-slate-300'
               }
             >
               <img
                 alt={_lang?.icon}
                 src={_lang?.icon}
-                className={'w-[40px] h-[40px] rounded-full'}
+                className={'!w-[30px] !h-[30px] !object-cover absolute top-1/2 left-1/2 transform translate -translate-x-1/2 -translate-y-1/2'}
               />
             </div>
           }

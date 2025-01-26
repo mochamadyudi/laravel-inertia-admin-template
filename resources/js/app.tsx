@@ -1,4 +1,5 @@
 import "../css/app.css"
+import "../scss/app.scss"
 import './bootstrap';
 import 'highlight.js/styles/atom-one-dark-reasonable.css';
 

@@ -36,14 +36,12 @@ export const Pre = styled.pre`
   color: ${
   //@ts-ignore
   function ({theme}: { theme: string }) {
-    console.log(theme)
-    return theme === 'dark' ? '#a9b7c6' : '#67749A';
-  }};
+    return theme === 'dark' ? '#a9b7c6' : '#282f43';
+  }} !important;
   border-radius: 7px;
   background: ${
     //@ts-ignore
     function ({theme}: { theme: string }) {
-      console.log(theme)
       return theme === 'dark' ? 'rgba(27,37,49,0.28)' : 'rgba(66,82,105,0.06)';
     }};
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
