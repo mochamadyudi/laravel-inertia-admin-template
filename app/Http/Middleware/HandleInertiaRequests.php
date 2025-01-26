@@ -34,7 +34,7 @@ class HandleInertiaRequests extends Middleware
    */
   public function share(Request $request): array
   {
-
+    $search = $request->getQueryString();
     return [
       ...parent::share($request),
       'auth' => [
@@ -42,6 +42,7 @@ class HandleInertiaRequests extends Middleware
       ],
       'ziggy' => fn() => [
         ...(new Ziggy)->toArray(),
+        'search' => $search,
         'location' => $request->url(),
       ],
       'themes'=> $this->themes(),

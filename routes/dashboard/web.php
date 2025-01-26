@@ -15,4 +15,17 @@ Route::prefix('components')
         Route::get('/', [Dashboard\Components\GeneralController::class,'button'])->name('dashboard.components.general');
       });
   });
+
+Route::prefix('pages')
+  ->group(function () {
+    Route::prefix('app')
+      ->group(function () {
+        Route::get('/profile', [Dashboard\Pages\AppController::class, 'profile'])->name('dashboard.pages.app.profile');
+      });
+
+    Route::get('/', function(){
+
+    })->name('dashboard.pages');
+  });
+
 Route::get('/', [Dashboard\DashboardController::class,'index'])->name('dashboard');

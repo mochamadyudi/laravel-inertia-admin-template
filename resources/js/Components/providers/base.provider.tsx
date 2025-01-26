@@ -4,13 +4,15 @@ import {App, ConfigProvider} from "antd";
 import {useDispatch, useSelector} from "react-redux";
 import AppLocale from "@/Lang";
 import {usePage} from "@inertiajs/react";
-import {rehydrateThemeConfig} from "@/Redux/actions/Theme";
+import {onSaveTheme, rehydrateThemeConfig} from "@/Redux/actions/Theme";
+import {Utils} from "@/Utils";
 
 type AntdProviderType = {
   children: React.ReactNode
 }
 
 const BaseProvider: React.FC<AntdProviderType> = ({children}) => {
+  const props = usePage().props;
   const dispatch = useDispatch();
   const themes: any = usePage<any>().props?.themes;
   const antd: any = useSelector(({Theme}: any)=> Theme?.antd)
@@ -22,6 +24,14 @@ const BaseProvider: React.FC<AntdProviderType> = ({children}) => {
     //@ts-ignore
     dispatch(rehydrateThemeConfig(themes?.antd))
   },[themes])
+  console.log({ props })
+
+  useEffect(() => {
+   if(new URLSearchParams(window.location.search).has('theme')){
+     //@ts-ignore
+     dispatch(onSaveTheme(new URLSearchParams(window.location.search).get('theme')))
+   }
+  },[]);
   return (
     <React.Fragment>
       <IntlProvider

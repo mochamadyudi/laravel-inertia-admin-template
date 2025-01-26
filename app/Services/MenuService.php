@@ -215,7 +215,7 @@ class MenuService
         'children' => [
           [
             'type' => 'submenu',
-            'key' => '@pages/pages',
+            'key' => route('dashboard.pages'),
             'label' => 'Pages',
             'icon' => 'FileProtectOutlined',
             'permissions' => [],
@@ -223,7 +223,7 @@ class MenuService
             'children' => [
               [
                 'type' => 'submenu',
-                'key' => '@pages/pages/app',
+                'key' => route('dashboard.pages.app.profile'),
                 'label' => 'App',
                 'icon' => 'GlobalOutlined',
                 'permissions' => [],
@@ -231,7 +231,7 @@ class MenuService
                 'children' => [
                   [
                     'type' => 'item',
-                    'key' => '@pages/pages/profile',
+                    'key' => route('dashboard.pages.app.profile'),
                     'label' => 'Profile',
                     'icon' => 'UserOutlined',
                     'permissions' => [],
@@ -255,40 +255,40 @@ class MenuService
                   ],
                 ]
               ],
-              [
-                'type' => 'submenu',
-                'key' => '@pages/pages/general',
-                'label' => 'General',
-                'icon' => 'GlobalOutlined',
-                'permissions' => [],
-                'roles' => [],
-                'children' => [
-                  [
-                    'type' => 'item',
-                    'key' => '@pages/pages/general/invoice',
-                    'label' => 'Invoice',
-                    'icon' => 'FileDoneOutlined',
-                    'permissions' => [],
-                    'roles' => [],
-                  ],
-                  [
-                    'type' => 'item',
-                    'key' => '@pages/pages/general/faq',
-                    'label' => 'FAQ',
-                    'icon' => 'FileDoneOutlined',
-                    'permissions' => [],
-                    'roles' => [],
-                  ],
-                  [
-                    'type' => 'item',
-                    'key' => '@pages/pages/general/pricing',
-                    'label' => 'Pricing',
-                    'icon' => 'FileDoneOutlined',
-                    'permissions' => [],
-                    'roles' => [],
-                  ],
-                ]
-              ],
+//              [
+//                'type' => 'submenu',
+//                'key' => '@pages/pages/general',
+//                'label' => 'General',
+//                'icon' => 'GlobalOutlined',
+//                'permissions' => [],
+//                'roles' => [],
+//                'children' => [
+//                  [
+//                    'type' => 'item',
+//                    'key' => '@pages/pages/general/invoice',
+//                    'label' => 'Invoice',
+//                    'icon' => 'FileDoneOutlined',
+//                    'permissions' => [],
+//                    'roles' => [],
+//                  ],
+//                  [
+//                    'type' => 'item',
+//                    'key' => '@pages/pages/general/faq',
+//                    'label' => 'FAQ',
+//                    'icon' => 'FileDoneOutlined',
+//                    'permissions' => [],
+//                    'roles' => [],
+//                  ],
+//                  [
+//                    'type' => 'item',
+//                    'key' => '@pages/pages/general/pricing',
+//                    'label' => 'Pricing',
+//                    'icon' => 'FileDoneOutlined',
+//                    'permissions' => [],
+//                    'roles' => [],
+//                  ],
+//                ]
+//              ],
 
             ]
           ],

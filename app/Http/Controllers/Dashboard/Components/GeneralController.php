@@ -37,7 +37,7 @@ class GeneralController extends Controller
     $state->setCollections([]);
     $state->setMeta($seo);
     $state->setState([]);
-    return Inertia::render('Dashboard/Components/Generals/icon/page', $state->go());
+    return Inertia::render('Dashboard/Components/Generals/FloatButton/page', $state->go());
   }
   public function typography(){
     $seo = $this->seo()

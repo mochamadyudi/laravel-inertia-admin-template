@@ -20,6 +20,49 @@
     color: themed('menu-item');
   }
 }
+@mixin submenu {
+  .ant {
+    &-menu {
+      &-submenu{
+        &-selected{
+          .ant-menu{
+            &-sub{
+              .ant-menu{
+                &-item{
+                  &-active{
+                    @extend %ant-menu-active;
+
+                    .ant-menu-submenu{
+                      &-title{
+                        @extend %ant-menu-active;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &-submenu{
+              &-title{
+                span {
+                  @include themify($themes){
+                    color: themed('menu-sub-title-active') !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &-sub {
+        @include themify($themes) {
+          background: themed('menu-sub') !important;
+        }
+
+      }
+    }
+  }
+
+}
 @mixin ant-menus{
   .ant {
     &-menu {
@@ -36,6 +79,8 @@
         margin-bottom: 5px !important;
         width: 100%;
       }
+
+
       &-root{
         padding: 5px 0;
       }
