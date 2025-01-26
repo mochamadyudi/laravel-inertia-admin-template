@@ -10,6 +10,7 @@ import EllipsisControllerExpandPartial
 import EllipsisSuffix from "@/Pages/Dashboard/Components/Generals/typography/partials/ellipsis-suffix.partial";
 import FooterLayout from "@/Components/layouts/footer.layout";
 import TheContainer from "@/Components/general/TheContainer";
+import ApiPartial from "@/Pages/Dashboard/Components/Generals/typography/partials/Api.partial";
 
 const Page = () => {
   return (
@@ -22,9 +23,10 @@ const Page = () => {
         contentClassName={'mt-6'}
         type={'default'}
       >
+        <ExamplePartial/>
         <Row gutter={[24,24]}>
           <Col sm={24}  lg={12}>
-            <ExamplePartial/>
+
             <EllipsisPartial/>
             <EllipsisSuffix/>
           </Col>
@@ -35,9 +37,7 @@ const Page = () => {
         </Row>
       </PageHeaderAlt>
       <FooterLayout>
-        <TheContainer>
-          <Typography.Title level={3}>API</Typography.Title>
-        </TheContainer>
+        <ApiPartial/>
       </FooterLayout>
     </React.Fragment>
   )
