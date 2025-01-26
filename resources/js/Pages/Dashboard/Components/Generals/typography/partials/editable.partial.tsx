@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { CheckOutlined, HighlightOutlined } from '@ant-design/icons';
 import {Card, Radio, Typography} from 'antd';
-
+import DemoCard from "@/Components/util-component/DemoCard";
+//@ts-ignore
+import MD, {attributes} from '../markdown/EditablePartial.md';
 const { Paragraph } = Typography;
 
 const EditablePartial: React.FC = () => {
@@ -50,94 +52,96 @@ const EditablePartial: React.FC = () => {
   }, [chooseTrigger]);
 
   return (
-    <Card title={'Editable'}>
-      <Paragraph editable={{ onChange: setEditableStr }}>{editableStr}</Paragraph>
-      <Paragraph
-        editable={{
-          onChange: setEditableStrWithSuffix,
-          text: editableStrWithSuffix,
-        }}
-        ellipsis={{
-          suffix: editableStrWithSuffixSuffixPart,
-        }}
-      >
-        {editableStrWithSuffixStartPart}
-      </Paragraph>
-      <Paragraph
-        editable={{
-          icon: <HighlightOutlined />,
-          tooltip: 'click to edit text',
-          onChange: setCustomIconStr,
-        }}
-      >
-        {customIconStr}
-      </Paragraph>
-      Trigger edit with:{' '}
-      <Radio.Group
-        onChange={(e) => setChooseTrigger(radioToState(e.target.value))}
-        value={stateToRadio}
-      >
-        <Radio value="icon">icon</Radio>
-        <Radio value="text">text</Radio>
-        <Radio value="both">both</Radio>
-      </Radio.Group>
-      <Paragraph
-        editable={{
-          tooltip: 'click to edit text',
-          onChange: setClickTriggerStr,
-          triggerType: chooseTrigger,
-        }}
-      >
-        {clickTriggerStr}
-      </Paragraph>
-      <Paragraph
-        editable={{
-          icon: <HighlightOutlined />,
-          tooltip: 'click to edit text',
-          onChange: setCustomEnterIconStr,
-          enterIcon: <CheckOutlined />,
-        }}
-      >
-        {customEnterIconStr}
-      </Paragraph>
-      <Paragraph
-        editable={{
-          icon: <HighlightOutlined />,
-          tooltip: 'click to edit text',
-          onChange: setNoEnterIconStr,
-          enterIcon: null,
-        }}
-      >
-        {noEnterIconStr}
-      </Paragraph>
-      <Paragraph editable={{ tooltip: false, onChange: setHideTooltipStr }}>
-        {hideTooltipStr}
-      </Paragraph>
-      <Paragraph
-        editable={{
-          onChange: setLengthLimitedStr,
-          maxLength: 50,
-          autoSize: { maxRows: 5, minRows: 3 },
-        }}
-      >
-        {lengthLimitedStr}
-      </Paragraph>
-      <Typography.Title editable level={1} style={{ margin: 0 }}>
-        h1. Ant Design
-      </Typography.Title>
-      <Typography.Title editable level={2} style={{ margin: 0 }}>
-        h2. Ant Design
-      </Typography.Title>
-      <Typography.Title editable level={3} style={{ margin: 0 }}>
-        h3. Ant Design
-      </Typography.Title>
-      <Typography.Title editable level={4} style={{ margin: 0 }}>
-        h4. Ant Design
-      </Typography.Title>
-      <Typography.Title editable level={5} style={{ margin: 0 }}>
-        h5. Ant Design
-      </Typography.Title>
-    </Card>
+    <DemoCard source={<MD/>} attributes={attributes}>
+      <div>
+        <Paragraph editable={{ onChange: setEditableStr }}>{editableStr}</Paragraph>
+        <Paragraph
+          editable={{
+            onChange: setEditableStrWithSuffix,
+            text: editableStrWithSuffix,
+          }}
+          ellipsis={{
+            suffix: editableStrWithSuffixSuffixPart,
+          }}
+        >
+          {editableStrWithSuffixStartPart}
+        </Paragraph>
+        <Paragraph
+          editable={{
+            icon: <HighlightOutlined />,
+            tooltip: 'click to edit text',
+            onChange: setCustomIconStr,
+          }}
+        >
+          {customIconStr}
+        </Paragraph>
+        Trigger edit with:{' '}
+        <Radio.Group
+          onChange={(e) => setChooseTrigger(radioToState(e.target.value))}
+          value={stateToRadio}
+        >
+          <Radio value="icon">icon</Radio>
+          <Radio value="text">text</Radio>
+          <Radio value="both">both</Radio>
+        </Radio.Group>
+        <Paragraph
+          editable={{
+            tooltip: 'click to edit text',
+            onChange: setClickTriggerStr,
+            triggerType: chooseTrigger,
+          }}
+        >
+          {clickTriggerStr}
+        </Paragraph>
+        <Paragraph
+          editable={{
+            icon: <HighlightOutlined />,
+            tooltip: 'click to edit text',
+            onChange: setCustomEnterIconStr,
+            enterIcon: <CheckOutlined />,
+          }}
+        >
+          {customEnterIconStr}
+        </Paragraph>
+        <Paragraph
+          editable={{
+            icon: <HighlightOutlined />,
+            tooltip: 'click to edit text',
+            onChange: setNoEnterIconStr,
+            enterIcon: null,
+          }}
+        >
+          {noEnterIconStr}
+        </Paragraph>
+        <Paragraph editable={{ tooltip: false, onChange: setHideTooltipStr }}>
+          {hideTooltipStr}
+        </Paragraph>
+        <Paragraph
+          editable={{
+            onChange: setLengthLimitedStr,
+            maxLength: 50,
+            autoSize: { maxRows: 5, minRows: 3 },
+          }}
+        >
+          {lengthLimitedStr}
+        </Paragraph>
+        <Typography.Title editable level={1} style={{ margin: 0 }}>
+          h1. Ant Design
+        </Typography.Title>
+        <Typography.Title editable level={2} style={{ margin: 0 }}>
+          h2. Ant Design
+        </Typography.Title>
+        <Typography.Title editable level={3} style={{ margin: 0 }}>
+          h3. Ant Design
+        </Typography.Title>
+        <Typography.Title editable level={4} style={{ margin: 0 }}>
+          h4. Ant Design
+        </Typography.Title>
+        <Typography.Title editable level={5} style={{ margin: 0 }}>
+          h5. Ant Design
+        </Typography.Title>
+      </div>
+    </DemoCard>
   );
 };
 

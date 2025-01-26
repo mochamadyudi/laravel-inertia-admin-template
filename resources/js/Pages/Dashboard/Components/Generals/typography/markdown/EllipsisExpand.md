@@ -1,14 +1,17 @@
+---
+title: Ellipsis Controlled expand/collapse
+---
+```typescript jsx
 import React, { useState } from 'react';
 import {Flex, Slider, Switch, Typography} from 'antd';
-import DemoCard from "@/Components/util-component/DemoCard";
-//@ts-ignore
-import MD, { attributes } from '../markdown/EllipsisExpand.md';
-const EllipsisControllerExpandPartial = () => {
+
+const { Paragraph } = Typography;
+
+const App: React.FC = () => {
   const [rows, setRows] = useState(2);
   const [expanded, setExpanded] = useState(false);
-
   return (
-    <DemoCard source={<MD/>} attributes={attributes}>
+    <React.Fragment>
       <Flex gap={16} vertical>
         <Flex gap={16} align="center">
           <Switch
@@ -33,8 +36,11 @@ const EllipsisControllerExpandPartial = () => {
           )}
         </Typography.Paragraph>
       </Flex>
-    </DemoCard>
-  );
+    </React.Fragment>
+  )
+
 };
 
-export default EllipsisControllerExpandPartial;
+export default App;
+
+```
