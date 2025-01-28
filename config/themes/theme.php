@@ -1,10 +1,14 @@
 <?php
 
 return [
+  'layout'=> [
+    'topNavColor' => '#F759AB',
+    'headerNavColor' => null,
+  ],
   'antd' => [
     'cssVar' => true,
     'token' => [
-      'colorPrimary' => '#722ED1',
+      'colorPrimary' => '#F759AB',
       "colorInfo" => "#5398f7",
       "colorSuccess" => "#4eb71a",
       "colorWarning" => "#eca619",

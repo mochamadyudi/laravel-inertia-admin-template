@@ -4,7 +4,7 @@ import {
   ON_SAVE_THEME,
   ON_CHANGE_LOCALE,
   REHYDRATE_THEME_CONFIG,
-  ON_CHANGE_NAV_COLLAPSED
+  ON_CHANGE_NAV_COLLAPSED, ON_CHANGE_DIRECTION
 } from "@/Redux/constants/theme";
 
 export function onSaveTheme(payload: any): ActionRedux<any> {
@@ -28,6 +28,12 @@ export function onChangeNavCollapsed(payload: boolean): ActionRedux<boolean>{
 export function rehydrateThemeConfig(payload: any): ActionRedux<any>{
   return {
     type: ACT_EVENT(REHYDRATE_THEME_CONFIG),
+    payload
+  }
+}
+export function onChangeDirection(payload: 'ltr' | 'rtl'): ActionRedux<'rtl' | 'ltr'> {
+  return {
+    type: ACT_EVENT(ON_CHANGE_DIRECTION),
     payload
   }
 }

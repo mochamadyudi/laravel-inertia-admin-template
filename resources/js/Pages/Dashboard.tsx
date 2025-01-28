@@ -1,5 +1,5 @@
 import React from "react";
-import TheDashboard from "@/Components/layouts/Dashboard/TheDashboard";
+import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Button, Card, Col, Progress, Row, Statistic, Table, Tabs, Typography} from "antd";
 import TheContainer from "@/Components/general/TheContainer";
 import {Icons} from "@/Components/general/Icons";
@@ -95,6 +95,6 @@ const Page = () => {
   )
 }
 
-Page.layout = (page: any) => <TheDashboard children={page}/>
+Page.layout = (page: any) => <TheLayout type={'page'} children={page}/>
 
 export default Page;

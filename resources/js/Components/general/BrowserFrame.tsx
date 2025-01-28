@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Button, Flex, Tooltip, Typography} from "antd";
 import {useSelector} from "react-redux";
 import {FullScreen, useFullScreenHandle} from "react-full-screen";
+import {Icons} from "@/Components/general/Icons";
 
 interface BrowserFrameProps {
   title?: string;
@@ -43,7 +44,10 @@ const BrowserFrame: React.FC<BrowserFrameProps> = ({src, className, extra, foote
                        onClick={handle.active ? handle.exit : handle.enter}/>
                 </Tooltip>
 
-                <div className="px-4">
+                <div className="px-4 flex items-center gap-2">
+                  <a href={src} target="_blank">
+                    <Icons type={'GlobalOutlined'}/>
+                  </a>
                   {title && <Typography.Paragraph className={'!text-sm !m-0'}>{title}</Typography.Paragraph>}
                 </div>
               </div>

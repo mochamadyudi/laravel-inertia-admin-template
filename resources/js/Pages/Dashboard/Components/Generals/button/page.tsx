@@ -1,5 +1,5 @@
 import React from 'react';
-import TheDashboard from "@/Components/layouts/Dashboard/TheDashboard";
+import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Col, Row, Typography, Descriptions, message, Button, Tooltip, Tag} from "antd";
 import PageHeaderAlt from "@/Components/general/PageHeaderAlt";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
@@ -58,7 +58,6 @@ const Page = () => {
         }
         container
         contentClassName={'mt-6'}
-        type={'default'}
       >
         <Row gutter={[24, 24]}>
           <Col
@@ -172,5 +171,5 @@ const Page = () => {
   )
 }
 
-Page.layout = (children: any) => <TheDashboard isFooter={false} showMenuBar={false} children={children}/>;
+Page.layout = (children: any) => <TheLayout isFooter={false} children={children}/>;
 export default Page;

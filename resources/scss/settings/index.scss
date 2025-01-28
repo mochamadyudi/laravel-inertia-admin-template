@@ -14,7 +14,7 @@ $themes: (
     text-label: lighten($text-color, 40),
     text-label-value: $text-color,
     body: $bg-layout,
-    border-dashboard: lighten($text-color, 80%),
+    border-dashboard: lighten($text-color, 65),
     header-background: $bg-header,
     sider-background:$bg-sider,
 
@@ -80,7 +80,7 @@ $themes: (
     menu-sub:darken($bg-sider-dark,5),
     menu-sub-title-active: var(--ant-color-primary-border-hover),
 
-    footer-background: $bg-footer-dark,
+    footer-background: lighten($bg-footer-dark,10),
     background-drawer: $bg-drawer-dark,
     btn-background: $bg-body-dark,
     btn-border: lighten($bg-body-dark, 5),

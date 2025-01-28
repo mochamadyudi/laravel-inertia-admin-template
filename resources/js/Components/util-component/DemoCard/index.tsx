@@ -37,7 +37,6 @@ const DemoCard: React.FC<DemoCardAttr> = ({children, source, attributes}) => {
     setOpen((prev: boolean) => !prev)
   }
 
-  console.log(source)
   return (
     <React.Fragment>
       <Card bordered={false} title={attributes?.title ?? ''}>

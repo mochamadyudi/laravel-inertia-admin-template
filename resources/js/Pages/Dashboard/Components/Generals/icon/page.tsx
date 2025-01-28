@@ -1,5 +1,5 @@
 import React, {ChangeEventHandler, useState} from 'react';
-import TheDashboard from "@/Components/layouts/Dashboard/TheDashboard";
+import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Affix, Card, Descriptions, Empty, Flex, Input, message, Segmented, Typography} from "antd";
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import PageHeaderAlt from "@/Components/general/PageHeaderAlt";
@@ -123,6 +123,6 @@ const Page = () => {
   )
 }
 
-Page.layout = (children: React.ReactNode) => <TheDashboard children={children} isFooter={false}/>
+Page.layout = (children: React.ReactNode) => <TheLayout children={children} isFooter={false}/>
 
 export default Page;

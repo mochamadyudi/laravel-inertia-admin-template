@@ -40,9 +40,11 @@ class HandleInertiaRequests extends Middleware
       'auth' => [
         'user' => $request->user(),
       ],
+      '_token' => csrf_token(),
       'ziggy' => fn() => [
         ...(new Ziggy)->toArray(),
         'search' => $search,
+        'queryParams' => $request->query(),
         'location' => $request->url(),
       ],
       'themes'=> $this->themes(),
@@ -60,7 +62,7 @@ class HandleInertiaRequests extends Middleware
       });
       $user->getPermissionNames();
       $permissions = $user->getPermissionsViaRoles()->pluck('name')->toArray();
-      $role = $user->roles()->first()->name;
+      $role = !empty($user->roles()->first()->name) ? $user->roles()->first()->name : null;
     }
 
     return [

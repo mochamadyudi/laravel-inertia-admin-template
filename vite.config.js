@@ -3,6 +3,8 @@ import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 import Markdown from "vite-plugin-react-markdown";
 import hljs from 'highlight.js';
+import tailwindcss from 'tailwindcss';
+
 
 export default defineConfig({
   plugins: [
@@ -31,4 +33,9 @@ export default defineConfig({
     }),
     react(),
   ],
+  css: {
+    postcss: {
+      plugins: [tailwindcss],
+    },
+  },
 });

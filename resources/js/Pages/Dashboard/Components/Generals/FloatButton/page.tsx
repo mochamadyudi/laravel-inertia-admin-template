@@ -1,5 +1,5 @@
 import React from 'react';
-import TheDashboard from "@/Components/layouts/Dashboard/TheDashboard";
+import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Col, Row, Typography} from "antd";
 import BasicFloatButtonPartial
   from "@/Pages/Dashboard/Components/Generals/FloatButton/partials/BasicFloatButton.partial";
@@ -225,6 +225,6 @@ const Page = () => {
   )
 }
 
-Page.layout = (children: React.ReactNode) => <TheDashboard isFooter={false} children={children} showMenuBar={false}/>
+Page.layout = (children: React.ReactNode) => <TheLayout isFooter={false} children={children}/>
 
 export default Page;

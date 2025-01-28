@@ -6,17 +6,16 @@
   }
 }
 
-%ant-menu-active{
-position: relative;
-@include themify($themes){
-  background: themed('menu-active-bg') !important;
+%ant-menu-active {
+  @apply relative;
+  @include themify($themes) {
+    background: themed('menu-active-bg') !important;
 
-  &:hover{
-    background: themed('menu-active-bg-hover') !important;
+    &:hover {
+      background: themed('menu-active-bg-hover') !important;
+    }
   }
 }
-}
-
 
 @mixin sider_direction($type, $value) {
   #{$type}: $value !important;
@@ -40,6 +39,7 @@ position: relative;
 
         &-content {
           margin-left: 0 !important;
+          //margin-right: 0 !important;
           margin-right: $side-width !important;
         }
       }
@@ -52,33 +52,26 @@ position: relative;
   min-height: 100vh;
   height: 100%;
 
-  &-page {
-    .app {
-      &-header {
-        .nav {
-          max-width: 72rem !important;
-          margin: auto !important;
-
-          &-left {
-            justify-content: start;
-          }
+  &.page{
+    .app{
+      &-content{
+        &__content{
+          padding-bottom: calc($padding-content * 2);
         }
-      }
-
-      &-content {
-        margin-left: 0 !important;
-
-        &__footer {
-          > div {
-            max-width: 72rem !important;
-            margin: auto !important;
-          }
+        :where(.app-content__footer){
+          margin-top: calc($padding-content*2) !important;
         }
       }
     }
   }
+  &.without-sider {
+    .app {
+      &-content {
+        margin: 0 !important;
+      }
+    }
+  }
 
-  //@antd
   .ant {
     &-layout {
       &-header {
@@ -115,6 +108,8 @@ position: relative;
   }
 
   &-sider {
+    z-index: 99;
+
     &.collapsed {
       transition: .2s $transition-easy-in-out;
       width: $side-width-collapsed !important;
@@ -146,6 +141,15 @@ position: relative;
   }
 
   &-main {
+    &-has-topbar{
+      .app{
+        &-content{
+          &__content{
+            margin-top: $top-bar;
+          }
+        }
+      }
+    }
     &.without-header {
       min-height: 100vh !important;
       height: 100vh !important;
@@ -153,16 +157,16 @@ position: relative;
     }
 
     min-height: calc(100vh - $top-height) !important;
-    //height: calc(100vh - $top-height) !important;
     padding-top: $top-height !important;
   }
 
   &-content {
-    padding: 20px;
+    padding: $padding-content;
     transition: .2s $transition-easy-in-out;
-    margin-left: $side-width;
+    margin-left: $side-width !important;
 
     &__content {
+      @applu flex flex-col;
       > div {
         &:where(.page-header-alt) {
           margin-bottom: 20px;
@@ -182,16 +186,22 @@ position: relative;
     }
 
     &__footer {
-      //background: white;
-
+      &.has-container{
+        > div {
+          @apply max-w-6xl mx-auto;
+        }
+      }
       @include themify($themes) {
         background: themed('footer-background');
         * {
           color: themed('text') !important;
         }
       }
+      width: calc(100% + calc($padding-content * 2));
       height: $footer-height;
-      margin: 0 !important;
+      margin-top: $padding-content;
+      margin-left: -$padding-content;
+      margin-bottom: -$padding-content;
       padding: 0 !important;
     }
   }
@@ -205,12 +215,41 @@ position: relative;
     height: $top-height !important;
     width: 100%;
 
-    &.sider-collapsed {
+    &-topbar {
+      z-index: 99;
+      height: $top-bar;
+      position: fixed;
+      top: 60px;
+      width: 100%;
+    }
+
+    &.has-container, &.page {
       .nav {
+        @apply max-w-6xl mx-auto;
+        &-right {
+        }
+
         &-left {
-          width: $side-width-collapsed !important;
+          width: $side-width !important;
+          min-width: $side-width;
+
+          > div {
+            width: 100% !important;
+            @apply px-0 justify-start flex flex-nowrap;
+          }
         }
       }
+    }
+
+    &.sider-collapsed {
+      &:where(:not(.has-container)) {
+        .nav {
+          &-left {
+            width: $side-width-collapsed !important;
+          }
+        }
+      }
+
     }
 
     .nav {
@@ -218,7 +257,7 @@ position: relative;
       height: 100%;
 
       &-left {
-        @media screen and (min-width: 0px) and (max-width: 767px){
+        @media screen and (min-width: 0px) and (max-width: 767px) {
           display: none !important;
         }
         height: 100%;
@@ -246,12 +285,7 @@ position: relative;
   &-sider {
     @include submenu;
     @include ant-menus;
-  }
-}
 
-
-.app {
-  &-sider {
     &.collapsed {
       .ant {
         &-menu {
@@ -267,7 +301,6 @@ position: relative;
         }
       }
     }
-
   }
 }
 
@@ -275,19 +308,15 @@ position: relative;
   font-size: 14px !important;
 }
 
-
-//$top-height: 60px;
-//$side-nav: 300px;
-
 .page {
   &-header {
     &-alt {
-      width: calc(100% + 40px);
-      padding: 20px;
+      width: calc(100% + calc($padding-content * 2));
+      padding: $padding-content;
       background: white;
-      margin-left: -20px;
-      margin-right: -20px;
-      margin-top: -20px;
+      margin-left: -$padding-content;
+      margin-right: -$padding-content;
+      margin-top: -$padding-content;
     }
   }
 }

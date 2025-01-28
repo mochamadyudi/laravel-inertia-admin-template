@@ -1,7 +1,17 @@
-@tailwind base;
+
 @tailwind components;
+@tailwind base;
 @tailwind utilities;
 @tailwind variants;
+
+@layer utilities{
+  .\!w-full{
+    @apply \!w-full;
+  }
+  .\!ml-0{
+    @apply \!ml-0;
+  }
+}
 
 $group_hover: (
   transform: (

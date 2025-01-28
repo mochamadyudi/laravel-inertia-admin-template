@@ -15,150 +15,150 @@ class MenuService
         'permissions' => [],
         'roles' => []
       ],
-      [
-        'type' => 'item',
-        'key' => '@analytics',
-        'label' => 'side.menu.analytic',
-        'icon' => 'DotChartOutlined',
-        'permissions' => [],
-        'roles' => []
-      ],
-      [
-        'type' => 'item',
-        'key' => '@sales',
-        'label' => 'Sales',
-        'icon' => 'FundOutlined',
-        'permissions' => [],
-        'roles' => []
-      ],
-      [
-        'type' => 'divider',
-        'className' => '!my-4',
-        'permissions' => [],
-        'roles' => []
-      ],
-      [
-        'type' => 'group',
-        'key' => '@app',
-        'label' => 'App',
-        'permissions' => [],
-        'roles' => [],
-        'children' => [
-          [
-            'type' => 'item',
-            'key' => '@user-management',
-            'label' => 'Mail',
-            'icon' => 'MailOutlined',
-            'permissions' => [],
-            'roles' => []
-          ],
-          [
-            'type' => 'item',
-            'key' => '@user-management',
-            'label' => 'Chat',
-            'icon' => 'MessageOutlined',
-            'permissions' => [],
-            'roles' => []
-          ],
-          [
-            'type' => 'item',
-            'key' => '@user-management',
-            'label' => 'Calendar',
-            'icon' => 'CalendarOutlined',
-            'permissions' => [],
-            'roles' => []
-          ],
-          [
-            'type' => 'submenu',
-            'key' => '@user-management',
-            'label' => 'Project',
-            'icon' => 'BulbOutlined',
-            'permissions' => [],
-            'roles' => [],
-            'children' => [
-              [
-                'type' => 'submenu',
-                'key' => '@user-management',
-                'label' => 'List',
-                'icon' => 'UnorderedListOutlined',
-                'permissions' => [],
-                'roles' => []
-              ],
-              [
-                'type' => 'submenu',
-                'key' => '@user-management',
-                'label' => 'Kanban',
-                'icon' => 'UnorderedListOutlined',
-                'permissions' => [],
-                'roles' => []
-              ],
-              [
-                'type' => 'submenu',
-                'key' => '@user-management',
-                'label' => 'Scrumboard',
-                'icon' => 'UnorderedListOutlined',
-                'permissions' => [],
-                'roles' => []
-              ],
-            ]
-          ],
-          [
-            'type' => 'submenu',
-            'key' => '@e-commerce',
-            'label' => 'E-Commerce',
-            'icon' => 'ShoppingCartOutlined',
-            'permissions' => [],
-            'roles' => [],
-            'children' => [
-              [
-                'type' => 'submenu',
-                'key' => '@e-commerce/product-list',
-                'label' => 'Product List',
-                'permissions' => [],
-                'roles' => []
-              ],
-              [
-                'type' => 'submenu',
-                'key' => '@e-commerce/product-add',
-                'label' => 'Add Product',
-                'permissions' => [],
-                'roles' => []
-              ],
-              [
-                'type' => 'submenu',
-                'key' => '@e-commerce/product-edit',
-                'label' => 'Edit Product',
-                'permissions' => [],
-                'roles' => []
-              ],
-              [
-                'type' => 'submenu',
-                'key' => '@e-commerce/order',
-                'label' => 'Order',
-                'permissions' => [],
-                'roles' => []
-              ]
-            ]
-          ],
-        ]
-      ],
+//      [
+//        'type' => 'item',
+//        'key' => '@analytics',
+//        'label' => 'side.menu.analytic',
+//        'icon' => 'DotChartOutlined',
+//        'permissions' => [],
+//        'roles' => []
+//      ],
+//      [
+//        'type' => 'item',
+//        'key' => '@sales',
+//        'label' => 'side.menu.sales',
+//        'icon' => 'FundOutlined',
+//        'permissions' => [],
+//        'roles' => []
+//      ],
       [
         'type' => 'divider',
         'className' => '!my-4',
         'permissions' => [],
         'roles' => []
       ],
+//      [
+//        'type' => 'group',
+//        'key' => '@app',
+//        'label' => 'App',
+//        'permissions' => [],
+//        'roles' => [],
+//        'children' => [
+//          [
+//            'type' => 'item',
+//            'key' => '@user-management',
+//            'label' => 'Mail',
+//            'icon' => 'MailOutlined',
+//            'permissions' => [],
+//            'roles' => []
+//          ],
+//          [
+//            'type' => 'item',
+//            'key' => '@user-management',
+//            'label' => 'Chat',
+//            'icon' => 'MessageOutlined',
+//            'permissions' => [],
+//            'roles' => []
+//          ],
+//          [
+//            'type' => 'item',
+//            'key' => '@user-management',
+//            'label' => 'Calendar',
+//            'icon' => 'CalendarOutlined',
+//            'permissions' => [],
+//            'roles' => []
+//          ],
+//          [
+//            'type' => 'submenu',
+//            'key' => '@user-management',
+//            'label' => 'Project',
+//            'icon' => 'BulbOutlined',
+//            'permissions' => [],
+//            'roles' => [],
+//            'children' => [
+//              [
+//                'type' => 'submenu',
+//                'key' => '@user-management',
+//                'label' => 'List',
+//                'icon' => 'UnorderedListOutlined',
+//                'permissions' => [],
+//                'roles' => []
+//              ],
+//              [
+//                'type' => 'submenu',
+//                'key' => '@user-management',
+//                'label' => 'Kanban',
+//                'icon' => 'UnorderedListOutlined',
+//                'permissions' => [],
+//                'roles' => []
+//              ],
+//              [
+//                'type' => 'submenu',
+//                'key' => '@user-management',
+//                'label' => 'Scrumboard',
+//                'icon' => 'UnorderedListOutlined',
+//                'permissions' => [],
+//                'roles' => []
+//              ],
+//            ]
+//          ],
+//          [
+//            'type' => 'submenu',
+//            'key' => '@e-commerce',
+//            'label' => 'E-Commerce',
+//            'icon' => 'ShoppingCartOutlined',
+//            'permissions' => [],
+//            'roles' => [],
+//            'children' => [
+//              [
+//                'type' => 'submenu',
+//                'key' => '@e-commerce/product-list',
+//                'label' => 'Product List',
+//                'permissions' => [],
+//                'roles' => []
+//              ],
+//              [
+//                'type' => 'submenu',
+//                'key' => '@e-commerce/product-add',
+//                'label' => 'Add Product',
+//                'permissions' => [],
+//                'roles' => []
+//              ],
+//              [
+//                'type' => 'submenu',
+//                'key' => '@e-commerce/product-edit',
+//                'label' => 'Edit Product',
+//                'permissions' => [],
+//                'roles' => []
+//              ],
+//              [
+//                'type' => 'submenu',
+//                'key' => '@e-commerce/order',
+//                'label' => 'Order',
+//                'permissions' => [],
+//                'roles' => []
+//              ]
+//            ]
+//          ],
+//        ]
+//      ],
+//      [
+//        'type' => 'divider',
+//        'className' => '!my-4',
+//        'permissions' => [],
+//        'roles' => []
+//      ],
       [
         'type' => 'group',
         'key' => '@components',
-        'label' => 'Components',
+        'label' => 'side.menu.components',
         'permissions' => [],
         'roles' => [],
         'children' => [
           [
             'type' => 'submenu',
             'key' => route('dashboard.components.general'),
-            'label' => 'General',
+            'label' => 'side.menu.components.general',
             'icon' => 'InfoCircleOutlined',
             'permissions' => [],
             'roles' => [],
@@ -166,14 +166,14 @@ class MenuService
               [
                 'type' => 'item',
                 'key' => route('dashboard.components.button'),
-                'label' => 'Button',
+                'label' => 'side.menu.components.general.button',
                 'permissions' => [],
                 'roles' => []
               ],
               [
                 'type' => 'item',
                 'key' => route('dashboard.components.float-button'),
-                'label' => 'FloatButton',
+                'label' => 'side.menu.components.general.float-button',
                 'permissions' => [],
                 'el_extra'=> [
                   'component' => 'tag',
@@ -184,14 +184,14 @@ class MenuService
               [
                 'type' => 'item',
                 'key' => route('dashboard.components.icon'),
-                'label' => 'Icon',
+                'label' => 'side.menu.components.general.icon',
                 'permissions' => [],
                 'roles' => []
               ],
               [
                 'type' => 'item',
                 'key' => route('dashboard.components.typography'),
-                'label' => 'Typography',
+                'label' => 'side.menu.components.general.typography',
                 'permissions' => [],
                 'roles' => []
               ],
@@ -208,7 +208,7 @@ class MenuService
       [
         'type' => 'group',
         'key' => '@pages',
-        'label' => 'Pages',
+        'label' => 'side.menu.pages',
         'icon' => 'FileProtectOutlined',
         'permissions' => [],
         'roles' => [],
@@ -216,7 +216,7 @@ class MenuService
           [
             'type' => 'submenu',
             'key' => route('dashboard.pages'),
-            'label' => 'Pages',
+            'label' => 'side.menu.pages.pages',
             'icon' => 'FileProtectOutlined',
             'permissions' => [],
             'roles' => [],
@@ -224,7 +224,7 @@ class MenuService
               [
                 'type' => 'submenu',
                 'key' => route('dashboard.pages.app.profile'),
-                'label' => 'App',
+                'label' => 'side.menu.pages.pages.app',
                 'icon' => 'GlobalOutlined',
                 'permissions' => [],
                 'roles' => [],
@@ -232,7 +232,7 @@ class MenuService
                   [
                     'type' => 'item',
                     'key' => route('dashboard.pages.app.profile'),
-                    'label' => 'Profile',
+                    'label' => 'side.menu.pages.pages.app.profile',
                     'icon' => 'UserOutlined',
                     'permissions' => [],
                     'roles' => [],
@@ -240,7 +240,7 @@ class MenuService
                   [
                     'type' => 'item',
                     'key' => '@pages/pages/profile',
-                    'label' => 'User List',
+                    'label' => 'side.menu.pages.pages.app.user-list',
                     'icon' => 'TeamOutlined',
                     'permissions' => [],
                     'roles' => [],
@@ -248,7 +248,7 @@ class MenuService
                   [
                     'type' => 'item',
                     'key' => '@pages/pages/app/settings',
-                    'label' => 'Settings',
+                    'label' => 'side.menu.pages.pages.app.setting',
                     'icon' => 'TeamOutlined',
                     'permissions' => [],
                     'roles' => [],
@@ -295,7 +295,7 @@ class MenuService
           [
             'type' => 'submenu',
             'key' => '@pages/auth',
-            'label' => 'Authorization',
+            'label' => 'side.menu.pages.authorization',
             'icon' => 'SafetyOutlined',
             'permissions' => [],
             'roles' => [],
@@ -303,28 +303,32 @@ class MenuService
               [
                 'type' => 'submenu',
                 'key' => '@pages/auth/login',
-                'label' => 'Login',
+                'icon'=> 'LoginOutlined',
+                'label' => 'side.menu.pages.authorization.login',
                 'permissions' => [],
                 'roles' => [],
                 'children' => [
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/login/1',
-                    'label' => 'Login 1',
+                    'icon'=> 'LoginOutlined',
+                    'label' => 'side.menu.pages.authorization.login.1',
                     'permissions' => [],
                     'roles' => [],
                   ],
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/login/2',
-                    'label' => 'Login 2',
+                    'icon'=> 'LoginOutlined',
+                    'label' => 'side.menu.pages.authorization.login.2',
                     'permissions' => [],
                     'roles' => [],
                   ],
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/login/3',
-                    'label' => 'Login 3',
+                    'icon'=> 'LoginOutlined',
+                    'label' => 'side.menu.pages.authorization.login.3',
                     'permissions' => [],
                     'roles' => [],
                   ],
@@ -333,28 +337,32 @@ class MenuService
               [
                 'type' => 'submenu',
                 'key' => '@pages/auth/register',
-                'label' => 'Register',
+                'icon'=> 'UsergroupAddOutlined',
+                'label' => 'side.menu.pages.authorization.register',
                 'permissions' => [],
                 'roles' => [],
                 'children' => [
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/register/1',
-                    'label' => 'Register 1',
+                    'icon'=> 'UsergroupAddOutlined',
+                    'label' => 'side.menu.pages.authorization.register.1',
                     'permissions' => [],
                     'roles' => [],
                   ],
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/register/2',
-                    'label' => 'Register 2',
+                    'icon'=> 'UsergroupAddOutlined',
+                    'label' => 'side.menu.pages.authorization.register.2',
                     'permissions' => [],
                     'roles' => [],
                   ],
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/register/3',
-                    'label' => 'Register 3',
+                    'icon'=> 'UsergroupAddOutlined',
+                    'label' => 'side.menu.pages.authorization.register.3',
                     'permissions' => [],
                     'roles' => [],
                   ],
@@ -363,7 +371,7 @@ class MenuService
               [
                 'type' => 'item',
                 'key' => '@pages/auth/verify-email',
-                'label' => 'Verify Email',
+                'label' => 'side.menu.pages.authorization.verify-email',
                 'icon' => 'MailOutlined',
                 'permissions' => [],
                 'roles' => [],
@@ -371,23 +379,23 @@ class MenuService
               [
                 'type' => 'submenu',
                 'key' => '@pages/auth/forgot',
-                'label' => 'Forgot',
-                'icon' => 'MailOutlined',
+                'label' => 'side.menu.pages.authorization.forgot',
+                'icon' => 'KeyOutlined',
                 'permissions' => [],
                 'roles' => [],
                 'children' => [
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/forgot/password',
-                    'label' => 'Forgot Password',
-                    'icon' => 'MailOutlined',
+                    'label' => 'side.menu.pages.authorization.forgot.password',
+                    'icon' => 'KeyOutlined',
                     'permissions' => [],
                     'roles' => [],
                   ],
                   [
                     'type' => 'item',
                     'key' => '@pages/auth/forgot/email',
-                    'label' => 'Forgot Email',
+                    'label' => 'side.menu.pages.authorization.forgot.email',
                     'icon' => 'MailOutlined',
                     'permissions' => [],
                     'roles' => [],
@@ -478,27 +486,27 @@ class MenuService
           ],
         ]
       ],
-      [
-        'type' => 'divider',
-        'permissions' => [],
-        'roles' => []
-      ],
-      [
-        'type' => 'item',
-        'key' => '@pages/documentation',
-        'label' => 'Documentation',
-        'icon' => 'FileUnknownOutlined',
-        'permissions' => [],
-        'roles' => [],
-      ],
-      [
-        'type' => 'item',
-        'key' => '@pages/change-log',
-        'label' => 'Change Log',
-        'icon' => 'FileZipOutlined',
-        'permissions' => [],
-        'roles' => [],
-      ],
+//      [
+//        'type' => 'divider',
+//        'permissions' => [],
+//        'roles' => []
+//      ],
+//      [
+//        'type' => 'item',
+//        'key' => '@pages/documentation',
+//        'label' => 'Documentation',
+//        'icon' => 'FileUnknownOutlined',
+//        'permissions' => [],
+//        'roles' => [],
+//      ],
+//      [
+//        'type' => 'item',
+//        'key' => '@pages/change-log',
+//        'label' => 'Change Log',
+//        'icon' => 'FileZipOutlined',
+//        'permissions' => [],
+//        'roles' => [],
+//      ],
     ];
   }
 }

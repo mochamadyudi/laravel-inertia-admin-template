@@ -1,6 +1,7 @@
-import {THEME_CONFIG} from "@/Configs/app.config";
+import {DIR_LTR, DIR_RTL, THEME_CONFIG} from "@/Configs/app.config";
 import {REHYDRATE} from "redux-persist/es/constants";
 import {
+  ON_CHANGE_DIRECTION,
   ON_CHANGE_LOCALE,
   ON_CHANGE_NAV_COLLAPSED,
   ON_SAVE_THEME,
@@ -10,6 +11,7 @@ import {ACT_EVENT} from "@/Redux/constants/action";
 
 const initialState: any = {
   ...THEME_CONFIG,
+  loading: true,
   antd: {}
 }
 
@@ -20,6 +22,14 @@ export default function (state = initialState, action: ActionRedux<any>) {
       document.body.classList.add(action?.payload?.Theme?.currentTheme ?? state.currentTheme);
       return action?.payload?.Theme ?? state;
     case ACT_EVENT(ON_CHANGE_LOCALE):
+      if(['ar'].includes(action?.payload)){
+        Reflect.set(state,'direction', DIR_RTL)
+      }else{
+        if(state?.direction !== DIR_LTR){
+          Reflect.set(state,'direction', DIR_LTR)
+        }
+
+      }
       return {
         ...state,
         locale: action.payload
@@ -39,9 +49,15 @@ export default function (state = initialState, action: ActionRedux<any>) {
     case ACT_EVENT(REHYDRATE_THEME_CONFIG):
       return {
         ...state,
+        loading: false,
         antd: {
           ...action?.payload
         }
+      }
+    case ACT_EVENT(ON_CHANGE_DIRECTION):
+      return {
+        ...state,
+        direction: action?.payload ?? state?.direction
       }
     default:
       document.body.classList.add(state.currentTheme);

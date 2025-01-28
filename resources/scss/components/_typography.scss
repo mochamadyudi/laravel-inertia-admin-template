@@ -1,13 +1,15 @@
 $typography_size: (
-  h1: $font-size-4xl,
-  h2:$font-size-3xl,
-  h3:$font-size-2xl,
-  h4:$font-size-xl,
-  h5:$font-size-lg,
+  h1: $font-size-3xl,
+  h2:$font-size-2xl,
+  h3:$font-size-xl,
+  h4:$font-size-lg,
+  h5:$font-size-base,
   h6:$font-size-base,
   div: $font-size-base,
   article: $font-size-base,
   p: $font-size-base,
+  span: $font-size-base,
+  a: $font-size-base,
 );
 $typography_family: (
   h1:'sf-pro-medium',
@@ -43,15 +45,16 @@ $typography_color: (
   div: 'paragraph',
   article: 'paragraph',
   p: 'paragraph',
-  span: 'paragraph'
+  span: 'paragraph',
 );
 
 @each $el, $value in $typography_size {
   #{$el} {
     &.ant {
       &-typography {
-        font-size: $value !important;
-        font-family: 'sf-pro-regular', "sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+        font-size: $value;
+        //margin: 0;
+        padding: 0;
       }
     }
 
@@ -60,6 +63,8 @@ $typography_color: (
 
 @each $el, $value in $typography_color {
   #{$el} {
+    font-family: map-get($typography_family,$el), "sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-weight: map-get($typography_weight, $el);
     &.ant {
       &-typography {
         font-family: map-get($typography_family,$el), "sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;

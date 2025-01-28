@@ -3,6 +3,7 @@ import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: 'jit',
   darkMode: 'class',
   content: [
     './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
@@ -37,7 +38,7 @@ export default {
     './resources/js/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/**/*.tsx',
     './app/Services/MenuServices.php'
   ],
-
+  safelist: ['!w-full','!ml-0'],
   theme: {
     extend: {
       fontFamily: {
