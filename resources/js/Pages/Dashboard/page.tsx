@@ -7,7 +7,6 @@ import {Icons} from "@/Components/general/Icons";
 const Page = () => {
   return (
     <React.Fragment>
-
       <Row gutter={[24, 24]}>
         <Col xs={24} lg={16}>
           <Row gutter={[24, 24]}>
@@ -57,15 +56,6 @@ const Page = () => {
         </Col>
       </Row>
       <TheContainer>
-        {/*<Tabs*/}
-        {/*  items={[*/}
-        {/*    {*/}
-        {/*      label: "Home",*/}
-        {/*      key: 'home',*/}
-        {/*      children: <p>etsting</p>*/}
-        {/*    }*/}
-        {/*  ]}*/}
-        {/*/>*/}
         <Card>
           <Table
             columns={[

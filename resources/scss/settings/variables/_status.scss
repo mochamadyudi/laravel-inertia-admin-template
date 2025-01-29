@@ -1,0 +1,9 @@
+$antd-status: ("error", "info", "warning", "primary", "success", "link");
+$antd-color-status: (
+"error": var(--ant-color-error),
+"info": var(--ant-color-info),
+"warning": var(--ant-color-warning),
+"success": var(--ant-color-success),
+"primary": var(--ant-color-primary),
+"link": var(--ant-color-link),
+);

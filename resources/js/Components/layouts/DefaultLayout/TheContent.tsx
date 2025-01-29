@@ -11,11 +11,13 @@ interface TheContentInterface {
 const TheContent: React.FC<TheContentInterface> = ({children, isFooter}) => {
   const ctx = useContext(InitializeContext);
   return (
-    <Layout.Content className={"app-content"}>
+    <Layout.Content className={`app-content ${ctx.hasContainer ? 'has-container' : ''}`}>
       <Layout
         className={`app-content__content ${!isFooter ? 'no-footer' : ''}`}
       >
-        {children}
+        <div className={'!h-full'}>
+          {children}
+        </div>
       </Layout>
       {!isFooter ? null :
         ctx.type === 'page' ?

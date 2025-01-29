@@ -41,7 +41,13 @@ $bg-footer-dark: $bg-body-dark;
 
 
 $bg-input: #fff;
-$bg-input-dark: #121921;
+$bg-input-dark: lighten(#121921, 3);
+$bg-input-error: rgba(255, 241, 240, 0.62);
+$bg-input-error-dark: #ffccc7;
+$border-input: #e7e7e7;
+$border-input-dark: #3e5064;
+$text-input-error: var(--ant-red-5);
+$text-input-error-dark: var(--ant-red-5);
 
 $bg-drawer: $color-white;
 $bg-drawer-dark: $bg-sider-layout;

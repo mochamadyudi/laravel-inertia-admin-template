@@ -1,0 +1,58 @@
+.ant{
+  &-input{
+    @apply outline-none;
+
+    &:focus{
+      @apply focus:outline-none;
+      //border-color: var(--ant-color-primary) !important;
+    }
+    //padding: 0.5rem;
+    //border-radius: 0.25rem;
+    width: 100% !important;
+
+    &:focus{
+      outline: none !important;
+    }
+  }
+}
+
+
+@mixin ant-input-suffix($color){
+  .ant{
+    &-input{
+      &-suffix{
+        svg{
+          fill:$color !important;
+          color:$color !important;
+        }
+        @content;
+      }
+    }
+  }
+}
+$status: ('success','error','warning','error','info','link','primary');
+
+.ant{
+  &-input{
+    &-textarea{
+      &-affix{
+        &-wrapper{
+          overflow: hidden;
+        }
+      }
+
+    }
+    &-status{
+      @each $val in $status{
+        &-#{$val}{
+          @include themify($themes) {
+            background: themed('input-background') !important;
+          }
+          @include ant-input-suffix(var(--ant-color-#{$val})){
+          }
+        }
+      }
+
+    }
+  }
+}

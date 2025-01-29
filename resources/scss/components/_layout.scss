@@ -1,8 +1,64 @@
 .ant {
   &-layout {
+    &-sider{
+      @include themify($themes) {
+        background: themed('sider-background') !important;
+        border-right: 1px solid darken(themed('sider-background'), 2);
+      }
+    }
     &-content {
       @include themify($themes) {
         background: themed('body');
+      }
+    }
+  }
+}
+
+.ant{
+  &-app{
+    &-rtl{
+      .inner{
+        &-layout{
+
+          &-sider{
+            .ant{
+              &-menu{
+                border-left: 1px solid;
+                border-right-style: none !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.inner{
+  &-layout{
+    @apply rounded-lg p-2 overflow-hidden bg-transparent flex-1;
+    //height: 100%;
+
+    @include themify($themes) {
+      background: themed('sider-background') !important;
+      border-color: darken(themed('sider-background'), 2);
+    }
+    &-sider{
+      @apply bg-transparent;
+      .ant{
+        &-menu{
+          @apply h-full p-2;
+          @include themify($themes) {
+            background: themed('sider-background') !important;
+            border-color: darken(themed('sider-background'), 2);
+          }
+        }
+      }
+    }
+    &-content{
+      @apply p-2;
+      @include themify($themes) {
+        background: themed('sider-background') !important;
       }
     }
   }

@@ -70,7 +70,7 @@ const GroupApi: React.FC = () => {
     },
     {
       property: 'onClick',
-      description: 'Set the handler to handle click event',
+      description: 'Set the handler to handler click event',
       type: '(event) => void',
       default: '-',
       version: '-'

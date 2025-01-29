@@ -1,5 +1,15 @@
 $padding-page-header: 2.25rem;
 
+
+.has-container{
+  .page{
+    &-header{
+      position: relative;
+      width: 100vw;
+      right: calc(calc(100vw - $container) /2);
+    }
+  }
+}
 .page {
   &-header {
     &-alt{

@@ -3,6 +3,7 @@ import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  important: false,
   mode: 'jit',
   darkMode: 'class',
   content: [

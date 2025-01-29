@@ -41,6 +41,9 @@ $themes: (
     card-table-border: rgba(231, 231, 231, 0.64),
     input-background:$bg-input,
     input-background-disabled: #F5F5F5,
+    input-background-error: $bg-input-error,
+    input-text-error: $text-input-error-dark,
+    input-border: $border-input,
     input-text-disabled: $text-color-placeholder,
     table-header: $bg-table-header,
     table-bordered: $table-bordered,
@@ -95,9 +98,14 @@ $themes: (
     table-bordered: $table-bordered-dark,
     card-border: $bg-card-dark,
     card-table-border: $bg-input-dark,
+
+    input-border: $border-input-dark,
     input-background: $bg-input-dark,
     input-background-disabled: #34465b,
+    input-background-error: $bg-input-error-dark,
+    input-text-error: $text-input-error-dark,
     input-text-disabled: #58718f,
+
     bcrumb-color: #52688d,
     bcrumb-color-link: #87a1cd,
 

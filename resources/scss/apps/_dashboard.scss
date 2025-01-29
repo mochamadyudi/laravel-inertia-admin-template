@@ -52,57 +52,36 @@
   min-height: 100vh;
   height: 100%;
 
-  &.page{
-    .app{
-      &-content{
-        &__content{
-          padding-bottom: calc($padding-content * 2);
-        }
-        :where(.app-content__footer){
-          margin-top: calc($padding-content*2) !important;
+  &.page {
+    .has-container{
+      .app-content__content{
+        > div {
+          @apply mx-auto w-full flex-1;
+          max-width: $container !important;
         }
       }
     }
+
+    &:where(.app-content__footer) {
+      .app {
+        &-content {
+          &__content {
+            padding-bottom: calc($padding-content * 2);
+          }
+
+          :where(.app-content__footer) {
+            margin-top: calc($padding-content * 2) !important;
+          }
+        }
+      }
+    }
+
   }
+
   &.without-sider {
     .app {
       &-content {
         margin: 0 !important;
-      }
-    }
-  }
-
-  .ant {
-    &-layout {
-      &-header {
-        @include themify($themes) {
-          background: themed('header-background') !important;
-          border-bottom: 1px solid themed('border-dashboard');
-          box-shadow: 0 0 10px themed('border-dashboard');
-          * {
-            color: themed('text')
-          }
-        }
-      }
-
-      &-sider {
-        transition: .2s $transition-easy-in-out;
-        position: fixed;
-        height: calc(100% - $top-height);
-        width: $side-width !important;
-        max-width: $side-width !important;
-        min-width: $side-width !important;
-
-        &-children {
-          width: 100%;
-          height: 100% !important;
-          flex: 1 !important;
-        }
-
-        @include themify($themes) {
-          background: themed('sider-background') !important;
-          border-right: 1px solid darken(themed('sider-background'), 2);
-        }
       }
     }
   }
@@ -141,15 +120,16 @@
   }
 
   &-main {
-    &-has-topbar{
-      .app{
-        &-content{
-          &__content{
+    &-has-topbar {
+      .app {
+        &-content {
+          &__content {
             margin-top: $top-bar;
           }
         }
       }
     }
+
     &.without-header {
       min-height: 100vh !important;
       height: 100vh !important;
@@ -162,14 +142,41 @@
 
   &-content {
     padding: $padding-content;
+    padding-bottom: 0 !important;
     transition: .2s $transition-easy-in-out;
     margin-left: $side-width !important;
+    @apply flex flex-col;
+
+    &.has-container {
+      > div {
+        &:not(.page-header) {
+          @apply mx-auto w-full flex-1;
+          max-width: $container !important;
+        }
+      }
+
+      &:not(.page-header) {
+        padding-bottom: 0 !important;
+
+        > div {
+          @apply mx-auto w-full flex-1;
+          max-width: $container !important;
+        }
+      }
+    }
 
     &__content {
-      @applu flex flex-col;
+      @apply w-full flex-1;
+      height: 100%;
+
       > div {
-        &:where(.page-header-alt) {
-          margin-bottom: 20px;
+        padding-bottom: $padding-content;
+        @apply flex-1 h-full flex flex-col;
+        min-height: 100%;
+
+        &:where(.page-header) {
+          margin-bottom: $padding-content;
+
         }
       }
 
@@ -186,11 +193,13 @@
     }
 
     &__footer {
-      &.has-container{
+      &.has-container {
         > div {
-          @apply max-w-6xl mx-auto;
+          @apply mx-auto;
+          max-width: $container !important;
         }
       }
+
       @include themify($themes) {
         background: themed('footer-background');
         * {
@@ -199,10 +208,8 @@
       }
       width: calc(100% + calc($padding-content * 2));
       height: $footer-height;
-      margin-top: $padding-content;
       margin-right: -$padding-content;
       margin-left: -$padding-content;
-      margin-bottom: -$padding-content;
       padding: 0 !important;
     }
   }
@@ -215,6 +222,15 @@
     left: 0;
     height: $top-height !important;
     width: 100%;
+    @include themify($themes) {
+      background: themed('header-background') !important;
+      border-bottom: 1px solid themed('border-dashboard');
+      box-shadow: 0 0 10px themed('border-dashboard');
+      * {
+        color: themed('text')
+      }
+    }
+
 
     &-topbar {
       z-index: 99;
@@ -226,7 +242,8 @@
 
     &.has-container, &.page {
       .nav {
-        @apply max-w-6xl mx-auto;
+        @apply mx-auto;
+        max-width: $container !important;
         &-right {
         }
 
@@ -284,6 +301,23 @@
 //menu
 .app {
   &-sider {
+    transition: .2s $transition-easy-in-out;
+    position: fixed;
+    height: calc(100% - $top-height);
+    width: $side-width !important;
+    max-width: $side-width !important;
+    min-width: $side-width !important;
+
+    &-children {
+      width: 100%;
+      height: 100% !important;
+      flex: 1 !important;
+    }
+
+    @include themify($themes) {
+      background: themed('sider-background') !important;
+      border-right: 1px solid darken(themed('sider-background'), 2);
+    }
     @include submenu;
     @include ant-menus;
 

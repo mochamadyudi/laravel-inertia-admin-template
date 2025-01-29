@@ -19,6 +19,7 @@ export const InitializeContext = createContext<InitializeState<any>>({
   type: null,
   isFooter: false,
   showMenu: true,
+  hasContainer: false,
 });
 const InitializeProvider: React.FC<InitializeProviderProps> = ({ state, children}) => {
 

@@ -1,3 +1,4 @@
+@import "entry";
 @import "modal";
 @import "spin";
 @import "typography";
@@ -10,7 +11,6 @@
 @import "card";
 @import "table";
 @import "breadcrumbs";
-@import "input";
 @import "popover";
 @import "pagination";
 @import "menu";
@@ -24,3 +24,9 @@
 @import "iframe";
 @import "avatar";
 @import "container";
+
+
+.container{
+  @apply mx-auto;
+  max-width: $container !important;
+}

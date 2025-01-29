@@ -1,16 +1,38 @@
-@tailwind components;
 @tailwind base;
+@tailwind components;
 @tailwind utilities;
 @tailwind variants;
-
-@layer utilities{
-  .\!w-full{
+@layer utilities {
+  .\!w-full {
     @apply \!w-full;
   }
-  .\!ml-0{
+
+  .\!ml-0 {
     @apply \!ml-0;
   }
 }
+
+@layer base {
+  input, select, textarea, button {
+    all: unset; /* Menghapus semua gaya default dari elemen ini */
+  }
+
+  /* Optional: Anda bisa tambahkan gaya dasar yang Anda inginkan atau membiarkannya */
+  input, select, textarea, button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none !important;
+    box-shadow: none !important;
+    &:focus{
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
 
 $group_hover: (
   transform: (
@@ -45,8 +67,8 @@ $scale: (
   100: scale(1),
   110: scale(1.1),
 );
-.scale{
-  @each $key, $values in $scale{
+.scale {
+  @each $key, $values in $scale {
     &-#{$key} {
       transform: $values !important;
     }
@@ -55,11 +77,11 @@ $scale: (
 
 .group-hover {
 
-  @each $key, $values in $group_hover{
-    @each $k2, $v2 in $values{
+  @each $key, $values in $group_hover {
+    @each $k2, $v2 in $values {
       @each $k3, $v3 in $v2 {
-        &\:#{$k2}-#{$k3}{
-          &:hover{
+        &\:#{$k2}-#{$k3} {
+          &:hover {
             #{$key}: $v3 !important;
           }
         }
@@ -71,6 +93,7 @@ $scale: (
 .transition {
   transition: ease-in-out !important;
 }
-.duration-200{
+
+.duration-200 {
   transition-duration: .2s !important;
 }

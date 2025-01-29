@@ -1,8 +1,23 @@
 .ant {
   &-form {
     &-item {
+      &-feedback{
+        &-icon{
+          @each $key, $value in $antd-color-status{
+            &-#{$key}{
+              .anticon{
+                color: $value !important;
+                fill: $value !important;
+              }
+
+            }
+          }
+        }
+      }
       &-label {
         label {
+          font-family: sf-pro-medium, sans-serif;
+          font-size: $font-size-base !important;
           @include themify($themes) {
             color: themed('text') !important;
           }
@@ -12,25 +27,45 @@
     }
   }
 }
-.ant{
-}
 
 .ant {
   &-input {
+    &-clear{
+      &-icon{
+        &-has-suffix{
+          @include themify($themes){
+            color: themed('text');
+            svg {
+              fill: lighten(themed('text'), 30) !important;
+            }
+          }
+        }
 
+      }
+    }
+    font-size: $font-size-base !important;
     &-suffix, &-prefix {
       @include themify($themes) {
-        color: themed('text') !important;
+        color: themed('text');
         svg {
-          fill: themed('text') !important;
+          fill: themed('text');
         }
       }
     }
 
     &-bordered, &-outlined {
-      //@include themify($themes) {
-      //  border: 1px solid darken(themed('input-background'), 10) !important;
-      //}
+      border-width: var(--ant-line-width);
+      border-style: var(--ant-line-type);
+      @include themify($themes) {
+        border-color: themed('input-border');
+      }
+
+      &:focus{
+        border-color: var(--ant-input-active-border-color);
+      }
+      &:hover{
+        border-color: var(--ant-input-hover-border-color);
+      }
     }
     &-affix {
       &-wrapper {
@@ -56,6 +91,16 @@
       }
     }
 
+    &-status{
+      @each $key, $value in $antd-color-status{
+        &-#{$key}{
+          border-color: unset;
+          @include themify($themes) {
+            background: themed('input-background') !important;
+          }
+        }
+      }
+    }
     &-disabled{
       @include themify($themes) {
         background: themed('input-background-disabled') !important;
@@ -78,6 +123,22 @@
       &-placeholder{
         @include themify($themes) {
           color: themed('text-placeholder') !important;
+        }
+      }
+    }
+    &.ant-select{
+      &-status{
+        @each $key, $value in $antd-color-status{
+          @if($key != 'success'){
+            &-#{$key}{
+              .ant-select{
+                &-selector{
+                  border: .5px var(--ant-line-type) $value !important;
+                }
+              }
+            }
+          }
+
         }
       }
     }
@@ -122,7 +183,7 @@
     &-selector {
       &:where(:not(.ant-select-focus)) {
         @include themify($themes) {
-          //border: 1px solid darken(themed('input-background'), 10) !important;
+          border-color: themed('input-border') !important;
         }
       }
     }
@@ -143,6 +204,7 @@
     &-arrow {
       @include themify($themes) {
         color: themed('text') !important;
+        font-size: $font-size-sm;
       }
     }
 

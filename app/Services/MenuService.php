@@ -222,38 +222,28 @@ class MenuService
             'roles' => [],
             'children' => [
               [
-                'type' => 'submenu',
+                'type' => 'item',
                 'key' => route('dashboard.pages.app.profile'),
-                'label' => 'side.menu.pages.pages.app',
-                'icon' => 'GlobalOutlined',
+                'label' => 'side.menu.pages.pages.app.profile',
+                'icon' => 'UserOutlined',
                 'permissions' => [],
                 'roles' => [],
-                'children' => [
-                  [
-                    'type' => 'item',
-                    'key' => route('dashboard.pages.app.profile'),
-                    'label' => 'side.menu.pages.pages.app.profile',
-                    'icon' => 'UserOutlined',
-                    'permissions' => [],
-                    'roles' => [],
-                  ],
-                  [
-                    'type' => 'item',
-                    'key' => route('dashboard.pages.app.user-list'),
-                    'label' => 'side.menu.pages.pages.app.user-list',
-                    'icon' => 'TeamOutlined',
-                    'permissions' => [],
-                    'roles' => [],
-                  ],
-                  [
-                    'type' => 'item',
-                    'key' => '@pages/pages/app/settings',
-                    'label' => 'side.menu.pages.pages.app.setting',
-                    'icon' => 'TeamOutlined',
-                    'permissions' => [],
-                    'roles' => [],
-                  ],
-                ]
+              ],
+              [
+                'type' => 'item',
+                'key' => route('dashboard.pages.app.user-list'),
+                'label' => 'side.menu.pages.pages.app.user-list',
+                'icon' => 'TeamOutlined',
+                'permissions' => [],
+                'roles' => [],
+              ],
+              [
+                'type' => 'item',
+                'key' => route('dashboard.pages.setting.edit-profile'),
+                'label' => 'side.menu.pages.pages.app.setting',
+                'icon' => 'SettingOutlined',
+                'permissions' => [],
+                'roles' => [],
               ],
 //              [
 //                'type' => 'submenu',

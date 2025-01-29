@@ -39,26 +39,16 @@ const SettingDropdown: React.FC<any> = () => {
       <Drawer
         title={
           <TheContainer>
-            <Flex justify={'space-between'}>
-              <Typography.Title level={4}>Setting Theme</Typography.Title>
-              <Flex gap={15}>
-                <Button
-                  icon={<Icons type={'ArrowLeftOutlined'} />}
-                  size={'large'}
-                  className={'!px-10'}
-                  onClick={_onChange}
-                >
-                  Close
-                </Button>
-                {/*<Button*/}
-                {/*  size={'large'}*/}
-                {/*  className={'!px-10'}*/}
-                {/*  type={'primary'}*/}
-                {/*  onClick={_onSaveTheme}*/}
-                {/*>*/}
-                {/*  Save*/}
-                {/*</Button>*/}
-              </Flex>
+            <Flex gap={10} align={'center'}>
+              <Button
+                type={'text'}
+                shape={'circle'}
+                size={'small'}
+                icon={<Icons type={state?.direction ==='ltr' ? 'ArrowLeftOutlined': 'ArrowRightOutlined'} />}
+                onClick={_onChange}
+              />
+              <Typography.Title level={4} className={'!m-0'}>Setting Theme</Typography.Title>
+
             </Flex>
           </TheContainer>
         }
@@ -68,7 +58,7 @@ const SettingDropdown: React.FC<any> = () => {
         height="90vh"
         open={open}
         onClose={_onChange}
-        placement={'bottom'}
+        placement={state?.direction ==='ltr' ? 'right': 'left'}
       >
         <TheContainer>
           <React.Fragment>

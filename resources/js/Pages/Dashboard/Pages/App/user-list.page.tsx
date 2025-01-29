@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Button, Card, Descriptions, Drawer, Flex, Image, message, Table, Tag, Tooltip, Typography} from "antd";
 import {ColumnsType} from "antd/lib/table";
-import {userData, userType} from "@/Pages/Dashboard/Pages/App/handle/user.data";
+import {userData, userType} from "@/Pages/Dashboard/Pages/App/handler/user.data";
 import AvatarStatus from "@/Components/general/AvatarStatus";
 import {Icons} from "@/Components/general/Icons";
 import EllipsisDropdown from "@/Components/general/Dropdown/EllipsisDropdown";

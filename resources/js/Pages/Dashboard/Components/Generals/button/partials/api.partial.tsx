@@ -14,7 +14,7 @@ const ApiPartial: React.FC<any> = () => {
     },
     {
       property: 'onClick',
-      description: 'Set the handler to handle click event',
+      description: 'Set the handler to handler click event',
       type: '(event: React.MouseEvent<HTMLElement, MouseEvent>) => void',
       default: '-',
       version: null

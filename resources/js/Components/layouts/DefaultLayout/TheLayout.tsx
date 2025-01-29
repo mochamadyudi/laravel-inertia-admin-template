@@ -10,7 +10,7 @@ import InitializeProvider, {
   InitializeState
 } from "@/Components/providers/initialize.provider";
 
-type TheLayoutInterface = InitializeState<string|null> &{
+export type TheLayoutInterface = InitializeState<string | null> & {
   children: React.ReactNode;
   header?: React.ReactNode | null;
   showSidebar?: boolean;
@@ -45,26 +45,28 @@ const TheLayoutLayout: React.FC<Pick<TheLayoutInterface, 'children' | 'header' |
 
   const ctx = useContext(InitializeContext);
 
-  console.log({ ctx })
   return (
     <Layout className={`app ${(ctx?.type === 'page') ? 'without-sider' : ''} ${ctx?.type}`}>
       {
         header ? header : <TheHeader type={ctx?.type as string}/>
       }
-      <Layout className={`app-main ${ctx?.type === 'page' && !!ctx?.showMenu ? `app-main-has-topbar` : ''}`}>
+      <Layout className={`app-main ${ctx?.type === 'page' && !!ctx?.showMenu ? `app-main-has-topbar` : ''} ${ctx?.type === 'page' ? 'has-container': ''}`}>
         {ctx?.type !== 'page' && showSidebar ? <TheSidebar/> : null}
         {
           ctx?.type === 'page' ?
             (
               <TheContent isFooter={ctx.isFooter ?? true}>
-                <TheContainer>
-                  {children}
-                </TheContainer>
+                {children}
               </TheContent>
             ) :
-            <TheContent isFooter={ctx.isFooter ?? true}>
-              {children}
-            </TheContent>
+            ctx?.hasContainer ?
+              <TheContent isFooter={ctx.isFooter ?? true}>
+                {children}
+              </TheContent>
+              :
+              <TheContent isFooter={ctx.isFooter ?? true}>
+                {children}
+              </TheContent>
         }
       </Layout>
     </Layout>

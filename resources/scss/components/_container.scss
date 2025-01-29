@@ -1,5 +1,6 @@
 .yid{
   &-container{
-    @apply mx-auto max-w-6xl w-full;
+    @apply mx-auto w-full;
+    max-width: $container !important;
   }
 }
