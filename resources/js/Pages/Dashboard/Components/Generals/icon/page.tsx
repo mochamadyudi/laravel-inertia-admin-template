@@ -123,6 +123,6 @@ const Page = () => {
   )
 }
 
-Page.layout = (children: React.ReactNode) => <TheLayout children={children} isFooter={false}/>
+Page.layout = (children: React.ReactNode) => <TheLayout type="dashboard" children={children} isFooter={false}/>
 
 export default Page;

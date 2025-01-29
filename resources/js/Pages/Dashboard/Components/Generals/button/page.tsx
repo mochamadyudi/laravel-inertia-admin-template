@@ -171,5 +171,5 @@ const Page = () => {
   )
 }
 
-Page.layout = (children: any) => <TheLayout isFooter={false} children={children}/>;
+Page.layout = (children: any) => <TheLayout type="dashboard" isFooter={false} children={children}/>;
 export default Page;

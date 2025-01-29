@@ -6,10 +6,13 @@ $color-success: #49f17b;
 $color-info: #4962f1;
 $color-white: #FFF;
 
-$color-table-row-success: #cbffd3;
-$color-table-row-warning: #ffe8cb;
+$color-table-row-success: rgba(203, 255, 211, 0.37);
+$color-table-row-success-hover: rgba(203, 255, 211, 0.37);
+$color-table-row-warning: rgba(245, 203, 96, 0.3);
+$color-table-row-warning-dark: rgba(238, 185, 79, 0.15);
 $color-table-row-info: #dde7ff;
 $color-table-row-error: #ffcbcb;
+$table-table-row-disabled: rgba(198, 198, 198, 0.13);
 
 $bg-layout: #f6f6fa;
 $bg-layout-dark: #1B2531;
@@ -63,3 +66,7 @@ $menu-color: #5a6a8a;
 $menu-color-dark: #b2c3d9;
 $menu-color-group-title: #8d9dae;
 $menu-color-group-title-dark: #445472;
+
+
+
+$variable-antd: ('blue', 'purple', 'cyan', 'green', 'magenta', 'pink', 'red', 'orange', 'yellow', 'volcano', 'geekblue', 'lime', 'gold');

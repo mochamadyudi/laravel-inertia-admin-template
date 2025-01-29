@@ -1,0 +1,66 @@
+$avatar-status-size-font: (
+  large: $font-size-lg,
+  default: $font-size-base,
+  small: $font-size-sm
+);
+$avatar-status-size: (
+  large: var(--ant-avatar-container-size-lg),
+  default: var(--ant-avatar-container-size),
+  small: var(--ant-avatar-container-size-sm),
+);
+
+.avatar{
+  &-status{
+    @apply flex gap-2;
+
+    .ant{
+      &-avatar{
+        img{
+          @apply h-full object-cover;
+          height: 100% !important;
+          width: 100% !important;
+
+        }
+      }
+    }
+    &.avatar-status{
+      &-size{
+        @each $key, $value in $avatar-status-size{
+          &-#{$key}{
+            .avatar-status{
+              &-subtitle{
+                font-size: map-get($avatar-status-size-font, $key) !important;
+                @include themify($themes){
+                  color: lighten(themed('paragraph-light'), 10) !important;
+                }
+              }
+              &-title{
+                &-content{
+                  font-size: map-get($avatar-status-size-font, $key) !important;
+                  font-family:  'sf-pro-medium', system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
+                }
+              }
+              &-suffix{
+                font-size: map-get($avatar-status-size-font, $key) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-content{
+      @apply flex flex-col;
+     }
+    &-suffix{
+      font-size: 12px !important;
+      margin: 0 !important;
+    }
+    &-title{
+      @apply flex items-center gap-2;
+      &-content{
+        margin: 0 !important;
+      }
+    }
+
+  }
+}

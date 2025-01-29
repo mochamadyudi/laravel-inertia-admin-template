@@ -64,9 +64,7 @@ const PageHeaderAlt: React.FC<PageHeaderAltAttr> = ({container, ...props}) => {
               )}
             </React.Fragment>
         }
-
       </div>
-
       {
         props?.children && (
           <div className={[
@@ -83,7 +81,6 @@ const PageHeaderAlt: React.FC<PageHeaderAltAttr> = ({container, ...props}) => {
           </div>
         )
       }
-
     </div>
   )
 }

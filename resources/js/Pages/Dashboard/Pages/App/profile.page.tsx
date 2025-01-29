@@ -6,7 +6,6 @@ import {Icons} from "@/Components/general/Icons";
 import ConnectionProfilePartial from "@/Pages/Dashboard/Pages/App/partials/connection.profile.partial";
 import DefaultTab from "@/Components/data-display/Tabs/default.tab";
 import OverviewProfilePartial from "@/Pages/Dashboard/Pages/App/partials/overview.profile.partial";
-import AccessDeniedProfilePartial from './partials/access-denied.profile.partial';
 
 const Page = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -120,5 +119,5 @@ const Page = () => {
     )
 }
 
-Page.layout = (children: React.ReactNode) => <TheLayout type={'dashboard'} hasContainer isFooter children={children}/>;
+Page.layout = (children: React.ReactNode) => <TheLayout type="dashboard" hasContainer isFooter children={children}/>;
 export default Page;

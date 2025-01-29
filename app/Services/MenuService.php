@@ -239,7 +239,7 @@ class MenuService
                   ],
                   [
                     'type' => 'item',
-                    'key' => '@pages/pages/profile',
+                    'key' => route('dashboard.pages.app.user-list'),
                     'label' => 'side.menu.pages.pages.app.user-list',
                     'icon' => 'TeamOutlined',
                     'permissions' => [],
@@ -431,7 +431,7 @@ class MenuService
                   ],
                   [
                     'type' => 'item',
-                    'key' => '@pages/pages/profile',
+                    'key' => route('dashboard.pages.app.user-list'),
                     'label' => 'User List',
                     'icon' => 'TeamOutlined',
                     'permissions' => [],

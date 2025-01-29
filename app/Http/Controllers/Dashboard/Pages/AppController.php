@@ -18,4 +18,15 @@ class AppController extends Controller
 
       return Inertia::render('Dashboard/Pages/App/profile.page', $state->go());
     }
+    public function user_list(){
+      $seo = $this->seo()
+        ->setTitle('User List - App | Pages')
+        ->go();
+      $state = $this->state();
+      $state->setCollections([]);
+      $state->setMeta($seo);
+      $state->setState([]);
+
+      return Inertia::render('Dashboard/Pages/App/user-list.page', $state->go());
+    }
 }

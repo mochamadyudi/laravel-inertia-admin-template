@@ -21,6 +21,7 @@ Route::prefix('pages')
     Route::prefix('app')
       ->group(function () {
         Route::get('/profile', [Dashboard\Pages\AppController::class, 'profile'])->name('dashboard.pages.app.profile');
+        Route::get('/user-list', [Dashboard\Pages\AppController::class, 'user_list'])->name('dashboard.pages.app.user-list');
       });
 
     Route::get('/', function(){

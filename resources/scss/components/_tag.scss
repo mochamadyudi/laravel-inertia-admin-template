@@ -1,7 +1,21 @@
 .ant{
   &-tag{
-    span{
-      font-size: $font-size-sm !important;
+    @apply text-sm px-2 py-1;
+
+    cursor: default;
+    font-family: sf-pro-medium, sans-serif;
+
+    @include themify($themes){
+      background: lighten(themed('btn-background'),10);
+      color: themed('paragraph');
+    }
+
+    @each $key in $variable-antd {
+      &-#{$key}{
+        color: var(--ant-#{$key}-7) !important;
+        background: var(--ant-#{$key}-1) !important;
+        border:1px solid var(--ant-#{$key}-4) !important;
+      }
     }
   }
 }

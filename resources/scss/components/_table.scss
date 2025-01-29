@@ -1,9 +1,10 @@
 
 $row-color: (
-  'success',
+  "success",
   "danger",
   "info",
-  "warning"
+  "warning",
+  "disabled"
 );
 
 .ant {
@@ -127,10 +128,23 @@ $row-color: (
         background: themed('card-background') !important;
       }
       &:hover{
-        //@include themify($themes) {
-        //  background: darken(themed('card-background'),10) !important;
-        //}
         transition: .2s;
+      }
+    }
+
+    &-cell{
+      &.ant{
+        &-table{
+          &-cell{
+            &-row{
+              &-hover{
+                @include themify($themes) {
+                  background: darken(themed('card-background'), 4) !important;
+                }
+              }
+            }
+          }
+        }
       }
     }
 
@@ -138,12 +152,6 @@ $row-color: (
       @include themify($themes) {
         background: themed('card-background') !important;
       }
-      > div {
-        //background: transparent !important;
-        @include themify($themes) {
-          background: themed('card-background');
-        }
-     }
     }
 
     &-thead {

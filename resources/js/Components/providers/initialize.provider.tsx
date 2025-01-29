@@ -13,9 +13,9 @@ export type InitializeState<T> = {
 } & commonProps
 export interface InitializeProviderProps {
   children: React.ReactNode;
-  state: InitializeState<string|null>
+  state: InitializeState<any>
 }
-export const InitializeContext = createContext<InitializeState<string|null>>({
+export const InitializeContext = createContext<InitializeState<any>>({
   type: null,
   isFooter: false,
   showMenu: true,

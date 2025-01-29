@@ -200,6 +200,7 @@
       width: calc(100% + calc($padding-content * 2));
       height: $footer-height;
       margin-top: $padding-content;
+      margin-right: -$padding-content;
       margin-left: -$padding-content;
       margin-bottom: -$padding-content;
       padding: 0 !important;

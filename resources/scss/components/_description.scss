@@ -13,6 +13,11 @@
         @include themify($themes) {
           color: themed('text-label') !important
         }
+
+        &:after{
+          margin-left: auto !important;
+          margin-right: var(--ant-descriptions-colon-margin-right) !important;
+        }
       }
 
       padding-bottom: 5px !important;

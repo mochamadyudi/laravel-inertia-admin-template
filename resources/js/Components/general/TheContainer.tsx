@@ -3,7 +3,7 @@ import React from 'react';
 const TheContainer: React.FC<{ className?: string; [k:string]: any;}> = (props)=> {
   return (
     <div className={[
-      'mx-auto max-w-6xl w-full',
+      'yid-container',
       props?.className,
     ].join(' ')}>
       {props.children}

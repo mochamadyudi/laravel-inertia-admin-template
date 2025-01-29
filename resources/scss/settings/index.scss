@@ -10,6 +10,7 @@ $themes: (
     post-bg: #fff,
     text: $text-color,
     paragraph: $text-paragraph,
+    paragraph-light: lighten($text-paragraph, 20),
     text-placeholder: $text-color-placeholder,
     text-label: lighten($text-color, 40),
     text-label-value: $text-color,
@@ -47,9 +48,11 @@ $themes: (
 
     bcrumb-color-link: #1B2531,
     success: $color-table-row-success,
+    success-hover: $color-table-row-success-hover,
     danger: $color-table-row-error,
     info: $color-table-row-info,
     warning: $color-table-row-warning,
+    disabled: $table-table-row-disabled,
 
     btn-disabled: $button-disabled,
     btn-disabled-border: $button-disabled-border,
@@ -60,6 +63,7 @@ $themes: (
     divider: lighten($bg-header-dark, 15),
     border-dashboard: darken($bg-header-dark, 2),
     paragraph: $text-paragraph-dark,
+    paragraph-light: darken($text-paragraph-dark, 30),
     text: $text-color-dark,
     text-placeholder: $text-color-placeholder-dark,
     text-label: lighten($text-color-placeholder-dark, 20),
@@ -98,9 +102,11 @@ $themes: (
     bcrumb-color-link: #87a1cd,
 
     success: darken($color-table-row-success, 20),
+    success-hover: darken($color-table-row-success, 20),
     danger: darken($color-table-row-error, 20),
     info: darken($color-table-row-info, 20),
-    warning: darken($color-table-row-warning, 20),
+    warning: $color-table-row-warning-dark,
+    disabled: $table-table-row-disabled,
 
     btn-disabled: $button-disabled-dark,
     btn-disabled-border: $button-disabled-dark-border,

@@ -58,4 +58,19 @@ export class Utils {
 
     return _colorBrightness > threshold ? 'dark' : 'light';
   }
+
+  static getRandomColorAntd(defaultColor: string | null = null): string {
+    const antdColorVariable = [
+      '--ant-blue-4',
+      '--ant-purple-4',
+      '--ant-cyan-4',
+      '--ant-green-4',
+      '--ant-magenta-4',
+      '--ant-pink-4',
+      '--ant-red-4',
+    ];
+
+    const randomIndex = Math.floor(Math.random() * antdColorVariable.length);
+    return typeof(antdColorVariable[randomIndex]) !== 'undefined' ? antdColorVariable[randomIndex] : defaultColor ??  '--ant-color-primary';
+  }
 }
