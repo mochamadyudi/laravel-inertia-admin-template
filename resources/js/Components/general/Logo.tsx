@@ -4,7 +4,7 @@ import {Typography} from "antd";
 const Logo: React.FC = () => {
   return (
     <React.Fragment>
-      <Typography className="!text-2xl !font-bold !font-pro-medium">Clonesia</Typography>
+      <Typography className="!text-3xl !font-bold !font-pro-medium">Clonesia</Typography>
     </React.Fragment>
   )
 }
