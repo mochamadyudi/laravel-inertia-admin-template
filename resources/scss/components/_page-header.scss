@@ -5,8 +5,24 @@ $padding-page-header: 2.25rem;
   .page{
     &-header{
       position: relative;
-      width: 100vw;
-      right: calc(calc(100vw - $container) /2);
+      left: 0!important;
+      &-alt{
+        z-index: 1;
+        position: relative;
+        &:before{
+          @include themify($themes) {
+            background: themed('page-header-alt-background') !important;
+          }
+          z-index: -1;
+          content: '';
+          position: absolute;
+          top:0;
+          height: 100%;
+          width: 100vw;
+          left: 50%; /* Letakkan di tengah */
+          transform: translateX(-50%); /* Geser ke kiri setengah dari lebar elemen untuk memusatkan */
+        }
+      }
     }
   }
 }

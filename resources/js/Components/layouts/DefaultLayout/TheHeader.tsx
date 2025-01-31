@@ -30,17 +30,23 @@ const TheHeader: React.FC<TheHeaderProps> = ({type = 'dashboard', container = fa
         ].join(' ')}
       >
         <div className="nav flex items-center justify-between h-full">
-          <div className={`nav-left`}>
-            <div
-              className={`w-full ${!navCollapsed ? 'px-6' : 'flex items-center justify-center'}`}
-            >
-              <Typography.Title level={2} className={'!text-2xl !m-0 !p-0'}>{(type !== 'page' && navCollapsed )? Utils.getNameInitial('Clonesia') : 'Clonesia'}</Typography.Title>
-            </div>
-          </div>
+          {
+            ctx.isDesktop && (
+              <div className={`nav-left`}>
+                <div
+                  className={`w-full ${!navCollapsed ? 'px-6' : 'flex items-center justify-center'}`}
+                >
+                  <Typography.Title level={2}
+                                    className={'!text-2xl !m-0 !p-0'}>{(type !== 'page' && navCollapsed) ? Utils.getNameInitial('Clonesia') : 'Clonesia'}</Typography.Title>
+                </div>
+              </div>
+            )
+          }
+
           <div className="nav-right flex justify-between items-center">
             <div>
               {type !== 'page' && (
-                <SiderCollapseComponent />
+                <SiderCollapseComponent/>
               )}
             </div>
             <Flex gap={20} align="center">

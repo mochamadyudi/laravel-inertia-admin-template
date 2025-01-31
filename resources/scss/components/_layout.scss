@@ -19,7 +19,6 @@
     &-rtl{
       .inner{
         &-layout{
-
           &-sider{
             .ant{
               &-menu{
@@ -37,7 +36,6 @@
 .inner{
   &-layout{
     @apply rounded-lg p-2 overflow-hidden bg-transparent flex-1;
-    //height: 100%;
 
     @include themify($themes) {
       background: themed('sider-background') !important;
@@ -56,10 +54,19 @@
       }
     }
     &-content{
-      @apply p-2;
+      @apply px-4 py-2;
       @include themify($themes) {
         background: themed('sider-background') !important;
       }
+    }
+  }
+}
+
+
+.bg{
+  &-body{
+    @include themify($themes){
+      background: themed('body');
     }
   }
 }

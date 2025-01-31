@@ -13,9 +13,9 @@
 }
 
 @layer base {
-  input, select, textarea, button {
-    all: unset; /* Menghapus semua gaya default dari elemen ini */
-  }
+  //input, select, textarea, button {
+  //  all: unset; /* Menghapus semua gaya default dari elemen ini */
+  //}
 
   /* Optional: Anda bisa tambahkan gaya dasar yang Anda inginkan atau membiarkannya */
   input, select, textarea, button {

@@ -26,5 +26,28 @@
   "side.menu.pages.authorization.verify-email": "Verify Email",
   "side.menu.pages.authorization.forgot": "Forgot",
   "side.menu.pages.authorization.forgot.password": "Forgot Password",
-  "side.menu.pages.authorization.forgot.email": "Forgot Email"
+  "side.menu.pages.authorization.forgot.email": "Forgot Email",
+
+
+  "menu.setting.edit-profile": "Edit Profile",
+  "menu.setting.change-password": "Change Password",
+  "menu.setting.billing": "Billing",
+  "menu.setting.notification": "Notification",
+  "menu.setting.additional-settings": "Additional Settings",
+
+  "page.title.setting.edit-profile": "Edit Profile",
+  "page.title.setting.change-password": "Change Password",
+
+  "form.edit-profile.label": "Name",
+  "form.edit-profile.placeholder": "Input your name",
+
+  "form.change-password.current-password.label": "Current Password",
+  "form.change-password.current-password.placeholder": "Input your old password",
+  "form.change-password.new-password.label": "New Password",
+  "form.change-password.new-password.placeholder": "Input your new password",
+  "form.change-password.new-password.error.required": "Please enter New Password",
+  "form.change-password.confirm-password.label": "Confirm Password",
+  "form.change-password.confirm-password.placeholder": "Input your confirm password",
+  "form.change-password.confirm-password.error.required": "Please enter confirm password",
+  "form.change-password.confirm-password.error.not-match": "Password do not match!"
 }

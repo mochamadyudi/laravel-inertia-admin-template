@@ -7,7 +7,7 @@ const Page = () => {
   const [form] = Form.useForm();
   return (
     <React.Fragment>
-      <Typography.Title level={1}>Edit Profile</Typography.Title>
+      <Typography.Title level={1} className={'!text-2xl !mb-8'}>Edit Profile</Typography.Title>
       <Form
         key="form-edit-profile"
         layout="vertical"

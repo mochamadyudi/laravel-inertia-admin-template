@@ -66,6 +66,20 @@
 @mixin ant-menus{
   .ant {
     &-menu {
+
+      &-item{
+        &-extra{
+          .ant{
+            &-tag{
+              padding: 3px 6px !important;
+              span{
+                font-size: 12px !important;
+              }
+            }
+          }
+
+        }
+      }
       &-title-content, &-item-group-title{
         @extend %font-default;
         span, a{

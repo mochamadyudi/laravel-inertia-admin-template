@@ -3,16 +3,14 @@ import store, {persistor} from '@/Redux/store';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import BaseProvider from "@/Components/providers/base.provider";
-import {usePage} from "@inertiajs/react";
 import MetaProvider from "@/Components/providers/meta.provider";
 
-const BaseLayout: React.FC<any> = ({children}) => {
-  const props = usePage<any>().props;
+const BaseLayout: React.FC<any> = ({children, ...props}) => {
   return (
     <MetaProvider>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <BaseProvider>
+          <BaseProvider {...props}>
             {children}
           </BaseProvider>
         </PersistGate>

@@ -1,6 +1,7 @@
 import React, {createContext} from "react";
 
 type commonProps = {
+  isDesktop?: any;
   isFooter?: boolean;
   showMenu?: boolean;
   hasContainer?: boolean;
@@ -8,7 +9,7 @@ type commonProps = {
 export type InitializeState<T> = {
   type: 'page';
   showMenu: Required<boolean>;
-} & Pick<commonProps, 'isFooter' | 'hasContainer'> | {
+} & Pick<commonProps, 'isFooter' | 'hasContainer' | 'isDesktop'> | {
   type: 'dashboard' | T ;
 } & commonProps
 export interface InitializeProviderProps {
@@ -16,6 +17,7 @@ export interface InitializeProviderProps {
   state: InitializeState<any>
 }
 export const InitializeContext = createContext<InitializeState<any>>({
+  isDesktop: false,
   type: null,
   isFooter: false,
   showMenu: true,

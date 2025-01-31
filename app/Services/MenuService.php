@@ -292,7 +292,7 @@ class MenuService
             'children' => [
               [
                 'type' => 'submenu',
-                'key' => '@pages/auth/login',
+                'key' => route('authorization.login.1'),
                 'icon'=> 'LoginOutlined',
                 'label' => 'side.menu.pages.authorization.login',
                 'permissions' => [],
@@ -300,7 +300,7 @@ class MenuService
                 'children' => [
                   [
                     'type' => 'item',
-                    'key' => '@pages/auth/login/1',
+                    'key' => route('authorization.login.1'),
                     'icon'=> 'LoginOutlined',
                     'label' => 'side.menu.pages.authorization.login.1',
                     'permissions' => [],
@@ -308,7 +308,7 @@ class MenuService
                   ],
                   [
                     'type' => 'item',
-                    'key' => '@pages/auth/login/2',
+                    'key' => route('authorization.login.2'),
                     'icon'=> 'LoginOutlined',
                     'label' => 'side.menu.pages.authorization.login.2',
                     'permissions' => [],
@@ -316,7 +316,7 @@ class MenuService
                   ],
                   [
                     'type' => 'item',
-                    'key' => '@pages/auth/login/3',
+                    'key' => route('authorization.login.3'),
                     'icon'=> 'LoginOutlined',
                     'label' => 'side.menu.pages.authorization.login.3',
                     'permissions' => [],

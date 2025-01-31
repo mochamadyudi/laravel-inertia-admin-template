@@ -19,7 +19,7 @@
           font-family: sf-pro-medium, sans-serif;
           font-size: $font-size-base !important;
           @include themify($themes) {
-            color: themed('text') !important;
+            color: themed('text');
           }
           font-weight: 600;
         }
@@ -29,6 +29,7 @@
 }
 
 .ant {
+
   &-input {
     &-clear{
       &-icon{
@@ -189,11 +190,17 @@
     }
 
     &-selection {
+      &-placeholder{
+        font-size: $font-size-base !important;
+      }
       &-search {
+
         &-input {
+          font-size: $font-size-base !important;
           @include themify($themes) {
             color: themed('text') !important;
             &::placeholder {
+              font-size: $font-size-base !important;
               color: themed('text-placeholder') !important;
             }
           }
@@ -204,7 +211,7 @@
     &-arrow {
       @include themify($themes) {
         color: themed('text') !important;
-        font-size: $font-size-sm;
+        font-size: $font-size-base;
       }
     }
 
@@ -233,5 +240,12 @@
         }
       }
     }
+  }
+}
+
+//setting border radius
+.ant{
+  &-input,  &-input-affix-wrapper, &-select-selector, &-select{
+    border-radius: $input-border-radius !important;
   }
 }

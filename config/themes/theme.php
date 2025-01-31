@@ -2,13 +2,13 @@
 
 return [
   'layout'=> [
-    'topNavColor' => '#F759AB',
+    'topNavColor' => '#F99339',
     'headerNavColor' => null,
   ],
   'antd' => [
     'cssVar' => true,
     'token' => [
-      'colorPrimary' => '#F759AB',
+      'colorPrimary' => '#F99339',
       "colorInfo" => "#5398f7",
       "colorSuccess" => "#4eb71a",
       "colorWarning" => "#eca619",

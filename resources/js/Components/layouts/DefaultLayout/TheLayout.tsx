@@ -1,14 +1,14 @@
 import React, {useContext} from 'react';
 import BaseLayout from "@/Components/layouts/base.layout";
-import {Layout} from "antd";
+import {Grid, Layout} from "antd";
 import TheHeader from "@/Components/layouts/DefaultLayout/TheHeader";
 import TheContent from "@/Components/layouts/DefaultLayout/TheContent";
 import TheSidebar from "@/Components/layouts/DefaultLayout/TheSidebar";
-import TheContainer from "@/Components/general/TheContainer";
 import InitializeProvider, {
   InitializeContext,
   InitializeState
 } from "@/Components/providers/initialize.provider";
+import {Utils} from "@/Utils";
 
 export type TheLayoutInterface = InitializeState<string | null> & {
   children: React.ReactNode;
@@ -17,9 +17,12 @@ export type TheLayoutInterface = InitializeState<string | null> & {
 }
 
 const TheLayout: React.FC<TheLayoutInterface> = ({type = 'dashboard', ...props}) => {
+  const breakpoints = Grid.useBreakpoint();
+  const isDesktop = Utils.getBreakPoints(breakpoints).includes('lg');
   return (
     <BaseLayout>
       <InitializeProvider state={{
+        isDesktop: isDesktop,
         type: new URLSearchParams(window.location.search).has('layout-type') ?
           new URLSearchParams(window.location.search).get('layout-type') :
           type ?? 'dashboard',
@@ -42,16 +45,15 @@ const TheLayoutLayout: React.FC<Pick<TheLayoutInterface, 'children' | 'header' |
        header = null,
        showSidebar = true,
      }) => {
-
   const ctx = useContext(InitializeContext);
 
   return (
-    <Layout className={`app ${(ctx?.type === 'page') ? 'without-sider' : ''} ${ctx?.type}`}>
+    <Layout className={`app ${(!ctx?.isDesktop || ctx?.type === 'page') ? 'without-sider' : ''} ${ctx?.type}`}>
       {
         header ? header : <TheHeader type={ctx?.type as string}/>
       }
       <Layout className={`app-main ${ctx?.type === 'page' && !!ctx?.showMenu ? `app-main-has-topbar` : ''} ${ctx?.type === 'page' ? 'has-container': ''}`}>
-        {ctx?.type !== 'page' && showSidebar ? <TheSidebar/> : null}
+        {ctx?.isDesktop ?  (ctx?.type !== 'page' && showSidebar) ? <TheSidebar/> : null: null}
         {
           ctx?.type === 'page' ?
             (

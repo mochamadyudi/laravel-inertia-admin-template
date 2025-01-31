@@ -44,6 +44,12 @@ export default {
     extend: {
       fontFamily: {
         'sf-pro': ['sf-pro-regular', ...defaultTheme.fontFamily.sans],
+        'pro-bold': ['sf-pro-bold', ...defaultTheme.fontFamily.sans],
+        'pro-italic': ['sf-pro-italic', ...defaultTheme.fontFamily.sans],
+        'pro-heavy-italic': ['sf-pro-heavy-italic', ...defaultTheme.fontFamily.sans],
+        'pro-medium': ['sf-pro-medium', ...defaultTheme.fontFamily.sans],
+        'pro-semibold-italic': ['sf-pro-semibold-italic', ...defaultTheme.fontFamily.sans],
+        'pro-thin-italic': ['sf-pro-lightthin-italic', ...defaultTheme.fontFamily.sans],
         sans: ['sf-pro-regular', ...defaultTheme.fontFamily.sans],
         Figtree: ['Figtree', ...defaultTheme.fontFamily.sans],
         poppins: ['Poppins', ...defaultTheme.fontFamily.sans],

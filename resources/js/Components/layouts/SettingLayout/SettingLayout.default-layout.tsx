@@ -9,7 +9,7 @@ type SettingLayoutDefaultLayoutProps =  {
 
 const SettingLayoutDefaultLayout: React.FC<SettingLayoutDefaultLayoutProps> = ({ inner, ...props }) => {
   return (
-    <TheLayout type={'dashboard'} isFooter hasContainer={props?.hasContainer ?? false}>
+    <TheLayout type={'dashboard'} isFooter hasContainer={false}>
       <InnerLayout {...inner}>
         {props.children}
       </InnerLayout>

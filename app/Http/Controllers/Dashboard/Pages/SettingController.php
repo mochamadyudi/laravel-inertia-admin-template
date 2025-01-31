@@ -52,4 +52,15 @@ class SettingController extends Controller
 
     return Inertia::render('Dashboard/Pages/Settings/additional.page', $state->go());
   }
+  public function billing(Request $request){
+    $seo = $this->seo()
+      ->setTitle('Billing | Pages')
+      ->go();
+    $state = $this->state();
+    $state->setCollections([]);
+    $state->setMeta($seo);
+    $state->setState([]);
+
+    return Inertia::render('Dashboard/Pages/Settings/billing.page', $state->go());
+  }
 }

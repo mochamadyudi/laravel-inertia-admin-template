@@ -27,9 +27,11 @@ Route::prefix('pages')
     Route::prefix('setting')
       ->group(function () {
         Route::get('/additional', [Dashboard\Pages\SettingController::class, 'additional'])->name('dashboard.pages.setting.additional');
+        Route::get('/billing', [Dashboard\Pages\SettingController::class, 'billing'])->name('dashboard.pages.setting.billing');
         Route::get('/notification', [Dashboard\Pages\SettingController::class, 'notification'])->name('dashboard.pages.setting.notification');
         Route::get('/change-password', [Dashboard\Pages\SettingController::class, 'change_password'])->name('dashboard.pages.setting.change-password');
-        Route::get('/', [Dashboard\Pages\SettingController::class, 'edit_profile'])->name('dashboard.pages.setting.edit-profile');
+        Route::get('/edit-profile', [Dashboard\Pages\SettingController::class, 'edit_profile'])->name('dashboard.pages.setting.edit-profile');
+        Route::get('/', [Dashboard\Pages\SettingController::class, 'edit_profile'])->name('dashboard.pages.setting');
       });
     Route::get('/', function(){
 

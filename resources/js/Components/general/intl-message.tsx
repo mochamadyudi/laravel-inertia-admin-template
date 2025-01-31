@@ -1,14 +1,24 @@
 import React from "react";
-import {FormattedMessage, injectIntl} from "react-intl";
+import {FormattedMessage} from "react-intl";
 
-const IntlMessage = (props: any) => <FormattedMessage {...props} />;
-
-export const setLocale = (isLocaleOn:boolean, localeKey: any) =>{
-  return isLocaleOn ? typeof(localeKey) !=='undefined' ?  <IntlMessage id={localeKey} />: '' : localeKey.toString();
+interface IntlMessageInterface {
+  id: string;
+  valueDefault?: string | null;
 }
+const IntlMessage: React.FC<IntlMessageInterface> = ({ id, valueDefault }) => {
+  // @ts-ignore
+  function render(val: any){
+    return Array.isArray(val) && val.includes(id) ?  valueDefault ?? null : val
+  }
 
-export default injectIntl(IntlMessage, {
-  //@ts-ignore
-  withRef: false
-});
+  return (
+    <FormattedMessage id={id}>
+      {/*@ts-ignore*/}
+      {render}
+    </FormattedMessage>
+  )
+};
 
+export const setLocale = (isLocaleOn:boolean, localeKey: string, valueDefault: any = null) =>{
+  return isLocaleOn ? typeof(localeKey) !=='undefined' ?  <IntlMessage id={localeKey} valueDefault={valueDefault ?? localeKey} />: '' : valueDefault
+}

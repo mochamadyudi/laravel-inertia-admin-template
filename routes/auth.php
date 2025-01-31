@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -11,6 +12,16 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+
+Route::prefix('authorization')
+  ->group(function() {
+    Route::prefix('login')
+      ->group(function() {
+        Route::get('/', [Controllers\Pages\Auth\LoginController::class, 'login_1'])->name('authorization.login.1');
+        Route::get('/2', [Controllers\Pages\Auth\LoginController::class, 'login_2'])->name('authorization.login.2');
+        Route::get('/3', [Controllers\Pages\Auth\LoginController::class, 'login_3'])->name('authorization.login.3');
+      });
+  });
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
