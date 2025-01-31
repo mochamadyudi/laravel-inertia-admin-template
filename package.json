@@ -99,6 +99,7 @@
     "react-redux": "^9.2.0",
     "react-resizable": "^1.11.0",
     "react-resize-detector": "^6.6.3",
+    "react-to-print": "^3.0.5",
     "react-virtualized": "^9.22.2",
     "react-window": "^1.8.6",
     "redux": "^5.0.1",
