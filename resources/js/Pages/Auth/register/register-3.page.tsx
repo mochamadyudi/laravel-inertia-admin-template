@@ -1,14 +1,13 @@
 import React from 'react';
 import BaseLayout from "@/Components/layouts/base.layout";
-import LoginForm from "@/Components/data-entry/form/login.form";
 import {Button, Divider, Flex, Form, Typography} from "antd";
 import {FacebookFilled, GoogleOutlined, LoginOutlined} from "@ant-design/icons";
 import {Link, router} from "@inertiajs/react";
 
-import RedirectLoginPartial from "@/Pages/Auth/login/partials/redirect-login.partial";
 import Lotties from "@/Components/general/Lotties";
-import Animation from "@/assets/lotties/dev.json"
+import Animation from "@/assets/lotties/edit.json"
 import message from 'antd/lib/message';
+import RegisterForm from "@/Components/data-entry/form/register.form";
 
 const Page = () => {
   const [form] = Form.useForm();
@@ -41,11 +40,10 @@ const Page = () => {
               <div className="space-y-2">
                 <Typography
                   className="!text-3xl !font-pro-medium !text-white"
-                >Welcome back</Typography>
+                >Welcome!</Typography>
                 <Typography.Paragraph
                   className="!font-sans !text-lg"
-                >Sign in to access your dashboard and enjoy the<br/>full features of our
-                  platform.</Typography.Paragraph>
+                >Create your account to get started<br/>explore the full features of our platform.</Typography.Paragraph>
               </div>
               <Lotties height={400} animation={Animation}/>
               <div>
@@ -57,13 +55,13 @@ const Page = () => {
                   align="center" justify="center">
               <div className="space-y-7  w-full max-w-[420px] xl:max-w-[540px] xl:px-0 xl:min-w-[480px]">
                 <div className="!space-y-2">
-                  <Typography.Title level={2} className={`!text-3xl !m-0 !text-white`}>Sign In</Typography.Title>
+                  <Typography.Title level={2} className={`!text-3xl !m-0 !text-white`}>Sign Up</Typography.Title>
                   <Flex gap={6}>
-                    <Typography className="!text-slate-300">Don't have an account yet?</Typography>
-                    <Link href={route('register')}>Register</Link>
+                    <Typography className="!text-slate-300">Already have an account?</Typography>
+                    <Link href={route('register')}>Sign In</Link>
                   </Flex>
                 </div>
-                <LoginForm
+                <RegisterForm
                   form={form}
                   onFinish={_onFinish}
                   layout="vertical"
@@ -71,7 +69,7 @@ const Page = () => {
                 >
                   <div className="space-y-6">
                     <Button htmlType="submit" type="primary" className="!w-full" icon={<LoginOutlined/>}>Sign
-                      in</Button>
+                      Up</Button>
                     <Divider variant="dotted" style={{background: 'transparent'}}>
                       <Typography>or connect with</Typography>
                     </Divider>
@@ -79,9 +77,8 @@ const Page = () => {
                       <Button shape="round" variant="outlined" color="primary" size="large" className="!bg-transparent" icon={<GoogleOutlined/>}>Google</Button>
                       <Button shape="round" variant="outlined" color="blue" size="large" className="!bg-transparent" icon={<FacebookFilled/>}>Facebook</Button>
                     </Flex>
-
                   </div>
-                </LoginForm>
+                </RegisterForm>
               </div>
             </Flex>
           </div>
@@ -90,7 +87,6 @@ const Page = () => {
       <div className="absolute top-0 left-0 w-screen h-screen z-0 overflow-hidden">
         <img src="/assets/img/abstract-plane.png" alt="/assets/img/abstract-bg.png" className="w-full h-full relative transform rotate-180 pointer-events-none lg:-top-[60%] opacity-70 !object-cover"/>
       </div>
-      <RedirectLoginPartial/>
     </React.Fragment>
   )
 }

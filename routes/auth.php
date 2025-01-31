@@ -21,6 +21,13 @@ Route::prefix('authorization')
         Route::get('/2', [Controllers\Pages\Auth\LoginController::class, 'login_2'])->name('authorization.login.2');
         Route::get('/3', [Controllers\Pages\Auth\LoginController::class, 'login_3'])->name('authorization.login.3');
       });
+
+    Route::prefix('register')
+      ->group(function() {
+        Route::get('/3', [Controllers\Pages\Auth\RegisterController::class, 'register_3'])->name('authorization.register.3');
+        Route::get('/2', [Controllers\Pages\Auth\RegisterController::class, 'register_2'])->name('authorization.register.2');
+        Route::get('/', [Controllers\Pages\Auth\RegisterController::class, 'register_1'])->name('authorization.register.1');
+      });
   });
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
