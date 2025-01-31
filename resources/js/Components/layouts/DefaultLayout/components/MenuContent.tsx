@@ -1,6 +1,6 @@
 import React from 'react';
 import {Utils} from "@/Utils";
-import {Flex, Grid, Menu, Tag, theme} from 'antd';
+import {Flex, Menu, Tag, theme} from 'antd';
 import {useSelector} from "react-redux";
 import {NAV_TYPE_SIDE, SIDE_NAV_LIGHT} from "@/Configs/app.config";
 import {Link, usePage} from "@inertiajs/react";
@@ -19,7 +19,6 @@ const SideMenu: React.FC<any> = () => {
   const prop = usePage().props;
 
   const {sideNavTheme, navCollapsed, currentTheme}: any = useSelector(({Theme}: any) => Theme);
-  const isMobile = Utils.getBreakPoints(Grid.useBreakpoint()).includes('lg')
 
   const formatMenus = (_menus: any[]) => {
     return Array.isArray(_menus) && _menus.length > 0
@@ -27,6 +26,7 @@ const SideMenu: React.FC<any> = () => {
         // Create a new menu item with the icon reformatted
         const formattedChild = {
           ...child,
+          target: child?.target ?? "_self",
           label: setLocale(true, child?.label),
           icon: <Icons type={child?.icon}/>, // Format the icon
         };
@@ -34,7 +34,7 @@ const SideMenu: React.FC<any> = () => {
           Reflect.set(
             formattedChild,
             'label',
-            <Link href={child?.key}>{setLocale(true, child?.label)}</Link>
+            <Link href={child?.key} target={child?.target ?? "_self"}>{setLocale(true, child?.label)}</Link>
           );
           if (
             typeof child.el_extra !== 'undefined' &&
@@ -127,7 +127,7 @@ const SideMenu: React.FC<any> = () => {
 const TopNavMenu: React.FC<any> = (props) => {
   const prop = usePage().props;
   const {token}: { token: GlobalToken } = theme.useToken();
-  const {sideNavTheme, topNavColor, currentTheme}: any = useSelector(({Theme}: any) => Theme);
+  const {topNavColor, currentTheme}: any = useSelector(({Theme}: any) => Theme);
   const formatMenus = (_menus: any[]) => {
     return Array.isArray(_menus) && _menus.length > 0
       ? _menus
@@ -136,6 +136,7 @@ const TopNavMenu: React.FC<any> = (props) => {
           // Create a new menu item with the icon reformatted
           const formattedChild = {
             ...child,
+            target: child?.target ?? '_self',
             label: setLocale(true, child?.label),
             icon: <Icons type={child?.icon}/>, // Format the icon
           };
@@ -143,7 +144,7 @@ const TopNavMenu: React.FC<any> = (props) => {
             Reflect.set(
               formattedChild,
               'label',
-              <Link href={child?.key}>{setLocale(true, child?.label)}</Link>
+              <Link href={child?.key} target={child?.target ?? "_self"}>{setLocale(true, child?.label)}</Link>
             );
             if (
               typeof child.el_extra !== 'undefined' &&
@@ -205,7 +206,6 @@ const TopNavMenu: React.FC<any> = (props) => {
       : []; // Return an empty array if no _menus are provided
   };
 
-  console.log({ token })
   return (
     <div className={'h-full yid-menu-horizontal'} style={{backgroundColor: token?.colorPrimary}}>
       <TheContainer className={'!h-full'}>

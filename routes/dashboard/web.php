@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('components')
   ->group(function () {
-
     Route::prefix('general')
       ->group(function () {
         Route::get('/float-button', [Dashboard\Components\GeneralController::class,'float_button'])->name('dashboard.components.float-button');
@@ -33,6 +32,15 @@ Route::prefix('pages')
         Route::get('/edit-profile', [Dashboard\Pages\SettingController::class, 'edit_profile'])->name('dashboard.pages.setting.edit-profile');
         Route::get('/', [Dashboard\Pages\SettingController::class, 'edit_profile'])->name('dashboard.pages.setting');
       });
+
+    Route::prefix('general')
+      ->group(function () {
+        Route::get('/invoice', [Dashboard\Pages\GeneralController::class, 'invoice'])->name('dashboard.pages.general.invoice');
+        Route::get('/faq', [Dashboard\Pages\GeneralController::class, 'faq'])->name('dashboard.pages.general.faq');
+        Route::get('/pricing', [Dashboard\Pages\GeneralController::class, 'pricing'])->name('dashboard.pages.general.pricing');
+        Route::get('/', function(){})->name('dashboard.pages.general');
+      });
+
     Route::get('/', function(){
 
     })->name('dashboard.pages');

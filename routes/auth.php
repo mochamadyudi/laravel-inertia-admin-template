@@ -29,6 +29,8 @@ Route::prefix('authorization')
         Route::get('/', [Controllers\Pages\Auth\RegisterController::class, 'register_1'])->name('authorization.register.1');
       });
   });
+
+
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
