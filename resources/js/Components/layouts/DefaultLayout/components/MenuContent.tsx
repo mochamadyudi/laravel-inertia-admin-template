@@ -37,25 +37,25 @@ const SideMenu: React.FC<any> = () => {
             <Link href={child?.key} target={child?.target ?? "_self"}>{setLocale(true, child?.label)}</Link>
           );
           if (
-            typeof child.el_extra !== 'undefined' &&
-            Object.keys(child.el_extra).length > 0
+            typeof child.extra !== 'undefined' &&
+            Object.keys(child.extra).length > 0
           ) {
             if (
-              typeof child.el_extra?.component !== 'undefined' &&
-              child.el_extra?.component
+              typeof child.extra?.component !== 'undefined' &&
+              child.extra?.component
             ) {
-              switch (child.el_extra?.component) {
+              switch (child.extra?.component) {
                 case 'tag':
                   Reflect.set(
                     formattedChild,
                     'extra',
                     <Tag
-                      {...child?.el_extra?.props}
-                      color={child.el_extra?.color ?? 'cyan'}
+                      {...child?.extra?.props}
+                      color={child.extra?.color ?? 'cyan'}
                       className={'!m-0'}
-                      icon={<Icons type={child?.el_extra?.icon}/>}
+                      icon={<Icons type={child?.extra?.icon}/>}
                     >
-                      {child.el_extra?.children}
+                      {child.extra?.children}
                     </Tag>
                   );
                   break;
@@ -63,14 +63,14 @@ const SideMenu: React.FC<any> = () => {
                   Reflect.set(
                     formattedChild,
                     'extra',
-                    <Icons type={child?.el_extra?.icon}/>
+                    <Icons type={child?.extra?.icon} {...child?.extra?.props}/>
                   );
                   break;
                 default:
                   Reflect.set(
                     formattedChild,
                     'extra',
-                    child.el_extra?.children
+                    <div {...child?.extra?.props}>{child.extra?.children}</div>
                   );
                   break;
               }
@@ -147,25 +147,25 @@ const TopNavMenu: React.FC<any> = (props) => {
               <Link href={child?.key} target={child?.target ?? "_self"}>{setLocale(true, child?.label)}</Link>
             );
             if (
-              typeof child.el_extra !== 'undefined' &&
-              Object.keys(child.el_extra).length > 0
+              typeof child.extra !== 'undefined' &&
+              Object.keys(child.extra).length > 0
             ) {
               if (
-                typeof child.el_extra?.component !== 'undefined' &&
-                child.el_extra?.component
+                typeof child.extra?.component !== 'undefined' &&
+                child.extra?.component
               ) {
-                switch (child.el_extra?.component) {
+                switch (child.extra?.component) {
                   case 'tag':
                     Reflect.set(
                       formattedChild,
                       'extra',
                       <Tag
-                        {...child?.el_extra?.props}
-                        color={child.el_extra?.color ?? 'cyan'}
+                        {...child?.extra?.props}
+                        color={child.extra?.color ?? 'cyan'}
                         className={'!m-0'}
-                        icon={<Icons type={child?.el_extra?.icon}/>}
+                        icon={<Icons type={child?.extra?.icon}/>}
                       >
-                        {child.el_extra?.children}
+                        {child.extra?.children}
                       </Tag>
                     );
                     break;
@@ -173,14 +173,14 @@ const TopNavMenu: React.FC<any> = (props) => {
                     Reflect.set(
                       formattedChild,
                       'extra',
-                      <Icons type={child?.el_extra?.icon}/>
+                      <Icons type={child?.extra?.icon}/>
                     );
                     break;
                   default:
                     Reflect.set(
                       formattedChild,
                       'extra',
-                      child.el_extra?.children
+                      child.extra?.children
                     );
                     break;
                 }

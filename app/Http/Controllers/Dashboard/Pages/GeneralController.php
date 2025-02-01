@@ -18,7 +18,7 @@ class GeneralController extends Controller
     $state->setMeta($seo);
     $state->setState([]);
 
-    return Inertia::render('Dashboard/Pages/App/profile.page', $state->go());
+    return Inertia::render('Dashboard/Pages/General/pricing.page', $state->go());
   }
   public function faq()
   {
@@ -30,7 +30,7 @@ class GeneralController extends Controller
     $state->setMeta($seo);
     $state->setState([]);
 
-    return Inertia::render('Dashboard/Pages/App/profile.page', $state->go());
+    return Inertia::render('Dashboard/Pages/General/faq.page', $state->go());
   }
   public function invoice()
   {

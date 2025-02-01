@@ -3,10 +3,14 @@ import {Layout} from "antd";
 
 interface FooterLayoutAttr {
   children: React.ReactNode;
+  className?: string;
 }
-const FooterLayout: React.FC<FooterLayoutAttr> = ({ children })=> {
+const FooterLayout: React.FC<FooterLayoutAttr> = ({ children, className })=> {
   return (
-    <Layout.Footer className={'!w-[calc(100%+40px)] -ml-[20px] -mb-[20px] bg-white dark:bg-slate-700'}>
+    <Layout.Footer className={[
+      'page-header-alt !w-[calc(100%+40px)] -ml-[20px] -mb-[20px] bg-card dark:bg-card-dark',
+      className
+    ].join(' ')}>
       {children}
     </Layout.Footer>
   )

@@ -95,6 +95,7 @@ Page.layout = (children: any) => {
       inner={{
         ...menusConfig,
         menu:{
+          activeKey: route('dashboard.pages.setting.notification'),
           defaultSelectedKeys: [route('dashboard.pages.setting.notification')],
           ...menusConfig.menu,
         }

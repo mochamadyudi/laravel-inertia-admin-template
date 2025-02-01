@@ -176,7 +176,7 @@ class MenuService
                 'key' => route('dashboard.components.float-button'),
                 'label' => 'side.menu.components.general.float-button',
                 'permissions' => [],
-                'el_extra' => [
+                'extra' => [
                   'component' => 'tag',
                   'children' => '5.0.0'
                 ],
@@ -320,6 +320,15 @@ class MenuService
                     'icon' => 'LoginOutlined',
                     'label' => 'side.menu.pages.authorization.login.3',
                     'permissions' => [],
+                    'extra' => [
+                      'component' => 'icon',
+                      'icon' => 'CrownOutlined',
+                      'props' => [
+                        'style' => [
+                          'color' => 'var(--ant-color-primary)'
+                        ]
+                      ],
+                    ],
                     'roles' => [],
                   ],
                 ]

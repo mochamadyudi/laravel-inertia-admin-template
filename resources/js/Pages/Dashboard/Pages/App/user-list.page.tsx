@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
-import {Button, Card, Descriptions, Drawer, Flex, Image, message, Table, Tag, Tooltip, Typography} from "antd";
+import {Button, Card, Descriptions, Drawer, Flex, Image, Input, message, Table, Tag, Tooltip, Typography} from "antd";
 import {ColumnsType} from "antd/lib/table";
 import {userData, userType} from "@/Pages/Dashboard/Pages/App/handler/user.data";
 import AvatarStatus from "@/Components/general/AvatarStatus";
@@ -9,13 +9,60 @@ import EllipsisDropdown from "@/Components/general/Dropdown/EllipsisDropdown";
 import dayjs from 'dayjs';
 
 const Page = () => {
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]); // State untuk menyimpan checkbox yang dipilih
   const [data, setData] = useState<Array<Omit<userType, 'id'>>>(userData);
   const [selected, setSelected] = useState<Omit<userType, 'id'> | null>(null);
   const [open, setOpen] = useState<boolean>(false);
 
+  const getColumnSearchProps = (dataIndex: any) => ({
+    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }: any) => (
+      <div style={{ padding: 8 }} className="!bg-layout dark:!bg-layout-dark">
+        <Input
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+          onPressEnter={() => confirm()}
+          style={{ marginBottom: 8, display: 'block' }}
+        />
+       <Flex gap={10}>
+         <Button
+           type="primary"
+           onClick={() => confirm()}
+           icon={<Icons type={'SearchOutlined'} />}
+           size="small"
+           style={{ width: 90 }}
+         >
+           Search
+         </Button>
+         <Button onClick={() => {
+           clearFilters()
+           confirm()
+         }} size="small" style={{ width: 90 }}>
+           Reset
+         </Button>
+       </Flex>
+      </div>
+    ),
+    filterIcon: (filtered: any) => (
+      <Icons type={'SearchOutlined'} style={{ color: filtered ? '#1890ff' : undefined }} />
+    ),
+    onFilter: (value: any, record: any) =>
+      record[dataIndex]
+        ? record[dataIndex].toString().toLowerCase().includes(value.toLowerCase())
+        : '',
+  });
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: (selectedRowKeys: any) => {
+      setSelectedRowKeys(selectedRowKeys);
+    },
+  };
+
   const columns: ColumnsType<any> = [
     {
       title: 'User',
+      fixed: 'left',
+      sorter: (a, b) => a.email.localeCompare(b.email),
       render: (val: userType) => {
         return (
           <AvatarStatus
@@ -27,11 +74,13 @@ const Page = () => {
               alt: val?.avatar,
             }}/>
         )
-      }
+      },
+      ...getColumnSearchProps('email')
     },
     {
       title: 'Role',
       dataIndex: 'role',
+      sorter: (a, b) => a.role.localeCompare(b.role),
     },
     {
       title: 'Social',
@@ -80,6 +129,7 @@ const Page = () => {
     {
       title: 'Status',
       dataIndex: 'status',
+      sorter: (a, b) => a.status.localeCompare(b.status),
       render: (_: userType['status']) => {
         return <Tag color={_ === 'Active' ? 'cyan' : 'default'}>{_}</Tag>
       }
@@ -161,9 +211,16 @@ const Page = () => {
       <Card bordered={false} title={'User List'}>
         <Table
           rowKey="email"
+          rowSelection={rowSelection}
           rowClassName={(prop: Omit<userType, 'id'> & {isDeleted?: boolean}) => typeof(prop?.isDeleted) !== 'undefined' ? 'danger'  : ''}
           columns={columns}
           dataSource={data}
+          pagination={{
+            showQuickJumper: false,
+            role: 'admin',
+            // total:  data.length,
+            showSizeChanger: true,
+          }}
         />
       </Card>
       <Drawer

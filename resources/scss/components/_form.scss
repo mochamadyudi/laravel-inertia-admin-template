@@ -72,8 +72,8 @@
       &-wrapper {
         &-disabled{
           @include themify($themes) {
-            background: themed('input-background-disabled') !important;
-            color: themed('input-text-disabled') !important;
+            background: themed('input-background-disabled');
+            color: themed('input-text-disabled');
           }
           user-select: none !important;
         }
@@ -97,14 +97,14 @@
         &-#{$key}{
           border-color: unset;
           @include themify($themes) {
-            background: themed('input-background') !important;
+            background: themed('input-background');
           }
         }
       }
     }
     &-disabled{
       @include themify($themes) {
-        background: themed('input-background-disabled') !important;
+        background: themed('input-background-disabled');
         color: themed('input-text-disabled') !important;
       }
       user-select: none !important;
@@ -123,7 +123,7 @@
     &-selection{
       &-placeholder{
         @include themify($themes) {
-          color: themed('text-placeholder') !important;
+          color: themed('text-placeholder') ;
         }
       }
     }
@@ -134,7 +134,7 @@
             &-#{$key}{
               .ant-select{
                 &-selector{
-                  border: .5px var(--ant-line-type) $value !important;
+                  border: .5px var(--ant-line-type) $value ;
                 }
               }
             }
@@ -148,26 +148,26 @@
         &-select{
           &-selector{
             @include themify($themes) {
-              background: themed('input-background-disabled') !important;
-              color: themed('input-text-disabled') !important;
+              background: themed('input-background-disabled') ;
+              color: themed('input-text-disabled') ;
             }
           }
         }
       }
-      user-select: none !important;
+      user-select: none ;
     }
 
     &-item {
       &-option {
         &-selected {
           @include themify($themes) {
-            color: themed('text') !important;
+            color: themed('text') ;
           }
         }
       }
 
       @include themify($themes) {
-        color: themed('text') !important;
+        color: themed('text') ;
       }
     }
 
@@ -176,32 +176,32 @@
       }
 
       @include themify($themes) {
-        background: themed('input-background') !important;
-        color: themed('text') !important;
+        background: themed('input-background') ;
+        color: themed('text') ;
       }
     }
 
     &-selector {
       &:where(:not(.ant-select-focus)) {
         @include themify($themes) {
-          border-color: themed('input-border') !important;
+          border-color: themed('input-border') ;
         }
       }
     }
 
     &-selection {
       &-placeholder{
-        font-size: $font-size-base !important;
+        font-size: $font-size-base ;
       }
       &-search {
 
         &-input {
-          font-size: $font-size-base !important;
+          font-size: $font-size-base ;
           @include themify($themes) {
-            color: themed('text') !important;
+            color: themed('text') ;
             &::placeholder {
-              font-size: $font-size-base !important;
-              color: themed('text-placeholder') !important;
+              font-size: $font-size-base ;
+                color: themed('text-placeholder') !important;
             }
           }
         }
@@ -246,6 +246,6 @@
 //setting border radius
 .ant{
   &-input,  &-input-affix-wrapper, &-select-selector, &-select{
-    border-radius: $input-border-radius !important;
+    border-radius: $input-border-radius;
   }
 }

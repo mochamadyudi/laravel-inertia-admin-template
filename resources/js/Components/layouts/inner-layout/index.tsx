@@ -15,6 +15,7 @@ const InnerLayout: React.FC<InnerLayoutProps> = ({ children, menu, sideWidth = 2
       <Layout.Sider width={sideWidth} className={'inner-layout-sider'}>
         <Scrollbars autoHide className={'!m-0'}>
           <Menu
+            key={'inner-layout'}
             {...menu}
             theme={menu?.theme ?? currentTheme}
           />

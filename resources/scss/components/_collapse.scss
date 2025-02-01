@@ -1,0 +1,42 @@
+.ant{
+  &-collapse{
+    &-ghost{
+      .ant{
+        &-collapse{
+          &-item{
+            @include themify($themes){
+              border-bottom: 1px solid themed('divider');
+            }
+            &:last-child{
+              border-bottom: none;
+            }
+
+          }
+        }
+      }
+    }
+    &-expand{
+      &-icon{
+        @include themify($themes){
+          color: themed('paragraph');
+        }
+      }
+    }
+    &-content{
+      &-box{
+        @include themify($themes){
+          color: themed('paragraph');
+        }
+      }
+    }
+    &-header{
+      &-text{
+        font-weight: 600;
+        font-family: sf-pro-medium, serif;
+        @include themify($themes){
+          color: themed('text');
+        }
+      }
+    }
+  }
+}

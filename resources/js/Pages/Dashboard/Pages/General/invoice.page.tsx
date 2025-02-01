@@ -83,12 +83,14 @@ const Page = () => {
   return (
     <React.Fragment>
       <PageHeaderAlt
-        title={'Invoice'}
         container
-        addonAfter={<Typography>Lorem ipsum dolor sit amet</Typography>}
-        className="!py-10"
+        title={
+        <div className="">
+          <Typography.Title level={1}>Invoice</Typography.Title>
+        </div>
+        }
+        className="!py-10 "
         contentClassName={"py-6"}
-
       >
         <Card classNames={{ body: "!p-0"}}>
           <div className="space-y-6 p-6" ref={ref}>

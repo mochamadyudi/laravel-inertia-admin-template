@@ -34,7 +34,8 @@ const Page = () => {
   return (
     <React.Fragment>
       <div className="h-screen w-screen  bg-black flex flex-col items-centerj justify-center">
-        <div className="relative z-[1]  backdrop-blur-xl rounded-lg shadow-lg border border-white/20 border-opacity-20 w-full lg:w-3/4 mx-auto h-full lg:h-3/4">
+        <div
+          className="relative z-[1]  backdrop-blur-xl rounded-lg shadow-lg border border-white/20 border-opacity-20 w-full lg:w-3/4 mx-auto h-full lg:h-3/4">
           <div className="flex justify-center h-full">
             <div className="w-full flex-1 h-full hidden lg:flex flex-col justify-center p-10">
               <div className="space-y-2">
@@ -43,9 +44,12 @@ const Page = () => {
                 >Welcome!</Typography>
                 <Typography.Paragraph
                   className="!font-sans !text-lg"
-                >Create your account to get started<br/>explore the full features of our platform.</Typography.Paragraph>
+                >Create your account to get started<br/>explore the full features of our
+                  platform.</Typography.Paragraph>
               </div>
-              <Lotties height={400} animation={Animation}/>
+              <div className="flex-1 flex items-center justify-center">
+                <Lotties width={'100%'} animation={Animation}/>
+              </div>
               <div>
                 <Typography.Title level={1} className="!text-xl !m-0">Clonesia</Typography.Title>
                 <Typography.Paragraph className="!m-0">v1.0</Typography.Paragraph>
@@ -74,8 +78,10 @@ const Page = () => {
                       <Typography>or connect with</Typography>
                     </Divider>
                     <Flex justify="center" gap={15}>
-                      <Button shape="round" variant="outlined" color="primary" size="large" className="!bg-transparent" icon={<GoogleOutlined/>}>Google</Button>
-                      <Button shape="round" variant="outlined" color="blue" size="large" className="!bg-transparent" icon={<FacebookFilled/>}>Facebook</Button>
+                      <Button shape="round" variant="outlined" color="primary" size="large" className="!bg-transparent"
+                              icon={<GoogleOutlined/>}>Google</Button>
+                      <Button shape="round" variant="outlined" color="blue" size="large" className="!bg-transparent"
+                              icon={<FacebookFilled/>}>Facebook</Button>
                     </Flex>
                   </div>
                 </RegisterForm>
@@ -85,7 +91,8 @@ const Page = () => {
         </div>
       </div>
       <div className="absolute top-0 left-0 w-screen h-screen z-0 overflow-hidden">
-        <img src="/assets/img/abstract-plane.png" alt="/assets/img/abstract-bg.png" className="w-full h-full relative transform rotate-180 pointer-events-none lg:-top-[60%] opacity-70 !object-cover"/>
+        <img src="/assets/img/abstract-plane.png" alt="/assets/img/abstract-bg.png"
+             className="w-full h-full relative transform rotate-180 pointer-events-none lg:-top-0 opacity-70 !object-cover"/>
       </div>
     </React.Fragment>
   )

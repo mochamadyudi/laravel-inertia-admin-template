@@ -12,7 +12,7 @@
   font-family:  'sf-pro-medium', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
   font-weight: $font-weight-semibold !important;
   letter-spacing: 0.022rem !important;
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
 }
 %menu-color-default{
   @extend %font-default;
@@ -66,14 +66,14 @@
 @mixin ant-menus{
   .ant {
     &-menu {
-
+      //@apply w-full;
       &-item{
         &-extra{
           .ant{
             &-tag{
-              padding: 3px 6px !important;
+              padding: 2px 6px !important;
               span{
-                font-size: 12px !important;
+                font-size: $font-size-xs !important;
               }
             }
           }
@@ -149,7 +149,7 @@
       }
       &-item {
         &-icon {
-          font-size: 16px !important;
+          font-size: $font-size-base !important;
         }
 
         &-group {
@@ -162,7 +162,7 @@
             }
             margin-top: 10px;
             padding-left: 23px;
-            font-size: 14px !important;
+            font-size: $font-size-sm !important;
           }
         }
       }

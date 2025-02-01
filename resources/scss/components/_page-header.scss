@@ -11,7 +11,7 @@ $padding-page-header: 2.25rem;
         position: relative;
         &:before{
           @include themify($themes) {
-            background: themed('page-header-alt-background') !important;
+            background: themed('page-header-alt-background');
           }
           z-index: -1;
           content: '';
@@ -28,11 +28,23 @@ $padding-page-header: 2.25rem;
 }
 .page {
   &-header {
+    &-content{
+      @apply w-full;
+    }
     &-alt{
       padding-top: $padding-page-header;
       padding-bottom: $padding-page-header;
+      @apply w-full;
+
       @include themify($themes) {
-        background: themed('page-header-alt-background') !important;
+        background: themed('page-header-alt-background');
+      }
+
+      &--left{
+        @apply w-full;
+      }
+      &--content{
+        @apply w-full
       }
     }
   }

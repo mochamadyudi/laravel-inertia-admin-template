@@ -69,7 +69,7 @@ $typography_color: (
       &-typography {
         font-family: map-get($typography_family,$el), "sans-serif", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
         font-weight: map-get($typography_weight, $el);
-        letter-spacing: .02rem !important;
+        letter-spacing: .03rem !important;
 
         &-ellipsis {
           @include themify($themes) {

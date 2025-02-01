@@ -161,7 +161,14 @@ Page.layout = (children: any) => {
       type="dashboard"
       isFooter
       children={children}
-      inner={menusConfig}
+      inner={{
+        ...menusConfig,
+        menu:{
+          activeKey: route('dashboard.pages.setting.change-password'),
+          defaultSelectedKeys: [route('dashboard.pages.setting.change-password')],
+          ...menusConfig.menu,
+        }
+      }}
     />
   )
 };

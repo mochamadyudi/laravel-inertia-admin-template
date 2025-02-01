@@ -35,7 +35,7 @@
 
 .inner{
   &-layout{
-    @apply rounded-lg p-2 overflow-hidden bg-transparent flex-1;
+    @apply rounded-lg overflow-hidden bg-transparent flex-1;
 
     @include themify($themes) {
       background: themed('sider-background') !important;
@@ -43,18 +43,21 @@
     }
     &-sider{
       @apply bg-transparent;
+
+      @include ant-menus;
+
       .ant{
         &-menu{
-          @apply h-full p-2;
+          @apply h-full;
           @include themify($themes) {
-            background: themed('sider-background') !important;
+            background: themed('sider-background');
             border-color: darken(themed('sider-background'), 2);
           }
         }
       }
     }
     &-content{
-      @apply px-4 py-2;
+      @apply p-6;
       @include themify($themes) {
         background: themed('sider-background') !important;
       }

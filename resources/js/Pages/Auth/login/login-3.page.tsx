@@ -37,17 +37,18 @@ const Page = () => {
       <div className="h-screen w-screen  bg-black flex flex-col items-centerj justify-center">
         <div className="relative z-[1]  backdrop-blur-xl rounded-lg shadow-lg border border-white/20 border-opacity-20 w-full lg:w-3/4 mx-auto h-full lg:h-3/4">
           <div className="flex justify-center h-full">
-            <div className="w-full flex-1 h-full hidden lg:flex flex-col justify-center p-10">
+            <div className="w-full flex-1 h-full hidden lg:flex flex-col justify-center !p-10">
               <div className="space-y-2">
                 <Typography
                   className="!text-3xl !font-pro-medium !text-white"
                 >Welcome back</Typography>
                 <Typography.Paragraph
                   className="!font-sans !text-lg"
-                >Sign in to access your dashboard and enjoy the<br/>full features of our
-                  platform.</Typography.Paragraph>
+                >Sign in to access your dashboard and enjoy the full features of our platform.</Typography.Paragraph>
               </div>
-              <Lotties height={400} animation={Animation}/>
+              <div className="flex-1 flex items-center justify-center">
+                <Lotties width={'100%'} animation={Animation}/>
+              </div>
               <div>
                 <Typography.Title level={1} className="!text-xl !m-0">Clonesia</Typography.Title>
                 <Typography.Paragraph className="!m-0">v1.0</Typography.Paragraph>
@@ -88,7 +89,7 @@ const Page = () => {
         </div>
       </div>
       <div className="absolute top-0 left-0 w-screen h-screen z-0 overflow-hidden">
-        <img src="/assets/img/abstract-plane.png" alt="/assets/img/abstract-bg.png" className="w-full h-full relative transform rotate-180 pointer-events-none lg:-top-[60%] opacity-70 !object-cover"/>
+        <img src="/assets/img/abstract-plane.png" alt="/assets/img/abstract-bg.png" className="w-full h-full relative transform rotate-180 pointer-events-none lg:-top-0 opacity-70 !object-cover"/>
       </div>
       <RedirectLoginPartial/>
     </React.Fragment>

@@ -41,7 +41,14 @@ Page.layout = (children: any) => {
       isFooter
       children={children}
       hasContainer
-      inner={menusConfig}
+      inner={{
+        ...menusConfig,
+        menu:{
+          activeKey: route('dashboard.pages.setting.edit-profile'),
+          defaultSelectedKeys: [route('dashboard.pages.setting.edit-profile')],
+          ...menusConfig.menu,
+        }
+      }}
     />
   )
 };

@@ -1,7 +1,7 @@
 $avatar-status-size-font: (
   large: $font-size-lg,
-  default: $font-size-base,
-  small: $font-size-sm
+  default: $font-size-sm,
+  small: $font-size-xs
 );
 $avatar-status-size: (
   large: var(--ant-avatar-container-size-lg),
