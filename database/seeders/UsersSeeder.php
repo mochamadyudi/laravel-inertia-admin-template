@@ -10,6 +10,7 @@ use Spatie\Permission\Models\Role;
 class UsersSeeder extends Seeder{
   public function run(){
     $super = Role::findOrCreate('super');
+    $user_role = Role::findOrCreate('user');
 
     $user = User::create([
       'name' => 'Super Admin',
