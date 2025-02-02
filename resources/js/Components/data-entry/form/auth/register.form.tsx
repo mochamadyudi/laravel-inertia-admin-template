@@ -19,7 +19,7 @@ const RegisterForm: React.FC<RegisterFormInterface> = ({ form, ...props}) => {
       >
         <Form.Item
           className={props?.formClassName ?? ""}
-          name="fullname" label="Fullname" rules={[{ required: true }]} hasFeedback>
+          name="name" label="Fullname" rules={[{ required: true }]} hasFeedback>
           <Input size="large" placeholder="Input your fullname" className={props?.inputClassName ?? ""}/>
         </Form.Item>
         <Form.Item
@@ -39,7 +39,7 @@ const RegisterForm: React.FC<RegisterFormInterface> = ({ form, ...props}) => {
           <Col xs={24} lg={12}>
             <Form.Item
               className={props?.formClassName ?? ""}
-              name="confirmation_password" label="Confirm Password" rules={[{ required: true }]}
+              name="password_confirmation" label="Confirm Password" rules={[{ required: true }]}
             >
               <Input.Password size="large" placeholder="Input your password" className={props?.inputClassName ?? ""}/>
             </Form.Item>
