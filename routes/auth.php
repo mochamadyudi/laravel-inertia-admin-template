@@ -28,6 +28,25 @@ Route::prefix('authorization')
         Route::get('/2', [Controllers\Pages\Auth\RegisterController::class, 'register_2'])->name('authorization.register.2');
         Route::get('/', [Controllers\Pages\Auth\RegisterController::class, 'register_1'])->name('authorization.register.1');
       });
+
+    Route::prefix('forgot')
+      ->group(function() {
+        Route::get('/password', [Controllers\Pages\Auth\ForgotController::class, 'password'])->name('authorization.forgot.password');
+      });
+
+    Route::prefix('reset')
+      ->group(function() {
+        Route::get('/password', [Controllers\Pages\Auth\ResetController::class, 'password'])->name('authorization.reset.password');
+      });
+    Route::prefix('verify')
+      ->group(function() {
+        Route::prefix('email')
+          ->group(function() {
+            Route::get('/verified', [Controllers\Pages\Auth\VerifyController::class, 'verified'])->name('authorization.verify.verified');
+            Route::get('/', [Controllers\Pages\Auth\VerifyController::class, 'email'])->name('authorization.verify.email');
+          });
+      });
+
   });
 
 
