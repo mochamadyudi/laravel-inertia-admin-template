@@ -6,8 +6,7 @@ import {Link, router} from "@inertiajs/react";
 
 import Lotties from "@/Components/general/Lotties";
 import Animation from "@/assets/lotties/edit.json"
-import message from 'antd/lib/message';
-import RegisterForm from "@/Components/data-entry/form/register.form";
+import RegisterForm from "@/Components/data-entry/form/auth/register.form";
 
 const Page = () => {
   const [form] = Form.useForm();
@@ -15,10 +14,10 @@ const Page = () => {
   function _onFinish() {
     form.validateFields()
       .then((value) => {
-        router.post(route('login'),  value, {
+        router.post(route('register'),  value, {
           onFinish(){
             // action
-            message.success('Successfully!');
+            form.resetFields();
           },
           onError(e: any){
             form.setFields([

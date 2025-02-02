@@ -5,7 +5,7 @@ import {FacebookFilled, GoogleOutlined, LoginOutlined} from "@ant-design/icons";
 import {Link} from "@inertiajs/react";
 import RedirectLoginPartial from "@/Pages/Auth/login/partials/redirect-login.partial";
 import ModeWidget from "@/Components/general/Widget/mode.widget";
-import RegisterForm from "@/Components/data-entry/form/register.form";
+import RegisterForm from "@/Components/data-entry/form/auth/register.form";
 import RedirectRegisterPartial from "@/Pages/Auth/register/partials/redirect-register.partial";
 
 const Page = () => {

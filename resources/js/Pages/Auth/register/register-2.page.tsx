@@ -9,7 +9,7 @@ import {useSelector} from "react-redux";
 import ModeWidget from "@/Components/general/Widget/mode.widget";
 import Lotties from "@/Components/general/Lotties";
 import Animation from "@/assets/lotties/edit.json";
-import RegisterForm from "@/Components/data-entry/form/register.form";
+import RegisterForm from "@/Components/data-entry/form/auth/register.form";
 import RedirectRegisterPartial from "@/Pages/Auth/register/partials/redirect-register.partial";
 
 const NavLeft = styled.div`
@@ -26,10 +26,10 @@ const Page = (props: any) => {
   function _onFinish() {
     form.validateFields()
       .then((value) => {
-        console.log({value});
         router.post(route('register'),  value, {
           onFinish(){
             // action
+            form.resetFields();
           },
           onError(e: any){
             form.setFields([
@@ -97,8 +97,8 @@ const Page = (props: any) => {
                 <div className="!space-y-2">
                   <Typography.Title level={2} className="!text-3xl !m-0">Sign In</Typography.Title>
                   <Flex gap={6}>
-                    <Typography>Don't have an account yet?</Typography>
-                    <Link href={route('register')}>Register</Link>
+                    <Typography>Already have an account?</Typography>
+                    <Link href={route('register')}>Sign In</Link>
                   </Flex>
                 </div>
                 <RegisterForm
