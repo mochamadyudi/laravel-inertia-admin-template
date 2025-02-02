@@ -1,9 +1,9 @@
 import React from 'react';
 import BaseLayout from "@/Components/layouts/base.layout";
-import LoginForm from "@/Components/data-entry/form/login.form";
+import LoginForm from "@/Components/data-entry/form/auth/login.form";
 import {Button, Card, Divider, Flex, Form, Typography} from "antd";
 import {FacebookFilled, GoogleOutlined, LoginOutlined} from "@ant-design/icons";
-import {Link} from "@inertiajs/react";
+import {Link, router} from "@inertiajs/react";
 import RedirectLoginPartial from "@/Pages/Auth/login/partials/redirect-login.partial";
 import ModeWidget from "@/Components/general/Widget/mode.widget";
 
@@ -13,7 +13,19 @@ const Page = () => {
   function _onFinish(){
     form.validateFields()
       .then((value)=> {
-        console.log({ value });
+        router.post(route('login'),  value, {
+          onFinish(){
+            form.resetFields();
+          },
+          onError(e: any){
+            form.setFields([
+              {
+                name: 'email',
+                errors: [e?.email]
+              }
+            ])
+          }
+        })
       })
   }
   return (
@@ -38,6 +50,12 @@ const Page = () => {
               layout="vertical"
             >
               <div className="space-y-6">
+                <Link
+                  href={route('password.request')}
+                  className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Forgot your password?
+                </Link>
                 <Button htmlType="submit" type="primary" className="!w-full" icon={<LoginOutlined/>}>Sign in</Button>
                 <Divider variant="dotted" style={{background: 'transparent'}}>
                   <Typography>or connect with</Typography>

@@ -1,6 +1,6 @@
 import React from 'react';
 import BaseLayout from "@/Components/layouts/base.layout";
-import LoginForm from "@/Components/data-entry/form/login.form";
+import LoginForm from "@/Components/data-entry/form/auth/login.form";
 import {Button, Divider, Flex, Form, Typography} from "antd";
 import {FacebookFilled, GoogleOutlined, LoginOutlined} from "@ant-design/icons";
 import {Link, router} from "@inertiajs/react";
@@ -10,7 +10,7 @@ import Lotties from "@/Components/general/Lotties";
 import Animation from "@/assets/lotties/dev.json"
 import message from 'antd/lib/message';
 
-const Page = () => {
+const Page = (props: any) => {
   const [form] = Form.useForm();
 
   function _onFinish() {
@@ -18,8 +18,7 @@ const Page = () => {
       .then((value) => {
         router.post(route('login'),  value, {
           onFinish(){
-            // action
-            message.success('Successfully!');
+            form.resetFields();
           },
           onError(e: any){
             form.setFields([
@@ -32,6 +31,8 @@ const Page = () => {
         })
       })
   }
+
+  console.log({ props })
   return (
     <React.Fragment>
       <div className="h-screen w-screen  bg-black flex flex-col items-centerj justify-center">
@@ -73,6 +74,18 @@ const Page = () => {
                   <div className="space-y-6">
                     <Button htmlType="submit" type="primary" className="!w-full" icon={<LoginOutlined/>}>Sign
                       in</Button>
+                    <div>
+                      {
+                        props?.canResetPassword && (
+                          <Link
+                            href={route('password.request')}
+                            className="rounded-md text-sm"
+                          >
+                            <Typography>Forgot your password?</Typography>
+                          </Link>
+                        )
+                      }
+                    </div>
                     <Divider variant="dotted" style={{background: 'transparent'}}>
                       <Typography>or connect with</Typography>
                     </Divider>

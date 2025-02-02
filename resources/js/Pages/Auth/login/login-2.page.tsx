@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import BaseLayout from "@/Components/layouts/base.layout";
-import LoginForm from "@/Components/data-entry/form/login.form";
+import LoginForm from "@/Components/data-entry/form/auth/login.form";
 import {theme, Button, Col, Row, Divider, Flex, Form, Typography} from "antd";
 import {FacebookFilled, GoogleOutlined, LoginOutlined} from "@ant-design/icons";
 import {Link, router} from "@inertiajs/react";
@@ -122,6 +122,19 @@ const Page = ({ziggy, ...props}: any) => {
                   <div className="space-y-6">
                     <Button htmlType="submit" type="primary" className="!w-full" icon={<LoginOutlined/>}>Sign
                       in</Button>
+
+                    <div>
+                      {
+                        props?.canResetPassword && (
+                          <Link
+                            href={route('password.request')}
+                            className="rounded-md text-sm"
+                          >
+                            Forgot your password?
+                          </Link>
+                        )
+                      }
+                    </div>
                     <Divider variant="dotted" style={{background: 'transparent'}}>
                       <Typography>or connect with</Typography>
                     </Divider>
