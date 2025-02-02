@@ -14,7 +14,7 @@ class MenuService
         'label' => 'side.menu.dashboard',
         'icon' => 'DashboardOutlined',
         'permissions' => [],
-        'roles' => []
+        'roles' => ['super']
       ],
       [
         'type' => 'item',
@@ -385,7 +385,7 @@ class MenuService
                 'children' => [
                   [
                     'type' => 'item',
-                    'key' => '@pages/auth/forgot/password',
+                    'key' => route('authorization.forgot.password'),
                     'label' => 'side.menu.pages.authorization.forgot.password',
                     'icon' => 'KeyOutlined',
                     'permissions' => [],
