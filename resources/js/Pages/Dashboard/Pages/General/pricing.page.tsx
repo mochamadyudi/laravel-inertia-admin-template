@@ -200,6 +200,6 @@ const CardSubscription: React.FC<CardSubscriptionType> = (props)=> {
 }
 
 
-Page.layout = (children: any) => <TheLayout type="dashboard" isFooter hasContainer children={children}/>;
+Page.layout = (children: any) => <TheLayout type="dashboard" isFooter={false} hasContainer children={children}/>;
 
 export default Page;
