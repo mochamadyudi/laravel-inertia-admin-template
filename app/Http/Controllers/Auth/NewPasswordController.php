@@ -21,10 +21,18 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request): Response
     {
-        return Inertia::render('Auth/ResetPassword', [
-            'email' => $request->email,
-            'token' => $request->route('token'),
-        ]);
+      $seo = $this->seo()
+        ->setTitle('Set New Password | Authorization')
+        ->go();
+      $state = $this->state();
+      $state->setCollections([]);
+      $state->setMeta($seo);
+      $state->setState([
+        'email' => $request->email,
+        'token' => $request->route('token'),
+      ]);
+
+        return Inertia::render('Auth/reset/password.page', $state->go());
     }
 
     /**
