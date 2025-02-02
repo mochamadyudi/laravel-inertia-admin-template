@@ -29,10 +29,9 @@ const Page = ({ziggy, ...props}: any) => {
   function _onFinish() {
     form.validateFields()
       .then((value) => {
-        console.log({value});
         router.post(route('login'),  value, {
           onFinish(){
-            // action
+            form.resetFields();
           },
           onError(e: any){
             form.setFields([
