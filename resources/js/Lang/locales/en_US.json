@@ -24,9 +24,9 @@
   "side.menu.pages.authorization.register.2": "Register 2",
   "side.menu.pages.authorization.register.3": "Register 3",
   "side.menu.pages.authorization.verify-email": "Verify Email",
-  "side.menu.pages.authorization.forgot": "Forgot",
+  "side.menu.pages.authorization.verify-email-verified": "Email Success Verified",
   "side.menu.pages.authorization.forgot.password": "Forgot Password",
-  "side.menu.pages.authorization.forgot.email": "Forgot Email",
+  "side.menu.pages.authorization.reset-password": "Reset Password",
 
 
   "menu.setting.edit-profile": "Edit Profile",
