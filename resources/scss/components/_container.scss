@@ -4,3 +4,8 @@
     max-width: $container !important;
   }
 }
+
+.container{
+  @apply mx-auto w-full #{!important};
+  max-width: $container !important;
+}

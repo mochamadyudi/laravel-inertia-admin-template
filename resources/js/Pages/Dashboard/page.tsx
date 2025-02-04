@@ -3,41 +3,48 @@ import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Button, Card, Col, Progress, Row, Statistic, Table, Tabs, Typography} from "antd";
 import TheContainer from "@/Components/general/TheContainer";
 import {Icons} from "@/Components/general/Icons";
+import VisitorTablePartial from "@/Pages/Dashboard/partials/visitor.table.partial";
 
 const Page = () => {
   return (
-    <React.Fragment>
-      <Row gutter={[24, 24]}>
+    <div className="dashboard">
+      <Row gutter={24}>
         <Col xs={24} lg={16}>
-          <Row gutter={[24, 24]}>
+          <Row gutter={24}>
             <Col span={8}>
               <Card bordered={false}>
-                <Statistic title="Feedback" value={1128} prefix={<Icons type={'LikeOutlined'}/>}/>
+                <Statistic title="Revenue" value={1128} prefix="$"/>
+                <Typography className="text-slate-400 dark:text-slate-500">Compare to last year (2025)</Typography>
               </Card>
             </Col>
             <Col span={8}>
               <Card bordered={false}>
-                <Statistic title="Feedback" value={1128} prefix={<Icons type={'LikeOutlined'}/>}/>
+                <Statistic title="Sales" value={1128} prefix="$"/>
+                <Typography className="text-slate-400 dark:text-slate-500">Compare to last year (2025)</Typography>
               </Card>
             </Col>
             <Col span={8}>
               <Card bordered={false}>
                 <Statistic
-                  title="Active"
+                  title="Expenditure"
                   value={11.28}
                   precision={2}
                   valueStyle={{color: '#70d415'}}
-                  prefix={<Icons type={'LikeOutlined'}/>}
+                  prefix={"$"}
                   suffix={<Icons type={'ArrowUpOutlined'} className={'!text-sm'}/>}
                 />
+                <Typography className="text-slate-400 dark:text-slate-500">Compare to last year (2025)</Typography>
               </Card>
+            </Col>
+            <Col span={24}>
+              <VisitorTablePartial/>
             </Col>
           </Row>
         </Col>
         <Col xs={24} lg={8}>
           <Card bordered={false}>
             <div className="text-center space-y-6">
-              <Typography.Title level={3} className={'!text-lg'}>Monthly Target</Typography.Title>
+              <Typography.Title level={3} className={'text-xl'}>Monthly Target</Typography.Title>
               <Progress
                 type="dashboard"
                 percent={73}
@@ -55,33 +62,7 @@ const Page = () => {
           </Card>
         </Col>
       </Row>
-      <TheContainer>
-        <Card>
-          <Table
-            columns={[
-              {
-                dataIndex: 'name',
-                title: 'Product'
-              },
-              {
-                dataIndex: 'name',
-                title: 'Category'
-              },
-              {
-                dataIndex: 'name',
-                title: 'Tags'
-              },
-              {
-                dataIndex: 'name',
-                title: 'Price'
-              },
-            ]}
-          />
-        </Card>
-        <p>testing</p>
-      </TheContainer>
-
-    </React.Fragment>
+    </div>
   )
 }
 

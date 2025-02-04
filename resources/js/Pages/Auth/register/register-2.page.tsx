@@ -98,7 +98,7 @@ const Page = (props: any) => {
                   <Typography.Title level={2} className="!text-3xl !m-0">Sign In</Typography.Title>
                   <Flex gap={6}>
                     <Typography>Already have an account?</Typography>
-                    <Link href={route('register')}>Sign In</Link>
+                    <Link href={route('login')}>Sign In</Link>
                   </Flex>
                 </div>
                 <RegisterForm

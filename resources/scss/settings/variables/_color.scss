@@ -37,11 +37,11 @@ $bg-header-dark: #283142;
 $bg-sider: $color-white;
 $bg-sider-dark: $bg-sider-layout;
 $bg-footer: $color-white;
-$bg-footer-dark: $bg-body-dark;
+$bg-footer-dark: #283142;
 
 
 $bg-input: #fff;
-$bg-input-dark: lighten(#121921, 3);
+$bg-input-dark: #212939;
 $bg-input-error: rgba(255, 241, 240, 0.62);
 $bg-input-error-dark: #ffccc7;
 $border-input: #e7e7e7;
@@ -58,7 +58,7 @@ $bg-card-dark: $bg-sider-layout;
 $bg-table-header: #ffffff;
 $table-bordered: rgba(198, 198, 198, 0.33);
 $table-bordered-dark: #152234;
-$bg-table-header-dark: #243040;
+$bg-table-header-dark: #1c2734;
 
 $button-border-default: #D9D9D9;
 $button-disabled: rgba(243, 243, 243, 0.3);
@@ -73,6 +73,9 @@ $menu-color-dark: #b2c3d9;
 $menu-color-group-title: #8d9dae;
 $menu-color-group-title-dark: #445472;
 
-
+$checkbox-bg: #FFFFFF;
+$checkbox-bg-dark: #445472;
+$checkbox-border: #d6d6d6;
+$checkbox-border-dark: #152234;
 
 $variable-antd: ('blue', 'purple', 'cyan', 'green', 'magenta', 'pink', 'red', 'orange', 'yellow', 'volcano', 'geekblue', 'lime', 'gold');

@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Form, message, Typography} from 'antd';
 import BaseLayout from "@/Components/layouts/base.layout";
-import {router} from "@inertiajs/react";
 import Lotties from "@/Components/general/Lotties";
-import Animation from "@/assets/lotties/finger.json";
-import ResetPasswordForm from "@/Components/data-entry/form/auth/reset-password.form";
+import Animation from "@/assets/lotties/mail.json";
+import EmailVerificationCodeForm from "@/Components/data-entry/form/auth/email-verification-code.form";
 
-const Page = ({email, token }: any) => {
+const Page = () => {
   const [form] = Form.useForm();
   const [enabled, setEnabled] = useState<boolean>(false);
   const watchForm = Form.useWatch([], form);
@@ -18,22 +17,7 @@ const Page = ({email, token }: any) => {
     }).then( r => r)
     form.validateFields()
       .then((values) => {
-        router.post(route('password.email'), values, {
-          preserveState: true,
-          preserveScroll: true,
-          onError(e: any){
-            message.error({
-              key: "submit",
-              content: e?.email,
-            }).then( r => r)
-            form.setFields([
-              {
-                name: 'email',
-                errors: [e?.email]
-              }
-            ])
-          }
-        })
+        // action
       })
       .catch((err: any)=> {
         message.error({
@@ -55,19 +39,15 @@ const Page = ({email, token }: any) => {
     <div className="flex flex-col items-center justify-center w-screen h-screen bg-white dark:bg-layout-dark">
       <div className="w-full max-w-[520px] p-6 rounded-xl mx-auto space-y-10">
         <div className="text-center">
-          <div className="flex-1 flex flex-col items-center justify-center">
-            <Lotties height={120} width={120} animation={Animation}/>
+          <div className="h-[180px] flex flex-col items-center justify-center">
+            <Lotties width={320} animation={Animation}/>
           </div>
-          <Typography.Title level={1} className="!text-2xl">Set New Password</Typography.Title>
-          <Typography.Paragraph>Must be at least 8 character.</Typography.Paragraph>
+          <Typography.Title level={1} className="!text-2xl">Email Verification</Typography.Title>
+          <Typography.Paragraph>Enter the 6-digit verification code that was sent to your email. This code is required to verify your identity and activate your account. If you did not receive the code, please check your spam folder or request a new one.</Typography.Paragraph>
         </div>
-        <ResetPasswordForm
+        <EmailVerificationCodeForm
           form={form}
           onFinish={_onFinish}
-          initialValues={{
-            token,
-            email
-          }}
         >
           <div className="py-4">
             <Button
@@ -75,9 +55,9 @@ const Page = ({email, token }: any) => {
               htmlType="submit"
               type="primary"
               className="w-full"
-            >Reset Password</Button>
+            >Submit</Button>
           </div>
-        </ResetPasswordForm>
+        </EmailVerificationCodeForm>
       </div>
     </div>
   )

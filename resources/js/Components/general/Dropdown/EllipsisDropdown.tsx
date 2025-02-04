@@ -23,12 +23,13 @@ const EllipsisDropdown: React.FC<EllipsisDropdownProps> = ({ menu}) => {
         dropdownRender={() => dropdownRender()}
       >
         <Button
+          type="text"
           size={'small'}
-          shape={'circle'}
           icon={
             <Icons
               type={'EllipsisOutlined'}
               style={{ transform: 'rotate(90deg)' }}
+              className="text-xl"
             />
           }
         />

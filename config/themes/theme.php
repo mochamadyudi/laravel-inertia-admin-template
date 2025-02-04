@@ -8,8 +8,8 @@ return [
   'antd' => [
     'cssVar' => true,
     'token' => [
-      'colorPrimary' => '#3E79F7',
-      "colorInfo" => "#5398f7",
+      'colorPrimary' => '#F2458B',
+      "colorInfo" => "#F2458B",
       "colorSuccess" => "#4eb71a",
       "colorWarning" => "#eca619",
       "colorError" => "#ec373a",
@@ -72,6 +72,9 @@ return [
       ],
       'Progress' => [
         'lineBorderRadius' => 20,
+      ],
+      "Checkbox" => [
+        "controlInteractiveSize" => 22
       ]
     ],
   ]

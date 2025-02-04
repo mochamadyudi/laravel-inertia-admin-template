@@ -1,0 +1,232 @@
+
+$row-color: (
+  "success",
+  "danger",
+  "info",
+  "warning",
+  "disabled"
+);
+
+@mixin table-default{
+  .ant{
+    &-table{
+      overflow:hidden;
+      background: transparent;
+      border-radius: $input-border-radius !important;
+      @include themify($themes) {
+        background: themed('card-background');
+      }
+
+      @content
+    }
+  }
+}
+
+@mixin nest-table-row{
+  &-row{
+    @include themify($themes) {
+      background: themed('card-background');
+    }
+    @content;
+    &:hover{
+      transition: .2s;
+    }
+  }
+}
+@mixin nest-table-ping($type){
+  &-ping{
+    &-#{$type}{
+      @content;
+    }
+  }
+}
+@mixin table-cell-fix{
+  .ant-table{
+    &-cell{
+      &-fix{
+        @content;
+      }
+    }
+  }
+}
+@mixin nest-table-cell{
+  &-cell{
+    @include themify($themes){
+      color: themed('paragraph');
+    }
+    @content;
+  }
+}
+@mixin nest-table-head{
+  &-thead{
+    border: 1px solid red;
+    @content;
+  }
+}
+@mixin nest-table-body{
+  &-tbody{
+    @content;
+    tr {
+      &.ant-table-placeholder{
+        @include themify($themes){
+          background:themed('card-background') !important;
+          color: themed('paragraph') !important;
+        }
+        *{
+          @include themify($themes){
+            background:themed('card-background') !important;
+            color: themed('paragraph') !important;
+          }
+          &:hover{
+            background: transparent;
+          }
+        }
+      }
+      td{
+        @include themify($themes){
+          border-color:themed('table-bordered') !important;
+        }
+      }
+    }
+  }
+}
+@mixin nest-table-footer{
+  &-footer{
+    background: transparent !important;
+  }
+}
+@mixin nest-table-header{
+  &-header{
+    background: transparent;
+  }
+}
+
+@include table-default{
+  @include nest-table-body{
+
+  }
+  @include nest-table-head{
+    //border color
+    tr, th{
+      @include themify($themes){
+        border-color: themed('table-bordered') !important;
+      }
+    }
+    .ant-table{
+
+      &-cell, &-column-title{
+        @apply font-pro-bold #{!important};
+        text-transform: capitalize;
+        @include themify($themes){
+          color: themed('text') !important;
+          letter-spacing: 2ren !important;
+        }
+      }
+    }
+    >tr{
+      >th{
+        @include themify($themes){
+          background: lighten(themed('card-background'),5) !important;
+        }
+      }
+    }
+  }
+  @include nest-table-footer;
+  @include nest-table-header;
+  @include nest-table-row{
+    &.ant-table{
+      &-row{
+        &-selected{
+          .ant-table{
+            @include nest-table-cell{
+              @apply bg-opacity-15 #{!important};
+              @include themify($themes){
+                background: opacify(darken(themed('card-background'),4), .4) !important;
+                &:before{
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include nest-table-cell{
+    @include themify($themes){
+      border-color: themed('table-bordered') !important;
+    }
+    @include nest-table-row{
+      &-hover{
+        @include themify($themes) {
+          background: darken(themed('card-background'),2) !important;
+        }
+      }
+    }
+  }
+
+
+  @include nest-table-ping('left'){
+    @include table-cell-fix{
+      &-left{
+        &-last{
+          transition:.2s;
+        }
+      }
+    }
+  }
+  @include nest-table-ping('right'){
+    @include table-cell-fix{
+      &-right{
+        &-last{
+          transition:.2s;
+        }
+      }
+    }
+  }
+
+
+  &-filter{
+    &-trigger{
+      @include themify($themes){
+        color: themed('paragraph') !important;
+      }
+    }
+  }
+  &-column{
+    &-sorter{
+      @include themify($themes){
+        color: themed('paragraph') !important;
+      }
+    }
+    &-sort{
+      @include themify($themes){
+        background: darken(themed('card-background'),2) !important;
+
+      }
+    }
+  }
+
+  &-bordered{
+    .ant-table{
+      &-container{
+        @include themify($themes){
+          border-width: .5px !important;
+          border-color: themed('table-bordered') !important;
+          border-right: none !important;
+        }
+      }
+    }
+  }
+}
+@include table-cell-fix{
+  &-left, &-right{
+    @include themify($themes) {
+      background: inherit;
+    }
+    &-last{
+      transition:.2s;
+    }
+  }
+}

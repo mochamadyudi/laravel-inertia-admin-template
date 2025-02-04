@@ -1,0 +1,29 @@
+.yid{
+  &-mail{
+
+    &-star{
+      &.checked{
+        color: $color-warning;
+      }
+      &.uncheck{
+
+      }
+
+    }
+    &-content{
+
+    }
+    &-item{
+      &--content{
+        @apply flex items-center gap-2;
+        &-thumb{
+          @apply flex items-center gap-2
+        }
+      }
+    }
+    &-list{
+
+
+    }
+  }
+}

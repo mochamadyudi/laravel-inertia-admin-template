@@ -15,38 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('authorization')
   ->group(function() {
-    Route::prefix('login')
-      ->group(function() {
-        Route::get('/', [Controllers\Pages\Auth\LoginController::class, 'login_1'])->name('authorization.login.1');
-        Route::get('/2', [Controllers\Pages\Auth\LoginController::class, 'login_2'])->name('authorization.login.2');
-        Route::get('/3', [Controllers\Pages\Auth\LoginController::class, 'login_3'])->name('authorization.login.3');
-      });
+    Route::get('/login/2', [Controllers\Pages\Auth\LoginController::class, 'login_2'])->name('authorization.login.2');
+    Route::get('/login/3', [Controllers\Pages\Auth\LoginController::class, 'login_3'])->name('authorization.login.3');
+    Route::get('/login', [Controllers\Pages\Auth\LoginController::class, 'login_1'])->name('authorization.login.1');
 
-    Route::prefix('register')
-      ->group(function() {
-        Route::get('/3', [Controllers\Pages\Auth\RegisterController::class, 'register_3'])->name('authorization.register.3');
-        Route::get('/2', [Controllers\Pages\Auth\RegisterController::class, 'register_2'])->name('authorization.register.2');
-        Route::get('/', [Controllers\Pages\Auth\RegisterController::class, 'register_1'])->name('authorization.register.1');
-      });
+    Route::get('/register', [Controllers\Pages\Auth\RegisterController::class, 'register_1'])->name('authorization.register.1');
+    Route::get('/register/2', [Controllers\Pages\Auth\RegisterController::class, 'register_2'])->name('authorization.register.2');
+    Route::get('/register/3', [Controllers\Pages\Auth\RegisterController::class, 'register_3'])->name('authorization.register.3');
 
-    Route::prefix('forgot')
-      ->group(function() {
-        Route::get('/password', [Controllers\Pages\Auth\ForgotController::class, 'password'])->name('authorization.forgot.password');
-      });
+    Route::get('/forgot/password', [Controllers\Pages\Auth\ForgotController::class, 'password'])->name('authorization.forgot.password');
+    Route::get('/reset/password', [Controllers\Pages\Auth\ResetController::class, 'password'])->name('authorization.reset.password');
 
-    Route::prefix('reset')
-      ->group(function() {
-        Route::get('/password', [Controllers\Pages\Auth\ResetController::class, 'password'])->name('authorization.reset.password');
-      });
-    Route::prefix('verify')
-      ->group(function() {
-        Route::prefix('email')
-          ->group(function() {
-            Route::get('/verified', [Controllers\Pages\Auth\VerifyController::class, 'verified'])->name('authorization.verify.verified');
-            Route::get('/', [Controllers\Pages\Auth\VerifyController::class, 'email'])->name('authorization.verify.email');
-          });
-      });
-
+    Route::get('/verify/email/verified', [Controllers\Pages\Auth\VerifyController::class, 'verified'])->name('authorization.verify.verified');
+    Route::get('/verify/email', [Controllers\Pages\Auth\VerifyController::class, 'email'])->name('authorization.verify.email');
   });
 
 

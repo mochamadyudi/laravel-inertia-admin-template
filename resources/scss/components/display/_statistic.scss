@@ -1,0 +1,28 @@
+.ant{
+  &-statistic {
+    &-title{
+      @apply text-xl font-pro-medium #{!important};
+      font-weight: 600;
+      margin-bottom: .625em !important;
+      @include themify($themes){
+        color: themed('paragraph') !important;
+      }
+    }
+    &-content{
+      font-weight: 700 !important;
+      @include themify($themes){
+        color: lighten(themed('text'), 10);
+      }
+
+      &-prefix{
+        @apply text-2xl font-pro-bold #{!important};
+      }
+
+      &-value{
+        &-int, &-decimal{
+          @apply text-2xl font-pro-bold #{!important};
+        }
+      }
+    }
+  }
+}

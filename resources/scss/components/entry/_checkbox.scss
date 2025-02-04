@@ -1,0 +1,31 @@
+.ant{
+  &-checkbox{
+    &-indeterminate{
+      .ant{
+        &-checkbox{
+          &-inner{
+            background-color: var(--ant-color-primary-border) !important;
+            border-color: var(--ant-color-primary-border-hover) !important;
+          }
+        }
+      }
+    }
+    &-checked{
+      .ant{
+        &-checkbox{
+          &-inner{
+            background-color: var(--ant-color-primary) !important;
+            border-color: var(--ant-color-primary-border-hover) !important;
+          }
+        }
+      }
+    }
+    &-inner{
+      @include themify($themes){
+        background-color: themed('checkbox-bg');
+        border-color: themed('checkbox-border');
+      }
+
+    }
+  }
+}

@@ -135,6 +135,7 @@ const Page = () => {
       }
     },
     {
+      width: '70px',
       render: (_: userType) => {
         return (
           <React.Fragment>
@@ -170,10 +171,6 @@ const Page = () => {
     }
   ];
 
-  function _onFilter() {
-
-  }
-
   function _onShow(_: Omit<userType, 'id'>){
     setSelected(_);
     setOpen(true);
@@ -203,23 +200,34 @@ const Page = () => {
         content: 'Successfully deleted!'
       })
       clearTimeout(timeout);
-    },1000)
+    },3000)
   }
 
   return (
     <React.Fragment>
       <Card bordered={false} title={'User List'}>
         <Table
+
+          loading={{
+            spinning: false,
+            size:"large"
+          }}
           rowKey="email"
           rowSelection={rowSelection}
-          rowClassName={(prop: Omit<userType, 'id'> & {isDeleted?: boolean}) => typeof(prop?.isDeleted) !== 'undefined' ? 'danger'  : ''}
+          rowClassName={(prop: Omit<userType, 'id'> & {isDeleted?: boolean}) => prop?.isDeleted ? 'bg-red-100 dark:bg-red-500'  : ''}
           columns={columns}
           dataSource={data}
+          scroll={{
+            x: 1280
+          }}
           pagination={{
             showQuickJumper: false,
             role: 'admin',
             // total:  data.length,
             showSizeChanger: true,
+          }}
+          locale={{
+            selectNone: false,
           }}
         />
       </Card>

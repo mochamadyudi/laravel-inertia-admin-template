@@ -21,7 +21,7 @@ class VerifyController extends Controller
     }
     public function verified(){
       $seo = $this->seo()
-        ->setTitle('Verify Email | Authorization')
+        ->setTitle('Verified Successfully | Authorization')
         ->go();
       $state = $this->state();
       $state->setCollections([]);

@@ -3,6 +3,19 @@
 use App\Http\Controllers\Dashboard;
 use Illuminate\Support\Facades\Route;
 
+Route::prefix('app')
+  ->group(function () {
+    Route::prefix('mail')
+      ->group(function () {
+        Route::get('/deleted', [Dashboard\App\MailController::class, 'deleted'])->name('dashboard.app.mail.deleted');
+        Route::get('/starred', [Dashboard\App\MailController::class, 'starred'])->name('dashboard.app.mail.starred');
+        Route::get('/draft', [Dashboard\App\MailController::class, 'draft'])->name('dashboard.app.mail.draft');
+        Route::get('/sent', [Dashboard\App\MailController::class, 'sent'])->name('dashboard.app.mail.sent');
+        Route::get('/compose', [Dashboard\App\MailController::class, 'compose'])->name('dashboard.app.mail.compose');
+        Route::get('/', [Dashboard\App\MailController::class, 'index'])->name('dashboard.app.mail.index');
+      });
+  });
+
 Route::prefix('components')
   ->group(function () {
     Route::prefix('general')
