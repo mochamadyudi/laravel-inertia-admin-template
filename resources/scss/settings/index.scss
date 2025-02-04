@@ -36,6 +36,10 @@ $themes: (
     btn-border: #d4d4d4,
     page-header-alt-background: #fff,
     quil-base: #fff,
+
+    checkbox-bg: $checkbox-bg,
+    checkbox-border: $checkbox-border,
+
     card-background: #fff,
     card-border: #e5e5e5,
     card-table-border: rgba(231, 231, 231, 0.64),
@@ -71,9 +75,10 @@ $themes: (
     text-placeholder: $text-color-placeholder-dark,
     text-label: lighten($text-color-placeholder-dark, 20),
     text-label-value: lighten($text-color-placeholder-dark, 40),
+
     body: $bg-body-dark,
-    post-bg: $bg-body-dark,
-    header-background: darken($bg-header-dark, 2),
+
+    header-background: $bg-header-dark,
     sider-background:$bg-sider-dark,
 
     menu-active-selected-only: lighten($bg-sider-dark, 10),
@@ -87,15 +92,19 @@ $themes: (
     menu-sub:darken($bg-sider-dark,5),
     menu-sub-title-active: var(--ant-color-primary-border-hover),
 
-    footer-background: lighten($bg-footer-dark,10),
+    footer-background: $bg-footer-dark,
     background-drawer: $bg-drawer-dark,
     btn-background: $bg-body-dark,
     btn-border: lighten($bg-body-dark, 5),
     page-header-alt-background: $bg-sider-dark,
-    card-background: $bg-card-dark,
     quil-base: darken($bg-card-dark, 5),
     table-header: $bg-table-header-dark,
     table-bordered: $table-bordered-dark,
+
+    checkbox-bg: $checkbox-bg-dark,
+    checkbox-border: $checkbox-border-dark,
+
+    card-background: $bg-card-dark,
     card-border: $bg-card-dark,
     card-table-border: $bg-input-dark,
 

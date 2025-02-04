@@ -10,7 +10,7 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
   title: title => {
-    return title.length > 0 ? title : appName;
+    return title.length > 0 ? [title,appName].join(' - ') : appName;
   },
   resolve: (name) =>
     resolvePageComponent(

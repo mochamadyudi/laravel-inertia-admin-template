@@ -1,33 +1,12 @@
+@import "navigations";
+@import "feedback";
+@import "display";
+@import "general";
 @import "entry";
-@import "modal";
-@import "spin";
-@import "typography";
-@import "tab";
-@import "drawer";
-@import "button";
-@import "page-header";
-@import "form";
-@import "card";
-@import "table";
-@import "breadcrumbs";
-@import "popover";
-@import "pagination";
-@import "menu";
 @import "layout";
-@import "dropdown";
-@import "page_post";
-@import "divider";
-@import "statistic";
-@import "description";
-@import "switch";
-@import "tag";
-@import "iframe";
-@import "avatar";
-@import "container";
-@import "message";
-@import "collapse";
 
-.container{
-  @apply mx-auto;
-  max-width: $container !important;
-}
+@import "page-header";
+@import "iframe";
+@import "container";
+
+

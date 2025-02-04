@@ -1,0 +1,10 @@
+.ant{
+  &-progress{
+    &-text{
+      @apply font-semibold font-pro-medium #{!important};
+      @include themify($themes){
+        color: themed('paragraph') !important;
+      }
+    }
+  }
+}

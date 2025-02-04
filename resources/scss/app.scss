@@ -1,9 +1,11 @@
+@import "antd/dist/reset.css";
 @import "externals/tailwind";
 @import "settings";
 @import "normalize";
 @import "externals";
 @import "components";
 @import "apps";
+
 
 body{
   &.dark{

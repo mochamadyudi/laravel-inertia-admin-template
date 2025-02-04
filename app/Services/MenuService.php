@@ -47,7 +47,7 @@ class MenuService
         'children' => [
           [
             'type' => 'item',
-            'key' => '@user-management',
+            'key' => route('dashboard.app.mail.index'),
             'label' => 'Mail',
             'icon' => 'MailOutlined',
             'permissions' => [],

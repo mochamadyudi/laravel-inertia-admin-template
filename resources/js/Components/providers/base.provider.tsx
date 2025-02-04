@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect} from 'react';
 import {IntlProvider} from 'react-intl';
-import {App, ConfigProvider} from "antd";
+import {App, ConfigProvider, theme} from "antd";
 import {useDispatch, useSelector} from "react-redux";
 import AppLocale from "@/Lang";
 import {usePage} from "@inertiajs/react";
@@ -74,8 +74,10 @@ const BaseConfiguration: React.FC<AntdProviderType & BaseContextType> = ({childr
           }}
           direction={direction}
           theme={{
+            algorithm: theme.defaultAlgorithm,
             ...themes?.antd,
             ...antd
+
           }}
         >
           <App>{children}</App>
