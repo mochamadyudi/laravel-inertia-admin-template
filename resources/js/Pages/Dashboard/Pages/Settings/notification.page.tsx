@@ -72,7 +72,7 @@ const Page = () => {
                 actions={item?.actions ?? []}
               >
                 <List.Item.Meta
-                  avatar={<Icons type={item?.icon} className="!text-3xl !text-[--ant-color-primary]"/>}
+                  avatar={<Icons type={item?.icon} className="!text-3xl !text-primary"/>}
                   title={<Typography.Paragraph className={'!m-0 !font-pro-medium !text-lg'}>{item?.title}</Typography.Paragraph>}
                   description={<Typography>{item?.description}</Typography>}
                 />

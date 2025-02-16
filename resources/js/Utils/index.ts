@@ -130,4 +130,32 @@ export class Utils {
     return masked;
   }
 
+  static getDeepValue(obj: object, key: string | string[]){
+    const keys = typeof key === 'string' ? key.split('.') : key;
+
+    return keys.reduce((value: any, currentKey: string) => {
+      if (value && typeof value === 'object' && currentKey in value) {
+        return value[currentKey];
+      }
+      return undefined; // Jika key tidak ditemukan, kembalikan undefined
+    }, obj);
+  }
+
+  static ensureMessageFormat(value: string){
+    let _ = value;
+    _ = _.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+    // Italic (_text_)
+    _ = _.replace(/__(.*?)__/g, "<em>$1</em>");
+
+    // Strikethrough (~text~)
+    _ = _.replace(/~~(.*?)~~/g, "<del>$1</del>");
+
+    // Monospace (```text```)
+    _ = _.replace(/```(.*?)```/gs, "<code>$1</code>");
+
+    _ = _.replace(/\n/g, "<br/>");
+
+    return _;
+  }
 }

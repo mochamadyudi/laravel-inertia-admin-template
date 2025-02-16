@@ -10,7 +10,7 @@ type MailLayoutType = {
 } & TheLayoutInterface;
 const MailLayout: React.FC<MailLayoutType> = ({...props})=> {
   return (
-    <TheLayout type={props?.type} isFooter hasContainer={false}>
+    <TheLayout type={props?.type} isFooter hasContainer>
       <InnerLayout
         sideWidth={220}
         menu={{
@@ -50,11 +50,7 @@ const MailLayout: React.FC<MailLayoutType> = ({...props})=> {
             </Link>
           </div>
         }
-        addonAfter={
-        <div className="p-4">
-          <Typography>after</Typography>
-        </div>
-        }
+        addonAfter={<></>}
       >
         {props.children}
       </InnerLayout>

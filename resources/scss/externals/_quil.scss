@@ -1,118 +1,35 @@
-.core-form-quil{
-  height:100% !important;
-  max-height: calc(100vh - 200px - $header-height);
-  overflow-y: auto;
-  --stroke-colour: white;
-  --fill-colour: white;
-  --picker-label-colour: white;
-  --editor-placeholder-colour: white;
-  padding-bottom: 60px;
-  .ant{
-    &-form{
-      &-item{
-        &-control{
+.yid-form-quil {
+  @apply relative overflow-y-auto h-full;
+  @include themify($themes) {
+    --stroke-colour: themed('paragraph');
+    --fill-colour: themed('text');
+    --picker-label-colour: themed('paragraph');
+    --editor-placeholder-colour: themed('paragraph');
+  }
+  .quill {
+    @apply relative h-full pb-14;
+    @apply border overflow-hidden rounded-xl;
 
-          height: 100%;
+    @include themify($themes) {
+      border: 1px solid themed('input-border') !important;
+      background: themed('input-background');
+    }
 
-          &-input{
-            height: inherit !important;
-            .quill{
-
-            }
-            > div {
-              height: inherit !important;
-              //overflow-x: hidden;
-
-              .ql{
-
-                &-toolbar{
-
-                  position: absolute;
-                  top: 0;
-
-                  background: transparent;
-                  display: flex;
-                  justify-content: start;
-                  width: 100%;
-                  border: none;
-                  left: 0;
-
-
-                  @include themify($themes){
-                    background: themed('card-background') !important;
-                    border-bottom: 1px solid themed('card-border');
-                    color: themed('text') !important;
-                  }
-
-                  > span{
-                    > button {
-                      min-width: 30px !important;
-                    }
-                    > span, > select {
-                      min-width: 35px;
-                      height: 30px;
-                    }
-                    width: 100%;
-                    display: inline-flex;;
-
-                  }
-                }
-                &-container{
-                  margin-top: 50px;
-                  border:none !important;
-                  *{
-                    @include themify($themes){
-                      color: themed('text') !important;
-                      &::placeholder{
-                        font-size: 20px !important;
-                        color: themed('text') !important;
-                      }
-
-                      &::before{
-                        color: themed('text') !important;
-                      }
-                    }
-                  }
-                }
-              }
-              .quill{
-                height: 100%;
-                border: none !important;
-
-                .ql{
-
-                  &-picker{
-                    &-options{
-                      @include themify($themes){
-                        background: themed('quil-base') !important;
-                        color: themed('text') !important;
-                      }
-                    }
-                  }
-                  &-formats{
-                    button {
-                      margin:0 2px;
-                    }
-                  }
-                  &-toolbar{
-                    //border:1px solid red !important;
-                    //*{
-                    //  @include themify($themes){
-                    //    color: themed('text') !important;
-                    //    fill: themed('text') !important;
-                    //  }
-                    //}
-                  }
-                }
-              }
-            }
-          }
+    .ql {
+      &-toolbar {
+        @apply absolute top-0 z-10 h-14 w-full  border-t-0 border-l-0 border-r-0;
+        @include themify($themes) {
+          border-color: themed('input-border') !important;
         }
       }
-    }
-    &-row{
 
-      height: 100%;
+      &-container {
+        @apply relative z-0 mt-14 border-none;
+      }
+
+      &-editor {
+        @apply mt-14;
+      }
     }
   }
 }

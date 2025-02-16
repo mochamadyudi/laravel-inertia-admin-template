@@ -55,7 +55,7 @@ class MenuService
           ],
           [
             'type' => 'item',
-            'key' => '@user-management',
+            'key' => route('dashboard.app.chat.index'),
             'label' => 'Chat',
             'icon' => 'MessageOutlined',
             'permissions' => [],

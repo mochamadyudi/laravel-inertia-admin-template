@@ -1,8 +1,9 @@
 import type {ReactNode} from "react";
 import {AvatarProps} from "antd/es/avatar/avatar";
+import {ImageProps} from "antd";
 
 export type AvatarStatusAttr = {
-  avatar?: AvatarProps & { type?: string };
+  avatar?: ImageProps & { type?: string };
   name?: string;
   suffix?: string | ReactNode;
   subTitle?: string | ReactNode;

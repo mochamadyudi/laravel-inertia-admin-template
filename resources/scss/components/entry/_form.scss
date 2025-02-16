@@ -44,7 +44,7 @@
 
       }
     }
-    font-size: $font-size-base !important;
+    font-size: $font-size-base ;
     &-suffix, &-prefix {
       @include themify($themes) {
         color: themed('text');

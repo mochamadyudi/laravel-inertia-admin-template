@@ -48,9 +48,7 @@
 }
 
 .app {
-  position: relative;
-  min-height: 100vh;
-  height: 100%;
+  @apply relative min-h-screen h-full;
 
   &.page {
     .has-container{
@@ -131,9 +129,7 @@
     }
 
     &.without-header {
-      min-height: 100vh !important;
-      height: 100vh !important;
-      padding-top: 0 !important;
+      @apply min-h-screen h-screen pt-0 #{!important};
     }
 
     min-height: calc(100vh - $top-height) !important;
@@ -141,8 +137,8 @@
   }
 
   &-content {
+    @apply pb-0;
     padding: $padding-content;
-    padding-bottom: 0 !important;
     transition: .2s $transition-easy-in-out;
     margin-left: $side-width !important;
     @apply flex flex-col;
@@ -193,6 +189,8 @@
     }
 
     &__footer {
+      @apply relative;
+      bottom: -$padding-content;
       &.has-container {
         > div {
           @apply mx-auto;

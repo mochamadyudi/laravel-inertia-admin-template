@@ -188,6 +188,30 @@ export default {
       200: '2',
     },
     caretColor: ({ theme }) => theme('colors'),
+
+
+    //{
+    //   "variables": {
+    //     "--ant-primary-color": "#1890ff",
+    //     "--ant-primary-color-hover": "#40a9ff",
+    //     "--ant-primary-color-active": "#096dd9",
+    //     "--ant-primary-color-outline": "rgba(24, 144, 255, 0.2)",
+    //     "--ant-primary-color-deprecated-border": "#1890ff",
+    //     "--ant-primary-color-deprecated-bg": "#e6f7ff",
+    //     "--ant-success-color": "#52c41a",
+    //     "--ant-warning-color": "#faad14",
+    //     "--ant-error-color": "#f5222d",
+    //     "--ant-font-size-base": "14px",
+    //     "--ant-border-radius-base": "2px",
+    //     "--ant-line-height-base": "1.5715",
+    //     "--ant-box-shadow": "0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.08)",
+    //     "--ant-border-color-base": "#d9d9d9",
+    //     "--ant-link-color": "#1890ff",
+    //     "--ant-heading-color": "rgba(0, 0, 0, 0.85)",
+    //     "--ant-text-color": "rgba(0, 0, 0, 0.85)",
+    //     "--ant-disabled-color": "rgba(0, 0, 0, 0.25)"
+    //   }
+    // }
     colors: ({ colors }) => ({
       'card-dark': '#283142',
       'card': '#ffffff',
@@ -195,6 +219,22 @@ export default {
       'drawer-dark': '#1B2531',
       'layout': '#eef1f3',
       'layout-dark': '#1B2531',
+      'primary': 'var(--ant-color-primary)',
+      'primary-bg': 'var(--ant-color-primary-bg)',
+      'primary-bg-hover': 'var(--ant-color-primary-bg-hover)',
+      'primary-hover': 'var(--ant-color-primary-hover)',
+      'primary-active': 'var(--ant-color-primary-active)',
+      'primary-border': 'var(--ant-color-primary-border)',
+      'primary-border-hover': 'var(--ant-color-primary-border-hover)',
+      'primary-deprecated': 'var(--ant-primary-color-deprecated)',
+      'primary-deprecated-bg': 'var(--ant-primary-color-deprecated-bg)',
+      'success': 'var(--ant-success-color)',
+      'error': 'var(--ant-error-color)',
+      'warning': 'var(--ant-warning-color)',
+      'link': 'var(--ant-link-color)',
+      'heading': 'var(--ant-heading-color)',
+      'color-text': 'var(--ant-text-color)',
+      'color-disabled': 'var(--ant-disabled-color)',
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
