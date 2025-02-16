@@ -16,10 +16,16 @@
 }
 %menu-color-default{
   @extend %font-default;
+
   @include themify($themes){
+
     color: themed('menu-item');
   }
 }
+//.ant-menu-css-var{
+//  --ant-menu-sub-menu-item-selected-color: red !important;
+//
+//}
 @mixin submenu {
   .ant {
     &-menu {
@@ -139,6 +145,7 @@
 
         &-selected{
           &:not(.ant-menu-item-active){
+
             @include themify($themes){
               background: themed('menu-active-selected-only') !important;
               color: themed('menu-active-selected-color-only') !important;

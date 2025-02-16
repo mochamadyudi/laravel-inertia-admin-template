@@ -34,6 +34,7 @@ const BaseConfiguration: React.FC<AntdProviderType & BaseContextType> = ({childr
   const ctx = useContext(BaseContext);
   const themes: any = usePage<any>().props?.themes;
   const antd: any = useSelector(({Theme}: any)=> Theme?.antd)
+  const _theme: any = useSelector(({Theme}: any)=> Theme)
   const locale: 'id' | 'en' = useSelector(({Theme}: any) => Theme?.locale ?? 'en')
   const direction: 'ltr' | 'rtl' | undefined = useSelector(({Theme}: any) => Theme?.direction ?? 'ltr')
   const currentAppLocale = AppLocale[locale ?? 'en'];
@@ -74,7 +75,7 @@ const BaseConfiguration: React.FC<AntdProviderType & BaseContextType> = ({childr
           }}
           direction={direction}
           theme={{
-            algorithm: theme.defaultAlgorithm,
+            algorithm: _theme.currentTheme === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm,
             ...themes?.antd,
             ...antd
 

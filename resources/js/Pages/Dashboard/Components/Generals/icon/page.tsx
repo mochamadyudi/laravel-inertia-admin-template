@@ -91,9 +91,9 @@ const Page = () => {
                                     <div className={'flex flex-col items-center justify-center'}>
                                       <div className={' p-4 flex flex-col space-y-4 items-center justify-center'}>
                                         <Icons type={child}
-                                               className={'dark:text-slate-300 text-4xl group-hover:text-[--ant-color-primary]'}/>
+                                               className={'dark:text-slate-300 text-4xl group-hover:text-primary'}/>
                                         <Typography
-                                          className={'!text-sm group-hover:text-[--ant-color-primary]'}>{child}</Typography>
+                                          className={'!text-sm group-hover:text-primary'}>{child}</Typography>
                                       </div>
                                     </div>
                                   </div>

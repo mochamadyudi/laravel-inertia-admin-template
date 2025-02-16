@@ -5,7 +5,8 @@ import TheContainer from "@/Components/general/TheContainer";
 import {Icons} from "@/Components/general/Icons";
 import VisitorTablePartial from "@/Pages/Dashboard/partials/visitor.table.partial";
 
-const Page = () => {
+const Page = (props: any) => {
+  console.log({ props })
   return (
     <div className="dashboard">
       <Row gutter={24}>

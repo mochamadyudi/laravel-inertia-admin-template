@@ -1,5 +1,8 @@
 .ant {
   &-layout {
+    @include themify($themes) {
+      background: themed('card-background');
+    }
     &-sider{
       @include themify($themes) {
         background: themed('sider-background') !important;
@@ -58,6 +61,11 @@
     }
     &-content{
       @apply p-6;
+
+      &.mobile{
+        @apply px-6 pt-2;
+      }
+
       @include themify($themes) {
         background: themed('sider-background') !important;
       }

@@ -32,6 +32,7 @@ import ButtonLoadingPartial from "@/Pages/Dashboard/Components/Generals/button/p
 import {PreContainer} from "@/Components/util-component/code-style";
 
 const Page = () => {
+
   return (
     <React.Fragment>
       <PageHeaderAlt
@@ -57,6 +58,7 @@ const Page = () => {
           </div>
         }
         container
+
         contentClassName={'mt-6'}
       >
         <Row gutter={[24, 24]}>
