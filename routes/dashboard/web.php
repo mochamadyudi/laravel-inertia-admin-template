@@ -19,6 +19,7 @@ Route::prefix('app')
 
     Route::prefix('chat')
       ->group(function () {
+        Route::get('/settings', [Dashboard\App\ChatController::class, 'settings'])->name('dashboard.app.chat.settings');
         Route::get('/call/log', [Dashboard\App\ChatController::class, 'log_call'])->name('dashboard.app.chat.log-call');
           Route::get('/{id}', [Dashboard\App\ChatController::class, 'show'])->name('dashboard.app.chat.show');
         Route::get('/', [Dashboard\App\ChatController::class, 'index'])->name('dashboard.app.chat.index');

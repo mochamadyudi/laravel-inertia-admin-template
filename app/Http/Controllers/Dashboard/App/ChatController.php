@@ -28,6 +28,16 @@ class ChatController extends Controller
     $state->setState([]);
     return Inertia::render('Dashboard/App/Chat/log-call.page', $state->go());
   }
+  public function settings(){
+    $seo = $this->seo()
+      ->setTitle('Settings')
+      ->go();
+    $state = $this->state();
+    $state->setCollections([]);
+    $state->setMeta($seo);
+    $state->setState([]);
+    return Inertia::render('Dashboard/App/Chat/settings.page', $state->go());
+  }
   public function show(string $id){
     $seo = $this->seo()
       ->setTitle('Detail Chat')

@@ -158,6 +158,7 @@ class Chat extends React.Component<ChatLayoutProps> {
                   icon={<SettingOutlined/>}
                   size="large"
                   type="primary"
+                  onClick={() => this.handleGo(route('dashboard.app.chat.settings'))}
                 />
                 {this.props?.menu && this.props.menu?.footer}
               </div>

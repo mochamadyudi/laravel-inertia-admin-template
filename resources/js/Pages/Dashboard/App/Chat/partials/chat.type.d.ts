@@ -46,6 +46,6 @@ export interface ChatHeaderSiderProps {
   title: string;
   extra?: string | ReactNode;
   search?: {
-    show?: true,
+    show?: boolean,
   };
 }
