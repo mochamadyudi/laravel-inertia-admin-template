@@ -39,7 +39,6 @@ const BaseConfiguration: React.FC<AntdProviderType & BaseContextType> = ({childr
   const direction: 'ltr' | 'rtl' | undefined = useSelector(({Theme}: any) => Theme?.direction ?? 'ltr')
   const currentAppLocale = AppLocale[locale ?? 'en'];
 
-  let timeout: any;
   useEffect(()=> {
     //@ts-ignore
     dispatch(rehydrateThemeConfig(themes?.antd))
@@ -56,12 +55,6 @@ const BaseConfiguration: React.FC<AntdProviderType & BaseContextType> = ({childr
       dispatch(onSaveTheme(ctx.mode))
     }
   },[ctx.mode]);
-
-  useEffect(() => {
-    if(ctx.mode){
-
-    }
-  }, [ctx.mode]);
 
   return (
     <React.Fragment>

@@ -1,0 +1,14 @@
+.app{
+  &-calendar{
+    @apply bg-transparent;
+  }
+}
+
+
+.ant{
+  &-picker{
+    &-panel, &-date-panel, &-body{
+      @apply bg-transparent #{!important};
+    }
+  }
+}

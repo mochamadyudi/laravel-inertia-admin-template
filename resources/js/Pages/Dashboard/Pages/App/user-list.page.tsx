@@ -69,7 +69,6 @@ const Page = () => {
             name={val?.name}
             subTitle={val?.email}
             avatar={{
-              size: 50,
               src: val?.avatar,
               alt: val?.avatar,
             }}/>

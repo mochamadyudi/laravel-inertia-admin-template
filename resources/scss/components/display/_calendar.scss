@@ -1,0 +1,9 @@
+.ant{
+  &-picker{
+    &-calendar{
+      @include themify($themes){
+        --ant-calendar-full-bg: themed('card');
+      }
+    }
+  }
+}

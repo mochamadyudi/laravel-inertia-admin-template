@@ -1,0 +1,35 @@
+.ant{
+  &-select{
+    &-arrow{
+
+      svg {
+        height: $font-size-xs;
+        width: $font-size-xs;
+
+        @include themify($themes){
+          fill: themed('paragraph');
+        }
+
+      }
+      //font-size: $font-size-xs !important;
+    }
+    &-dropdown{
+      .ant{
+        &-select{
+          &-item{
+            font-size: $font-size-base;
+          }
+        }
+      }
+    }
+    &-selection{
+      &-item{
+        font-size: $font-size-base;
+        @include themify($themes){
+          color: themed('paragraph') !important;
+        }
+      }
+    }
+  }
+
+}

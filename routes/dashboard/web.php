@@ -17,6 +17,11 @@ Route::prefix('app')
         Route::get('/', [Dashboard\App\MailController::class, 'index'])->name('dashboard.app.mail.index');
       });
 
+    Route::prefix('calendar')
+      ->group(function () {
+        Route::get('/', [Dashboard\App\CalendarController::class, 'index'])->name('dashboard.app.calendar.index');
+      });
+
     Route::prefix('chat')
       ->group(function () {
         Route::get('/settings', [Dashboard\App\ChatController::class, 'settings'])->name('dashboard.app.chat.settings');

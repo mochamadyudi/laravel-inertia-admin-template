@@ -47,6 +47,7 @@
   }
 }
 
+
 .app {
   @apply relative min-h-screen h-full;
 
@@ -117,6 +118,7 @@
     }
   }
 
+
   &-main {
     &-has-topbar {
       .app {
@@ -137,11 +139,11 @@
   }
 
   &-content {
-    @apply pb-0;
+    @apply pb-0 flex flex-col;
+
     padding: $padding-content;
     transition: .2s $transition-easy-in-out;
     margin-left: $side-width !important;
-    @apply flex flex-col;
 
     &.has-container {
       > div {
@@ -152,13 +154,28 @@
       }
 
       &:not(.page-header) {
-        padding-bottom: 0 !important;
-
         > div {
           @apply mx-auto w-full flex-1;
           max-width: $container !important;
         }
       }
+    }
+    &.has-footer{
+      padding-bottom: 0;
+      .app-content__content{
+        padding-bottom: $padding-content;
+      }
+
+    }
+
+    &-full{
+      @apply relative;
+      min-height: calc(100% + ($padding-content*2));
+      width: calc(100% + ($padding-content*2));
+      left: -$padding-content;
+      top: -$padding-content;
+      right: -$padding-content;
+      bottom: -$padding-content;
     }
 
     &__content {
@@ -166,31 +183,24 @@
       height: 100%;
 
       > div {
-        padding-bottom: $padding-content;
-        @apply flex-1 h-full flex flex-col;
+        @apply flex-1 h-full flex flex-col space-y-2;
         min-height: 100%;
-
-        &:where(.page-header) {
-          margin-bottom: $padding-content;
-
-        }
       }
 
       @include themify($themes) {
         background: themed('body') !important;
       }
       transition-timing-function: $transition-easy-in-out;
-
       &.no-footer {
-        min-height: 100%;
+        min-height: 100% !important;
+        //padding-bottom: $padding-content;
       }
 
       min-height: calc(100% - $footer-height);
     }
 
     &__footer {
-      @apply relative;
-      bottom: -$padding-content;
+      @apply relative p-0;
       &.has-container {
         > div {
           @apply mx-auto;
@@ -208,16 +218,12 @@
       height: $footer-height;
       margin-right: -$padding-content;
       margin-left: -$padding-content;
-      padding: 0 !important;
     }
   }
 
   &-header {
+    @apply top-0 left-0 p-0 fixed;
     z-index: 99;
-    position: fixed;
-    padding: 0 !important;
-    top: 0;
-    left: 0;
     height: $top-height !important;
     width: 100%;
     @include themify($themes) {

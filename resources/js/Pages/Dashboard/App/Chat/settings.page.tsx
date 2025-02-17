@@ -3,8 +3,10 @@ import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import Chat from "@/Pages/Dashboard/App/Chat/partials/chat.layout";
 import {Icons} from "@/Components/general/Icons";
 import {Button, Empty, Menu, Tooltip, Typography} from "antd";
+import {useSelector} from "react-redux";
 
 const Page = () => {
+  const {currentTheme} = useSelector(({Theme}: any) => Theme);
   const [active, setActive] = useState<number>(1);
   const menu = [
     {
@@ -30,10 +32,10 @@ const Page = () => {
         search:{
           show: false,
         },
-        component: <>
+        component: <div>
           <Menu
             className="bg-transparent border-none"
-            theme={'light'}
+            theme={currentTheme}
             items={[
               {
                 key: 'account',
@@ -66,7 +68,7 @@ const Page = () => {
 
             ]}
           />
-        </>,
+        </div>,
       }}
       toolbar={{
         show: true,
