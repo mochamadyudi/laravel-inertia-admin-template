@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Splitter} from "antd";
+import {Layout, Splitter, Typography} from "antd";
 
 interface ICalendarLayoutProps {
   children: React.ReactNode;
@@ -16,9 +16,12 @@ const CalendarLayout: React.FC<ICalendarLayoutProps> = ({ children }) => {
         <Splitter.Panel min={320}>
           <Layout.Sider
             width={320}
-            className="app-calendar-sider border-l "
+            className="app-calendar-sider"
           >
-
+            <Typography.Title level={1}>Agenda</Typography.Title>
+            <div>
+              <div className="rounded-xl w-full p-4 bg-red-500"></div>
+            </div>
           </Layout.Sider>
         </Splitter.Panel>
       </Splitter>

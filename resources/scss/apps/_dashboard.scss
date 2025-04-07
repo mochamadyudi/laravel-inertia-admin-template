@@ -211,7 +211,7 @@
       @include themify($themes) {
         background: themed('footer-background');
         * {
-          color: themed('text') !important;
+          color: themed('paragraph');
         }
       }
       width: calc(100% + calc($padding-content * 2));

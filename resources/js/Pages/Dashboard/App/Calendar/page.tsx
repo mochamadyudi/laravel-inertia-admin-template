@@ -1,9 +1,10 @@
 import React from 'react';
 import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
-import {Badge, BadgeProps, Calendar, CalendarProps, Typography} from "antd";
+import {Badge, BadgeProps, Calendar, CalendarProps} from "antd";
 import CalendarLayout from "@/Pages/Dashboard/App/Calendar/partials/calendar.layout";
 import {Dayjs} from "dayjs";
 import {CalendarMode} from "antd/es/calendar/generateCalendar";
+import CalendarProvider from "@/Pages/Dashboard/App/Calendar/partials/calendar.context";
 
 const Page = () => {
   const getListData = (value: Dayjs) => {
@@ -77,13 +78,15 @@ const Page = () => {
 
   return (
     <div className="app-content-full h-full">
-      <CalendarLayout>
-        <Calendar
-          fullscreen
-          cellRender={cellRender}
-          onPanelChange={_onPanelChange}
-        />
-      </CalendarLayout>
+      <CalendarProvider>
+        <CalendarLayout>
+          <Calendar
+            fullscreen
+            cellRender={cellRender}
+            onPanelChange={_onPanelChange}
+          />
+        </CalendarLayout>
+      </CalendarProvider>
 
     </div>
   )

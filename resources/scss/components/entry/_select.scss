@@ -9,9 +9,7 @@
         @include themify($themes){
           fill: themed('paragraph');
         }
-
       }
-      //font-size: $font-size-xs !important;
     }
     &-dropdown{
       .ant{

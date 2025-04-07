@@ -1,11 +1,12 @@
 @mixin divider{
   &-divider{
     @include themify($themes){
-      background: themed('divider') !important;
+      background: transparent;
       color: themed('divider') !important;
     }
   }
 }
+
 @mixin core($pref: $prefix) {
   .#{$pref} {
     @content;
@@ -61,7 +62,6 @@
     }
   }
 }
-
 
 @mixin themify($themes) {
   @each $theme, $map in $themes {

@@ -156,9 +156,7 @@ $btn-variant: ("outlined", "dashed", "solid", "filled", "text", "link");
             &.ant-btn {
               &-color {
                 &-#{$key} {
-                  //background: var(--ant-#{$key}-6) !important;
                   color: var(--ant-#{$key}-4) !important;
-                  //border-color: var(--ant-#{$key}-4) !important;
                   box-shadow: none !important;
 
                   .ant {
@@ -303,6 +301,9 @@ $btn-variant: ("outlined", "dashed", "solid", "filled", "text", "link");
     &-link, &-dashed, &-default{
       box-shadow: none !important;
 
+      @include themify($themes){
+        color: themed('paragraph') !important;
+      }
       &.ant-btn {
         &-dangerous {
           color: var(--ant-color-error) !important;

@@ -1,6 +1,10 @@
 .app{
   &-calendar{
     @apply bg-transparent;
+
+    &-sider{
+      @apply p-4 space-y-4;
+    }
   }
 }
 
