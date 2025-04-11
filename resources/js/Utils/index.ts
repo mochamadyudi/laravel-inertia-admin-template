@@ -1,6 +1,7 @@
 import ReactDOMServer from 'react-dom/server';
 import { ReactNode } from 'react'
-import { Grid } from 'antd';
+import {Grid, message} from 'antd';
+import {RcFile, UploadProps} from "antd/es/upload/interface";
 Grid.useBreakpoint
 export class Utils {
   /**
@@ -110,21 +111,16 @@ export class Utils {
     return formatted;
   }
   static maskCardNumber(cardNumber: string, notSpace = false) {
-    // Menghapus semua spasi yang ada
     const cleaned = cardNumber.replace(/\s+/g, '');
 
-
-    // Memastikan input hanya berisi angka
     if (!/^\d+$/.test(cleaned)) {
       throw new Error('Nomor kartu harus hanya berisi angka');
     }
 
-    // Memastikan panjang nomor kartu cukup untuk di-mask
     if (cleaned.length < 4) {
       throw new Error('Nomor kartu terlalu pendek');
     }
 
-    // Menyembunyikan semua digit kecuali 4 digit terakhir
     const masked = '*'.repeat(cleaned.length - 4) + cleaned.slice(-4);
 
     return masked;
@@ -141,6 +137,11 @@ export class Utils {
     }, obj);
   }
 
+  static getBase64(img: Blob | RcFile | any, callback: (item: any)=>  void){
+    const reader = new FileReader();
+    reader.addEventListener('load', () => callback(reader.result));
+    reader.readAsDataURL(img);
+  }
   static ensureMessageFormat(value: string){
     let _ = value;
     _ = _.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
@@ -157,5 +158,27 @@ export class Utils {
     _ = _.replace(/\n/g, "<br/>");
 
     return _;
+  }
+
+  static beforeUploadsItem(file: RcFile, type: string[], size: number, errorMessageType?: string, errorMessageSize?: string){
+    if(!file) return false;
+    if(!type.some((item: string)=> item == file.type)){
+      if(errorMessageType){
+        message.error(errorMessageType);
+      }else{
+        message.error(`You can ${type.join(' | ')} file!`);
+      }
+      return false;
+    }
+    const isMaxSize = file.size / 1024 / 1024 < size;
+    if(!isMaxSize){
+      if(errorMessageSize){
+        message.error(errorMessageType);
+      }else{
+        message.error(`Image must smaller than ${size}MB!`);
+      }
+      return false;
+    }
+    return true;
   }
 }

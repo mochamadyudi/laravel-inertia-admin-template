@@ -154,6 +154,7 @@ $row-color: (
   }
 
   @include nest-table-cell{
+    font-size: $font-size-sm;
     @include themify($themes){
       border-color: themed('table-bordered') !important;
     }

@@ -105,36 +105,29 @@ class MenuService
           ],
           [
             'type' => 'submenu',
-            'key' => '@e-commerce',
+            'key' => route('dashboard.ecommerce.index'),
             'label' => 'E-Commerce',
             'icon' => 'ShoppingCartOutlined',
             'permissions' => [],
             'roles' => [],
             'children' => [
               [
-                'type' => 'submenu',
-                'key' => '@e-commerce/product-list',
+                'type' => 'item',
+                'key' => route('dashboard.ecommerce.index'),
                 'label' => 'Product List',
                 'permissions' => [],
                 'roles' => []
               ],
               [
-                'type' => 'submenu',
-                'key' => '@e-commerce/product-add',
+                'type' => 'item',
+                'key' => route('dashboard.ecommerce.create'),
                 'label' => 'Add Product',
                 'permissions' => [],
                 'roles' => []
               ],
               [
-                'type' => 'submenu',
-                'key' => '@e-commerce/product-edit',
-                'label' => 'Edit Product',
-                'permissions' => [],
-                'roles' => []
-              ],
-              [
-                'type' => 'submenu',
-                'key' => '@e-commerce/order',
+                'type' => 'item',
+                'key' => route('dashboard.ecommerce.order.index'),
                 'label' => 'Order',
                 'permissions' => [],
                 'roles' => []
@@ -909,108 +902,29 @@ class MenuService
 
             ]
           ],
-//          [
-//            'type' => 'submenu',
-//            'key' => '@pages/errors',
-//            'label' => 'Errors',
-//            'icon' => 'StopOutlined',
-//            'permissions' => [],
-//            'roles' => [],
-//            'children' => [
-//              [
-//                'type' => 'submenu',
-//                'key' => '@pages/pages/app',
-//                'label' => 'App',
-//                'icon' => 'GlobalOutlined',
-//                'permissions' => [],
-//                'roles' => [],
-//                'children' => [
-//                  [
-//                    'type' => 'item',
-//                    'key' => '@pages/pages/profile',
-//                    'label' => 'Profile',
-//                    'icon' => 'UserOutlined',
-//                    'permissions' => [],
-//                    'roles' => [],
-//                  ],
-//                  [
-//                    'type' => 'item',
-//                    'key' => route('dashboard.pages.app.user-list'),
-//                    'label' => 'User List',
-//                    'icon' => 'TeamOutlined',
-//                    'permissions' => [],
-//                    'roles' => [],
-//                  ],
-//                  [
-//                    'type' => 'item',
-//                    'key' => '@pages/pages/app/settings',
-//                    'label' => 'Settings',
-//                    'icon' => 'TeamOutlined',
-//                    'permissions' => [],
-//                    'roles' => [],
-//                  ],
-//                ]
-//              ],
-//              [
-//                'type' => 'submenu',
-//                'key' => '@pages/pages/general',
-//                'label' => 'General',
-//                'icon' => 'GlobalOutlined',
-//                'permissions' => [],
-//                'roles' => [],
-//                'children' => [
-//                  [
-//                    'type' => 'item',
-//                    'key' => '@pages/pages/general/invoice',
-//                    'label' => 'Invoice',
-//                    'icon' => 'FileDoneOutlined',
-//                    'permissions' => [],
-//                    'roles' => [],
-//                  ],
-//                  [
-//                    'type' => 'item',
-//                    'key' => '@pages/pages/general/faq',
-//                    'label' => 'FAQ',
-//                    'icon' => 'FileDoneOutlined',
-//                    'permissions' => [],
-//                    'roles' => [],
-//                  ],
-//                  [
-//                    'type' => 'item',
-//                    'key' => '@pages/pages/general/pricing',
-//                    'label' => 'Pricing',
-//                    'icon' => 'FileDoneOutlined',
-//                    'permissions' => [],
-//                    'roles' => [],
-//                  ],
-//                ]
-//              ],
-//
-//            ]
-//          ],
         ]
       ],
-//      [
-//        'type' => 'divider',
-//        'permissions' => [],
-//        'roles' => []
-//      ],
-//      [
-//        'type' => 'item',
-//        'key' => '@pages/documentation',
-//        'label' => 'Documentation',
-//        'icon' => 'FileUnknownOutlined',
-//        'permissions' => [],
-//        'roles' => [],
-//      ],
-//      [
-//        'type' => 'item',
-//        'key' => '@pages/change-log',
-//        'label' => 'Change Log',
-//        'icon' => 'FileZipOutlined',
-//        'permissions' => [],
-//        'roles' => [],
-//      ],
+      [
+        'type' => 'divider',
+        'permissions' => [],
+        'roles' => []
+      ],
+      [
+        'type' => 'item',
+        'key' => '@pages/documentation',
+        'label' => 'Documentation',
+        'icon' => 'FileUnknownOutlined',
+        'permissions' => [],
+        'roles' => [],
+      ],
+      [
+        'type' => 'item',
+        'key' => '@pages/change-log',
+        'label' => 'Change Log',
+        'icon' => 'FileZipOutlined',
+        'permissions' => [],
+        'roles' => [],
+      ],
     ];
   }
 }

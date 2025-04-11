@@ -44,6 +44,13 @@ $font_size_ql: (
   }
 
 }
+.h{
+  &-content{
+    &-screen{
+      height: 100%;
+    }
+  }
+}
 
 .ql{
   &-size{

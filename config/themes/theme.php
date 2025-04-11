@@ -19,8 +19,8 @@ return [
     'components' => [
       'Input' => [
         'colorBorder' => 'rgba(210,210,210,0.4)',
-        'inputFontSizeLG' => 14,
-        'inputFontSize' => 14,
+        'inputFontSizeLG' => 16,
+        'inputFontSize' => 16,
         'colorText' => 'rgba(6,6,6,0.88)',
         'paddingBlock' => 7,
         'paddingBlockSM' => 7,

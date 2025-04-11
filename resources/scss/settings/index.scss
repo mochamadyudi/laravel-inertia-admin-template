@@ -40,8 +40,10 @@ $themes: (
     checkbox-bg: $checkbox-bg,
     checkbox-border: $checkbox-border,
 
+    border: $border-color,
+
     card-background: #fff,
-    card-border: #e5e5e5,
+    card-border: #ececec,
     card-table-border: rgba(231, 231, 231, 0.64),
     input-background:$bg-input,
     input-background-disabled: #F5F5F5,
@@ -49,6 +51,8 @@ $themes: (
     input-text-error: $text-input-error-dark,
     input-border: $border-input,
     input-text-disabled: $text-color-placeholder,
+
+    select-arrow: $select-arrow,
     table-header: $bg-table-header,
     table-bordered: $table-bordered,
     bcrumb-color:#b8b8b8,
@@ -114,9 +118,11 @@ $themes: (
     input-background-error: $bg-input-error-dark,
     input-text-error: $text-input-error-dark,
     input-text-disabled: #58718f,
+    select-arrow: $select-arrow-dark,
 
     bcrumb-color: #52688d,
     bcrumb-color-link: #87a1cd,
+    border: $border-color-dark,
 
     success: darken($color-table-row-success, 20),
     success-hover: darken($color-table-row-success, 20),

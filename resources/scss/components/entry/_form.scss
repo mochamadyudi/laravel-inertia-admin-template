@@ -1,11 +1,11 @@
 .ant {
   &-form {
     &-item {
-      &-feedback{
-        &-icon{
-          @each $key, $value in $antd-color-status{
-            &-#{$key}{
-              .anticon{
+      &-feedback {
+        &-icon {
+          @each $key, $value in $antd-color-status {
+            &-#{$key} {
+              .anticon {
                 color: $value !important;
                 fill: $value !important;
               }
@@ -14,6 +14,7 @@
           }
         }
       }
+
       &-label {
         label {
           font-family: sf-pro-medium, sans-serif;
@@ -30,11 +31,74 @@
 
 .ant {
 
+  &-input-number {
+    @apply w-full;
+    &-prefix{
+      @include themify($themes) {
+        color: themed('text') !important;
+        svg {
+          fill: themed('text');
+        }
+      }
+    }
+    &-affix-wrapper {
+      @apply w-full;
+      @include themify($themes) {
+        background: themed('input-background');
+      }
+    }
+
+    &-status-error {
+      @include themify($themes) {
+        background: themed('input-background') !important;
+      }
+    }
+
+    &-input {
+      @include themify($themes) {
+        color: themed('text');
+      }
+    }
+
+    &-input-wrap {
+      border-color: var(--ant-input-number-active-border-color) !important;
+    }
+
+    &:hover {
+      border-color: var(--ant-input-number-active-border-color) !important;
+    }
+
+    &-focused {
+      border-color: var(--ant-input-number-active-border-color) !important;
+    }
+
+    &-outlined {
+      border-width: var(--ant-line-width);
+      border-style: var(--ant-line-type);
+      @include themify($themes) {
+        border-color: themed('input-border');
+      }
+
+      &:hover {
+        border-color: var(--ant-input-number-active-border-color) !important;
+      }
+    }
+
+    @include themify($themes) {
+      background: themed('input-background');
+      color: themed('text');
+
+      &::placeholder {
+        color: themed('text-placeholder');
+      }
+    }
+  }
+
   &-input {
-    &-clear{
-      &-icon{
-        &-has-suffix{
-          @include themify($themes){
+    &-clear {
+      &-icon {
+        &-has-suffix {
+          @include themify($themes) {
             color: themed('text');
             svg {
               fill: lighten(themed('text'), 30) !important;
@@ -44,7 +108,9 @@
 
       }
     }
-    font-size: $font-size-base ;
+
+    font-size: $font-size-base;
+
     &-suffix, &-prefix {
       @include themify($themes) {
         color: themed('text');
@@ -61,25 +127,28 @@
         border-color: themed('input-border');
       }
 
-      &:focus{
+      &:focus {
         border-color: var(--ant-input-active-border-color);
       }
-      &:hover{
+
+      &:hover {
         border-color: var(--ant-input-hover-border-color);
       }
     }
+
     &-affix {
       &-wrapper {
-        &-disabled{
+        &-disabled {
           @include themify($themes) {
             background: themed('input-background-disabled');
             color: themed('input-text-disabled');
           }
           user-select: none !important;
         }
+
         @include themify($themes) {
-          background: themed('input-background') ;
-          color: themed('text') ;
+          background: themed('input-background');
+          color: themed('text');
 
           &::placeholder {
             color: themed('text-placeholder');
@@ -92,9 +161,9 @@
       }
     }
 
-    &-status{
-      @each $key, $value in $antd-color-status{
-        &-#{$key}{
+    &-status {
+      @each $key, $value in $antd-color-status {
+        &-#{$key} {
           border-color: unset;
           @include themify($themes) {
             background: themed('input-background');
@@ -102,39 +171,43 @@
         }
       }
     }
-    &-disabled{
+
+    &-disabled {
       @include themify($themes) {
         background: themed('input-background-disabled');
         color: themed('input-text-disabled') !important;
       }
       user-select: none !important;
     }
+
     @include themify($themes) {
       background: themed('input-background');
       color: themed('text');
 
       &::placeholder {
         color: themed('text-placeholder');
+        font-size: $font-size-sm;
       }
     }
   }
 
   &-select {
-    &-selection{
-      &-placeholder{
+    &-selection {
+      &-placeholder {
         @include themify($themes) {
-          color: themed('text-placeholder') ;
+          color: themed('text-placeholder');
         }
       }
     }
-    &.ant-select{
-      &-status{
-        @each $key, $value in $antd-color-status{
-          @if($key != 'success'){
-            &-#{$key}{
-              .ant-select{
-                &-selector{
-                  border: .5px var(--ant-line-type) $value ;
+
+    &.ant-select {
+      &-status {
+        @each $key, $value in $antd-color-status {
+          @if ($key != 'success') {
+            &-#{$key} {
+              .ant-select {
+                &-selector {
+                  border: .5px var(--ant-line-type) $value;
                 }
               }
             }
@@ -143,31 +216,33 @@
         }
       }
     }
-    &-disabled{
-      .ant{
-        &-select{
-          &-selector{
+
+    &-disabled {
+      .ant {
+        &-select {
+          &-selector {
             @include themify($themes) {
-              background: themed('input-background-disabled') ;
-              color: themed('input-text-disabled') ;
+              background: themed('input-background-disabled');
+              color: themed('input-text-disabled');
             }
           }
         }
       }
-      user-select: none ;
+
+      user-select: none;
     }
 
     &-item {
       &-option {
         &-selected {
           @include themify($themes) {
-            color: themed('text') ;
+            color: themed('text');
           }
         }
       }
 
       @include themify($themes) {
-        color: themed('text') ;
+        color: themed('text');
       }
     }
 
@@ -176,32 +251,33 @@
       }
 
       @include themify($themes) {
-        background: themed('input-background') ;
-        color: themed('text') ;
+        background: themed('input-background');
+        color: themed('text');
       }
     }
 
     &-selector {
       &:where(:not(.ant-select-focus)) {
         @include themify($themes) {
-          border-color: themed('input-border') ;
+          border-color: themed('input-border');
         }
       }
     }
 
     &-selection {
-      &-placeholder{
-        font-size: $font-size-base ;
+      &-placeholder {
+        font-size: $font-size-sm;
       }
+
       &-search {
 
         &-input {
-          font-size: $font-size-base ;
+          font-size: $font-size-sm;
           @include themify($themes) {
-            color: themed('text') ;
+            color: themed('text');
             &::placeholder {
-              font-size: $font-size-base ;
-                color: themed('text-placeholder') !important;
+              font-size: $font-size-sm;
+              color: themed('text-placeholder') !important;
             }
           }
         }
@@ -235,7 +311,7 @@
       &-item {
         &-option {
           &-selected {
-            background: var(--ant-color-primary) !important;
+
           }
         }
       }
@@ -244,8 +320,8 @@
 }
 
 //setting border radius
-.ant{
-  &-input,  &-input-affix-wrapper, &-select-selector, &-select{
+.ant {
+  &-input, &-input-affix-wrapper, &-select-selector, &-select {
     border-radius: $input-border-radius;
   }
 }
