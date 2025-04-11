@@ -303,6 +303,107 @@ class EcommerceController extends Controller
     ];
 
   }
+  private function getDataOrder(): array
+  {
+    return [
+      [
+        'order_id' => '0001',
+        'id' => 1,
+        'date' => '2025-04-12',
+        'product' => [
+          'thumbnail' => asset('assets/img/product/1.png'),
+          'name' => 'T-Shirt White',
+          'category' => 'cloths',
+          'currency' => '$',
+          'price' => 77.00,
+        ],
+        'qty' => 4,
+        'status' => 'expired',
+        'payment'=> [
+          'status' => 'expired',
+        ],
+      ],
+      [
+        'order_id' => '0002',
+        'id' => 2,
+        'date' => '2025-04-11',
+        'product' => [
+          'thumbnail' => asset('assets/img/product/2.png'),
+          'name' => 'Nike Red',
+          'category' => 'shoes',
+          'currency' => '$',
+          'price' => 23.50,
+        ],
+        'qty' => 2,
+        'status' => 'processing',
+        'payment'=> [
+          'status' => 'paid',
+        ],
+      ],
+      [
+        'order_id' => '0003',
+        'id' => 3,
+        'date' => '2025-04-10',
+        'product' => [
+          'thumbnail' => asset('assets/img/product/laptop-2.png'),
+          'name' => 'Laptop Air 15"',
+          'category' => 'electronics',
+          'currency' => '$',
+          'price' => 849.99,
+        ],
+        'qty' => 1,
+        'status' => 'shipped',
+        'payment'=> [
+          'status' => 'paid',
+        ],
+      ],
+      [
+        'order_id' => '0004',
+        'id' => 4,
+        'date' => '2025-04-10',
+        'product' => [
+          'description'=> 'Lorem ipsum dolor sit amet',
+          'qty_limit' => 10,
+          'id' => 4,
+          'thumbnail' => asset('assets/img/product/4.png'),
+          'name' => 'Red Blazer',
+          'category' => 'apparel',
+          'price' => 49.99,
+          'compare_price' => 45.00,
+          'cost_per_item' => 40.00,
+          'tax_rate' => 10,
+          'tag' => ['apparel'],
+          'currency' => '$',
+        ],
+        'qty' => 10,
+        'status' => 'shipped',
+        'payment'=> [
+          'status' => 'paid',
+        ],
+      ],
+      [
+        'order_id' => '0005',
+        'id' => 5,
+        'date' => '2025-04-10',
+        'product' => [
+          'thumbnail' => asset('assets/img/product/handphone.png'),
+          'name' => 'Smartphone X',
+          'category' => 'electronics',
+          'price' => 299.99,
+          'compare_price' => 279.99,
+          'cost_per_item' => 250.00,
+          'tax_rate' => 10,
+          'tag' => ['electronics'],
+          'currency' => '$',
+        ],
+        'status' => 'shipped',
+        'payment'=> [
+          'status' => 'paid',
+        ],
+        'qty' => 15,
+      ]
+    ];
+  }
 
   public function index(Request $request)
   {
@@ -409,7 +510,7 @@ class EcommerceController extends Controller
       ->go();
     $state = $this->state();
     $state->setCollections([
-      'data' => $this->getData(),
+      'data' => $this->getDataOrder(),
     ]);
     $state->setMeta($seo);
     $state->setState([]);
