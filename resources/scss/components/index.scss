@@ -10,3 +10,9 @@
 @import "container";
 
 
+
+.border-color-default{
+  @include themify($themes){
+    border-color: themed('border');
+  }
+}

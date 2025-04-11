@@ -3,16 +3,20 @@ import {Avatar, Image, Typography} from 'antd';
 import {AvatarStatusAttr} from "@/Components/general/AvatarStatus/type";
 import {Icons} from "@/Components/general/Icons";
 
-const AvatarStatus:React.FC<AvatarStatusAttr> = (props) => {
-  function _onClickName(){
-    if(typeof props?.onNameClick !== 'undefined' && typeof props?.onNameClick === 'function'){
+const AvatarStatus: React.FC<AvatarStatusAttr> = (props) => {
+  function _onClickName() {
+    if (typeof props?.onNameClick !== 'undefined' && typeof props?.onNameClick === 'function') {
       props?.onNameClick(props)
     }
   }
 
   return (
     <div className={`avatar-status avatar-status-size-default`}>
-      <div className={['rounded-full overflow-hidden h-[40px] w-[40px]', props?.avatar?.className, ].join(' ')}>
+      <div className={[
+        props?.shape === 'circle' ? 'rounded-full' : 'rounded-lg',
+        'overflow-hidden h-[40px] w-[40px]',
+        props?.avatar?.className,
+      ].join(' ')}>
         {
           props?.avatar?.src ?
             <Image
@@ -29,20 +33,24 @@ const AvatarStatus:React.FC<AvatarStatusAttr> = (props) => {
             : <div
               className="flex items-center justify-center h-full w-full"
               style={{
-              backgroundColor: props?.avatar?.style?.backgroundColor ?? `var(--ant-color-primary-border)`,
-            }}>
-              <Icons type={'UserOutlined'} />
+                backgroundColor: props?.avatar?.style?.backgroundColor ?? `var(--ant-color-primary-border)`,
+              }}>
+              <Icons type={'UserOutlined'}/>
             </div>
         }
       </div>
       <div className={'avatar-status-content'}>
         <div className={'avatar-status-title'}>
-          <Typography.Paragraph
-            onClick={_onClickName}
-            className={'avatar-status-title-content'}
-          >
-            {props?.name}
-          </Typography.Paragraph>
+          {
+            typeof (props?.name) == 'string' ?
+              <Typography.Paragraph
+                onClick={_onClickName}
+                className={'avatar-status-title-content'}
+              >
+                {props?.name}
+              </Typography.Paragraph>
+              : props?.name
+          }
           {props?.suffix && (
             <Typography.Paragraph className={'avatar-status-suffix'}>{props?.suffix}</Typography.Paragraph>
           )}

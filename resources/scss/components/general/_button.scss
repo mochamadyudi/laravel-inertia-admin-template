@@ -67,7 +67,9 @@ $btn-variant: ("outlined", "dashed", "solid", "filled", "text", "link");
 
     &-dashed {
       background: transparent !important;
-      //border-color: $button-border-default !important;
+      @include themify($themes){
+        border-color: themed('border');
+      }
     }
   }
 }

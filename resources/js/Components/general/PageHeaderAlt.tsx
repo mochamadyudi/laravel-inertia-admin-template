@@ -18,7 +18,6 @@ type PageHeaderProps = {
 
 type PageHeaderAltAttr = PageHeaderProps & { type?: string };
 const PageHeaderAlt: React.FC<PageHeaderAltAttr> = ({container, ...props}) => {
-  console.log(typeof(props?.title))
   return (
     <div className="page-header">
       <div className={`page-header-alt ${props?.className}`}>

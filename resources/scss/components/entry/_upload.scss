@@ -1,0 +1,9 @@
+.ant{
+  &-upload{
+    &-wrapper, &-drag{
+      @include themify($themes){
+        background: darken(themed('card-background'), 1) !important;
+      }
+    }
+  }
+}

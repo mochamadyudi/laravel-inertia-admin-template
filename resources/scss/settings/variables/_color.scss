@@ -26,7 +26,7 @@ $bg-chat-list-item-active: #2e333d;
 $text-paragraph: #435383;
 $text-paragraph-dark: #afb8d4;
 
-$text-color: #354a62;
+$text-color: #40536a;
 $text-color-placeholder: #b5b5b5;
 $text-color-placeholder-dark: #2d3c4f;
 $text-color-dark: #dae1ee;
@@ -40,11 +40,16 @@ $bg-footer: $color-white;
 $bg-footer-dark: #283142;
 
 
+$border-color: #d1d1d1;
+$border-color-dark: #414e6a;
+
 $bg-input: #fff;
 $bg-input-dark: #212939;
 $bg-input-error: rgba(255, 241, 240, 0.62);
 $bg-input-error-dark: #ffccc7;
 $border-input: #e7e7e7;
+$select-arrow: #d1d1d1;
+$select-arrow-dark: #6284ab;
 $border-input-dark: #3e5064;
 $text-input-error: var(--ant-red-5);
 $text-input-error-dark: var(--ant-red-5);

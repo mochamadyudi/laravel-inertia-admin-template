@@ -24,6 +24,15 @@ Route::prefix('app')
           Route::get('/{id}', [Dashboard\App\ChatController::class, 'show'])->name('dashboard.app.chat.show');
         Route::get('/', [Dashboard\App\ChatController::class, 'index'])->name('dashboard.app.chat.index');
       });
+
+    Route::prefix('ecommerce')
+      ->group(function () {
+        Route::prefix('order')
+          ->group(function () {
+            Route::get('/', [Dashboard\App\EcommerceController::class, 'orderIndex'])->name('dashboard.ecommerce.order.index');
+          });
+      });
+    Route::resource('ecommerce', Dashboard\App\EcommerceController::class)->names('dashboard.ecommerce');
   });
 
 Route::prefix('components')

@@ -1,10 +1,10 @@
-@mixin ant-input-suffix($color){
-  .ant{
-    &-input{
-      &-suffix{
-        svg{
-          fill:$color !important;
-          color:$color !important;
+@mixin ant-input-suffix($color) {
+  .ant {
+    &-input {
+      &-suffix {
+        svg {
+          fill: $color !important;
+          color: $color !important;
         }
 
         @content;
@@ -12,27 +12,72 @@
     }
   }
 }
-$status: ('success','error','warning','error','info','link','primary');
 
-.ant{
-  &-input{
-    &-textarea{
-      &-affix{
-        &-wrapper{
+$status: ('success', 'error', 'warning', 'error', 'info', 'link', 'primary');
+
+.ant {
+  &-input {
+    &-textarea {
+      &-affix {
+        &-wrapper {
           overflow: hidden;
         }
       }
 
     }
-    &-status{
-      @each $val in $status{
-        &-#{$val}{
-          @include ant-input-suffix(var(--ant-color-#{$val})){
+
+    &-status {
+      @each $val in $status {
+        &-#{$val} {
+          @include ant-input-suffix(var(--ant-color-#{$val})) {
 
           }
         }
       }
 
+    }
+  }
+}
+
+.ant {
+  &-select {
+    &.ant {
+      &-select {
+        &-open {
+          .ant-select{
+            &-arrow {
+              .anticon {
+                color: var(--ant-color-primary) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-outlined {
+
+      .ant {
+        &-select {
+          &-selector {
+            border-width: var(--ant-line-width);
+            border-style: var(--ant-line-type);
+            @include themify($themes) {
+              border-color: themed('input-border');
+            }
+          }
+        }
+      }
+    }
+
+    &-arrow {
+      .anticon {
+        position: relative;
+        transform: rotate(0);
+        font-size: 12px;
+        @include themify($themes) {
+          color: themed('select-arrow') !important;
+        }
+      }
     }
   }
 }
