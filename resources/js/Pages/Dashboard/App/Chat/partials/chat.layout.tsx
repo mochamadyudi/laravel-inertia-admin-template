@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Badge, Button, Divider, Layout, Typography} from "antd";
+import {Badge, Button, Divider, Layout, Splitter, Typography} from "antd";
 import {
   FolderOutlined,
   MessageOutlined,
@@ -85,7 +85,7 @@ class Chat extends React.Component<ChatLayoutProps> {
     active: 'chat',
     width: {
       menu: 80,
-      sider: 360
+      sider: 280
     }
   }
 
@@ -164,44 +164,51 @@ class Chat extends React.Component<ChatLayoutProps> {
               </div>
             </div>
           </Layout.Sider>
-          {
-            this.props?.sider && this.props.sider?.component ?
-              <Layout.Sider width={this.state?.width?.sider ?? 360} className={[
-                "app-chat-sider-addon",
-                this.props.sider?.search?.show ? 'has-search': null,
-              ].filter((child: string|null)=> child !== null).join(' ')}>
-                <Chat.SiderHeader {...this.props.sider}/>
-                <div className="app-chat-sider-content">
-                  <Scrollbars autoHide>
-                    {this.props.sider?.component}
-                  </Scrollbars>
-                </div>
-              </Layout.Sider>  : (
-                <Layout.Sider width={this.state?.width?.sider ?? 360} className={[
-                  "app-chat-sider-addon",
-                  this.props.sider?.search?.show ? 'has-search' : null,
-                ].filter((child: string | null) => child !== null).join(' ')}>
-                  <Chat.SiderHeader {...this.props.sider}/>
-                  <Scrollbars autoHide>
-                    <Chat.List/>
-                  </Scrollbars>
-                 </Layout.Sider>
-              )
-          }
-          <Layout.Content className="bg-transparent">
-            <div className="app-chat-content">
+          <Splitter >
+            <Splitter.Panel className="" defaultSize={this.state?.width?.sider ?? 280} min={this.state?.width?.sider ?? 280}>
               {
-                this.props?.toolbar?.show && (
-                  <Chat.Toolbar {...this.props.toolbar}/>
-                )
+                this.props?.sider && this.props.sider?.component ?
+                    <Layout.Sider className={[
+                      "app-chat-sider-addon",
+                      this.props.sider?.search?.show ? 'has-search': null,
+                    ].filter((child: string|null)=> child !== null).join(' ')}>
+                      <Chat.SiderHeader {...this.props.sider}/>
+                      <div className="app-chat-sider-content">
+                        <Scrollbars autoHide>
+                          {this.props.sider?.component}
+                        </Scrollbars>
+                      </div>
+                    </Layout.Sider>  : (
+                        <Layout.Sider className={[
+                          "app-chat-sider-addon",
+                          this.props.sider?.search?.show ? 'has-search' : null,
+                        ].filter((child: string | null) => child !== null).join(' ')}>
+                          <Chat.SiderHeader {...this.props.sider}/>
+                          <Scrollbars autoHide>
+                            <Chat.List/>
+                          </Scrollbars>
+                        </Layout.Sider>
+                    )
               }
-              <div className="app-chat-content--content">
-                <Scrollbars autoHide>
-                  {this.props?.children ? this.props.children : <Chat.StartedContent/>}
-                </Scrollbars>
-              </div>
-            </div>
-          </Layout.Content>
+            </Splitter.Panel>
+            <Splitter.Panel defaultSize="512" min={512}>
+              <Layout.Content className="bg-transparent">
+                <div className="app-chat-content">
+                  {
+                      this.props?.toolbar?.show && (
+                          <Chat.Toolbar {...this.props.toolbar}/>
+                      )
+                  }
+                  <div className="app-chat-content--content">
+                    <Scrollbars autoHide>
+                      {this.props?.children ? this.props.children : <Chat.StartedContent/>}
+                    </Scrollbars>
+                  </div>
+                </div>
+              </Layout.Content>
+            </Splitter.Panel>
+          </Splitter>
+
         </Layout>
       </React.Fragment>
     )

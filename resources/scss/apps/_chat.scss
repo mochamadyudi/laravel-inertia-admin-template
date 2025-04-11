@@ -5,13 +5,27 @@ $height-chat-toolbar-with-search: 100px;
   &-chat {
     @apply rounded-xl overflow-hidden;
     @include themify($themes){
-      border:1px solid darken(themed('body'),2);
+      //border:1px solid darken(themed('body'),2);
+    }
+
+    .ant{
+      &-splitter{
+        @apply w-full h-full;
+        &-panel{
+          @apply w-full h-full;
+        }
+      }
+      &-layout{
+        &-content{
+          @apply h-full;
+        }
+      }
     }
     &-content{
-      @apply h-full flex flex-col;
+      @apply h-full flex flex-col w-full #{!important};
 
       &--content{
-        @apply h-full;
+        @apply h-full flex flex-col #{!important};
 
         > div {
           @apply bg-transparent #{!important};
@@ -35,21 +49,20 @@ $height-chat-toolbar-with-search: 100px;
         @apply min-h-40 flex flex-col items-center justify-end space-y-2;
       }
     }
-
     &-group{
       @apply h-screen;
     }
     &-sider {
-      @apply bg-transparent #{!important};
+      @apply bg-transparent w-full #{!important};
       @include themify($themes){
         border-right:1px solid darken(themed('body'),2);
       }
       &-addon{
-        @apply relative;
+        @apply relative w-full min-w-full h-full #{!important};
         > div {
           @apply bg-transparent flex flex-col;
           @include themify($themes){
-            border-right:1px solid darken(themed('body'),2);
+            //border-right:1px solid darken(themed('body'),2);
           }
         }
       }
@@ -149,8 +162,6 @@ $height-chat-toolbar-with-search: 100px;
     }
   }
 }
-
-
 
 .app{
   &-chat{

@@ -14,7 +14,6 @@
           }
         }
       }
-
       &-label {
         label {
           font-family: sf-pro-medium, sans-serif;
@@ -161,9 +160,9 @@
       }
     }
 
-    &-status {
-      @each $key, $value in $antd-color-status {
-        &-#{$key} {
+    &-status{
+      @each $key, $value in $antd-color-status{
+        &-#{$key}{
           border-color: unset;
           @include themify($themes) {
             background: themed('input-background');
@@ -171,8 +170,7 @@
         }
       }
     }
-
-    &-disabled {
+    &-disabled{
       @include themify($themes) {
         background: themed('input-background-disabled');
         color: themed('input-text-disabled') !important;

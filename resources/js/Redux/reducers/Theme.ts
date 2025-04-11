@@ -5,7 +5,7 @@ import {
   ON_CHANGE_LOCALE,
   ON_CHANGE_NAV_COLLAPSED,
   ON_SAVE_THEME,
-  REHYDRATE_THEME_CONFIG
+  REHYDRATE_THEME_CONFIG, THEME_TOKEN
 } from "@/Redux/constants/theme";
 import {ACT_EVENT} from "@/Redux/constants/action";
 
@@ -59,7 +59,19 @@ export default function (state = initialState, action: ActionRedux<any>) {
         ...state,
         direction: action?.payload ?? state?.direction
       }
+    case ACT_EVENT(THEME_TOKEN):
+      return {
+        ...state,
+        antd:{
+          ...state.antd,
+          token:{
+            ...state.antd?.token,
+            ...action.payload?.token
+          }
+        }
+      }
     default:
+
       document.body.classList.add(state.currentTheme);
       return state;
   }

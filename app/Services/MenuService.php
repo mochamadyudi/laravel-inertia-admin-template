@@ -63,7 +63,7 @@ class MenuService
           ],
           [
             'type' => 'item',
-            'key' => '@user-management',
+            'key' => route('dashboard.app.calendar.index'),
             'label' => 'Calendar',
             'icon' => 'CalendarOutlined',
             'permissions' => [],
@@ -71,7 +71,7 @@ class MenuService
           ],
           [
             'type' => 'submenu',
-            'key' => '@user-management',
+            'key' => '@project',
             'label' => 'Project',
             'icon' => 'BulbOutlined',
             'permissions' => [],
@@ -79,7 +79,7 @@ class MenuService
             'children' => [
               [
                 'type' => 'submenu',
-                'key' => '@user-management',
+                'key' => '@project/list',
                 'label' => 'List',
                 'icon' => 'UnorderedListOutlined',
                 'permissions' => [],
@@ -87,7 +87,7 @@ class MenuService
               ],
               [
                 'type' => 'submenu',
-                'key' => '@user-management',
+                'key' => '@project/kanban',
                 'label' => 'Kanban',
                 'icon' => 'UnorderedListOutlined',
                 'permissions' => [],
@@ -95,7 +95,7 @@ class MenuService
               ],
               [
                 'type' => 'submenu',
-                'key' => '@user-management',
+                'key' => '@project/scrumboard',
                 'label' => 'Scrumboard',
                 'icon' => 'UnorderedListOutlined',
                 'permissions' => [],

@@ -1,12 +1,10 @@
 import React from "react";
 import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
-import {Button, Card, Col, Progress, Row, Statistic, Table, Tabs, Typography} from "antd";
-import TheContainer from "@/Components/general/TheContainer";
+import {Button, Card, Col, Progress, Row, Statistic, Typography} from "antd";
 import {Icons} from "@/Components/general/Icons";
 import VisitorTablePartial from "@/Pages/Dashboard/partials/visitor.table.partial";
 
 const Page = (props: any) => {
-  console.log({ props })
   return (
     <div className="dashboard">
       <Row gutter={24}>
@@ -67,6 +65,5 @@ const Page = (props: any) => {
   )
 }
 
-Page.layout = (page: any) => <TheLayout type="dashboard" children={page}/>
-
+Page.layout = (page: any) => <TheLayout type="dashboard" children={page}/>;
 export default Page;

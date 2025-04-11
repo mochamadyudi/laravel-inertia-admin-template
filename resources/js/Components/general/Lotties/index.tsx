@@ -24,3 +24,5 @@ const Lotties: React.FC<LottiesInterface> = (props) => {
 }
 
 export default Lotties;
+
+

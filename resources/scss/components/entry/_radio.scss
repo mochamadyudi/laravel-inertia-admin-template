@@ -1,0 +1,21 @@
+.ant{
+  &-radio{
+    &-css{
+      &-var{
+        @include themify($themes){
+          --ant-radio-button-bg: themed('input-background') !important;
+          --ant-radio-button-checked-bg: themed('input-background') !important;
+        }
+
+      }
+    }
+  }
+}
+.ant{
+  &-radio{
+    &-group{
+
+      //@apply border border-red-500;
+    }
+  }
+}

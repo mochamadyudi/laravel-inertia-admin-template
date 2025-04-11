@@ -3,8 +3,6 @@
 use App\Http\Controllers\Dashboard;
 use Illuminate\Support\Facades\Route;
 
-
-
 Route::prefix('app')
   ->group(function () {
     Route::prefix('mail')
@@ -15,6 +13,11 @@ Route::prefix('app')
         Route::get('/sent', [Dashboard\App\MailController::class, 'sent'])->name('dashboard.app.mail.sent');
         Route::get('/compose', [Dashboard\App\MailController::class, 'compose'])->name('dashboard.app.mail.compose');
         Route::get('/', [Dashboard\App\MailController::class, 'index'])->name('dashboard.app.mail.index');
+      });
+
+    Route::prefix('calendar')
+      ->group(function () {
+        Route::get('/', [Dashboard\App\CalendarController::class, 'index'])->name('dashboard.app.calendar.index');
       });
 
     Route::prefix('chat')

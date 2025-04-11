@@ -4,7 +4,7 @@ import {
   ON_SAVE_THEME,
   ON_CHANGE_LOCALE,
   REHYDRATE_THEME_CONFIG,
-  ON_CHANGE_NAV_COLLAPSED, ON_CHANGE_DIRECTION
+  ON_CHANGE_NAV_COLLAPSED, ON_CHANGE_DIRECTION, THEME_TOKEN
 } from "@/Redux/constants/theme";
 
 export function onSaveTheme(payload: any): ActionRedux<any> {
@@ -34,6 +34,13 @@ export function rehydrateThemeConfig(payload: any): ActionRedux<any>{
 export function onChangeDirection(payload: 'ltr' | 'rtl'): ActionRedux<'rtl' | 'ltr'> {
   return {
     type: ACT_EVENT(ON_CHANGE_DIRECTION),
+    payload
+  }
+}
+
+export function changeThemeToken(payload: any): ActionRedux<any>{
+  return {
+    type: ACT_EVENT(THEME_TOKEN),
     payload
   }
 }

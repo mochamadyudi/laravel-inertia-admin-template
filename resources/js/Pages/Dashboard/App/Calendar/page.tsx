@@ -1,7 +1,6 @@
 import React from 'react';
 import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Affix, Badge, BadgeProps, Calendar, CalendarProps, Layout, Splitter, Typography} from "antd";
-import CalendarLayout from "@/Pages/Dashboard/App/Calendar/partials/calendar.layout";
 import {Dayjs} from "dayjs";
 import {CalendarMode} from "antd/es/calendar/generateCalendar";
 import CalendarProvider from "@/Pages/Dashboard/App/Calendar/partials/calendar.context";
@@ -13,25 +12,25 @@ const Page = () => {
     switch (value.date()) {
       case 8:
         listData = [
-          {type: 'warning', content: 'This is warning event.'},
-          {type: 'success', content: 'This is usual event.'},
+          { type: 'warning', content: 'This is warning event.' },
+          { type: 'success', content: 'This is usual event.' },
         ];
         break;
       case 10:
         listData = [
-          {type: 'warning', content: 'This is warning event.'},
-          {type: 'success', content: 'This is usual event.'},
-          {type: 'error', content: 'This is error event.'},
+          { type: 'warning', content: 'This is warning event.' },
+          { type: 'success', content: 'This is usual event.' },
+          { type: 'error', content: 'This is error event.' },
         ];
         break;
       case 15:
         listData = [
-          {type: 'warning', content: 'This is warning event'},
-          {type: 'success', content: 'This is very long usual event......'},
-          {type: 'error', content: 'This is error event 1.'},
-          {type: 'error', content: 'This is error event 2.'},
-          {type: 'error', content: 'This is error event 3.'},
-          {type: 'error', content: 'This is error event 4.'},
+          { type: 'warning', content: 'This is warning event' },
+          { type: 'success', content: 'This is very long usual event......' },
+          { type: 'error', content: 'This is error event 1.' },
+          { type: 'error', content: 'This is error event 2.' },
+          { type: 'error', content: 'This is error event 3.' },
+          { type: 'error', content: 'This is error event 4.' },
         ];
         break;
       default:
@@ -60,7 +59,7 @@ const Page = () => {
       <ul className="events">
         {listData.map((item) => (
           <li key={item.content}>
-            <Badge status={item.type as BadgeProps['status']} text={item.content}/>
+            <Badge status={item.type as BadgeProps['status']} text={item.content} />
           </li>
         ))}
       </ul>
@@ -73,8 +72,8 @@ const Page = () => {
     return info.originNode;
   };
 
-  function _onPanelChange(date: any, mode: CalendarMode) {
-    console.log({date, mode})
+  function _onPanelChange(date: any, mode: CalendarMode){
+    console.log({ date, mode})
   }
 
   return (
