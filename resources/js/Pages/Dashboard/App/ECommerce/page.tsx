@@ -76,7 +76,7 @@ const Page = (props: any) => {
       }
     },
     {
-      key: 'status',
+      key: 'action',
       render: (val) => {
         return <EllipsisDropdown
           menu={{
