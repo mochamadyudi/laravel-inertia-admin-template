@@ -1,4 +1,4 @@
-import React, {InputHTMLAttributes, useState} from 'react';
+import React, {InputHTMLAttributes, useCallback, useState} from 'react';
 import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 import {Table, Card, Flex, Input, Select, Typography, Image, Badge, Tag} from "antd";
 
@@ -10,12 +10,13 @@ import {
   SearchOutlined
 } from "@ant-design/icons";
 import EllipsisDropdown from "@/Components/general/Dropdown/EllipsisDropdown";
+import {debounce} from "lodash";
 
 type TableRowSelection<T extends object = object> = TableProps<T>['rowSelection'];
 
 const Page = (props: any) => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(()=> {
+  const [data, setData] = useState(() => {
     return props?.collections?.data ?? []
   });
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
@@ -33,14 +34,14 @@ const Page = (props: any) => {
     {
       dataIndex: 'order_id',
       title: "ID",
-      render: (_: string)=> ["#",_].join('')
+      render: (_: string) => ["#", _].join('')
     },
     {
       dataIndex: 'product',
       sorter: (a, b) => a.name.length - b?.name.length,
       title: "Product",
       width: "25%",
-      render: (_: {thumbnail: string, name: string}) => {
+      render: (_: { thumbnail: string, name: string }) => {
         return (
           <div className="flex items-center gap-4">
             <Image
@@ -58,9 +59,9 @@ const Page = (props: any) => {
     {
       dataIndex: 'status',
       title: "Order Status",
-      render: (_:string)=> {
+      render: (_: string) => {
         let color;
-        switch (_.toLowerCase()){
+        switch (_.toLowerCase()) {
           case "processing":
             color = 'cyan';
             break;
@@ -80,11 +81,11 @@ const Page = (props: any) => {
       }
     },
     {
-      dataIndex: ['payment','status'],
+      dataIndex: ['payment', 'status'],
       title: "Payment Status",
-      render: (_: string)=> {
+      render: (_: string) => {
         let color;
-        switch (_.toLowerCase()){
+        switch (_.toLowerCase()) {
           case "paid":
             color = 'cyan';
             break;
@@ -103,7 +104,7 @@ const Page = (props: any) => {
     {
       dataIndex: ['qty'],
       title: "Total",
-      render: (_: number, val: any) => [val?.product?.currency , (_ * val?.product?.price).toFixed(2)].join(' ')
+      render: (_: number, val: any) => [val?.product?.currency, (_ * val?.product?.price).toFixed(2)].join(' ')
     },
     {
       key: 'action',
@@ -115,14 +116,15 @@ const Page = (props: any) => {
                 label: "View Detail",
                 key: 'detail',
                 icon: <EyeOutlined/>,
-                onClick: ()=>{
+                onClick: () => {
                 },
               },
               {
                 label: "Add to Remarks",
                 key: 'edit',
                 icon: <PlusOutlined/>,
-                onClick: ()=>{},
+                onClick: () => {
+                },
               }
             ]
           }}/>
@@ -135,34 +137,27 @@ const Page = (props: any) => {
   };
 
 
-  let timeout: any;
-  const onSearch: InputHTMLAttributes<any>['onChange'] = (event) => {
+  const handleSearch = async (value: string) => {
     setLoading(true);
-    if(event.target.value.length > 0){
-      new Promise((resolve)=> {
-        resolve(
-          timeout = setTimeout(()=> {
-            let filtered = props?.collections?.data.filter((item: any)=> item.product.name.toLowerCase().includes(event.target.value)) ?? [];
-            setData([...filtered])
-            setLoading(false);
-            clearTimeout(timeout)
-          },2000)
-        )
-      })
-    }else{
-      new Promise((resolve)=> {
-        resolve(
-          timeout = setTimeout(()=> {
-            setData(props.collections?.data ?? [])
-            setLoading(false);
-            clearTimeout(timeout)
-          },2000)
-        )
-      })
+    setTimeout(() => {
+      if (value.length > 0) {
+        let filtered = props?.collections?.data.filter((item: any) => item.product.name.toLowerCase().includes(value)) ?? [];
+        setData([...filtered])
+      } else {
+        setData(props.collections?.data ?? [])
+      }
+      setLoading(false);
+    }, 1000); // misal delay fetch 1 detik
+  };
 
-    }
+  // Gunakan useCallback agar debounce tidak dibuat ulang di setiap render
+  const debouncedSearch = useCallback(
+    debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+      handleSearch(e.target.value);
+    }, 500), // 500ms debounce
+    []
+  );
 
-  }
   return (
     <Card
       classNames={{
@@ -174,7 +169,8 @@ const Page = (props: any) => {
           <Input
             prefix={<SearchOutlined/>}
             placeholder="Search"
-            onChange={onSearch}
+            onChange={debouncedSearch}
+            allowClear
           />
           <Select
             className="min-w-[200px]"
