@@ -172,10 +172,7 @@
       @apply relative;
       min-height: calc(100% + ($padding-content*2));
       width: calc(100% + ($padding-content*2));
-      left: -$padding-content;
-      top: -$padding-content;
-      right: -$padding-content;
-      bottom: -$padding-content;
+      margin: -$padding-content;
     }
 
     &__content {

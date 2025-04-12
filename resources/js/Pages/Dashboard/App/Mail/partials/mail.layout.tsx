@@ -2,7 +2,7 @@ import React from 'react';
 import TheLayout, {TheLayoutInterface} from "@/Components/layouts/DefaultLayout/TheLayout";
 import InnerLayout from "@/Components/layouts/inner-layout";
 import {Icons} from "@/Components/general/Icons";
-import {Button, MenuProps, Typography} from "antd";
+import {Button, MenuProps} from "antd";
 import {Link} from "@inertiajs/react";
 
 type MailLayoutType = {
@@ -10,7 +10,7 @@ type MailLayoutType = {
 } & TheLayoutInterface;
 const MailLayout: React.FC<MailLayoutType> = ({...props})=> {
   return (
-    <TheLayout type={props?.type} isFooter hasContainer>
+    <TheLayout type={props?.type ?? null} isFooter hasContainer>
       <InnerLayout
         sideWidth={220}
         menu={{

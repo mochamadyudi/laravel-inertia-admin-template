@@ -12,14 +12,13 @@ interface TheContentInterface {
 const TheContent: React.FC<TheContentInterface> = ({children, isFooter}) => {
   const ctx = useContext(InitializeContext);
   const props = usePage().props;
-  console.log({ props })
   // @ts-ignore
   return (
     <Layout.Content className={`app-content ${ctx.hasContainer ? 'has-container' : ''} ${ctx.isFooter ? 'has-footer' : 'no-footer'}`}>
       <Layout
         className={`app-content__content ${!isFooter ? 'no-footer' : 'has-footer'}`}
       >
-        <div className={'!h-full'}>
+        <div className={'!h-full flex flex-col'}>
           {
             typeof (props?.content) !== 'undefined' && props?.content ?
               //@ts-ignore

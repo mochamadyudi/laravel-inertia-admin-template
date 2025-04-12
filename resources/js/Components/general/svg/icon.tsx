@@ -40,3 +40,27 @@ export const ImageSvg = () => {
     </svg>
   )
 }
+
+export const BoardSVG = () => {
+  return (
+    <svg role="presentation" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g fill="currentColor">
+        <path
+          d="M4 11H12.004C12 11 12 5 12 5H3.996C4 5 4 11 4 11ZM3 4.997C3 4.4465 3.449 4 3.995 4H12.005C12.554 4 13 4.4475 13 4.997V11.003C12.9996 11.267 12.8947 11.52 12.7083 11.7068C12.5218 11.8937 12.269 11.9991 12.005 12H3.995C3.73093 11.9995 3.47785 11.8942 3.29131 11.7073C3.10477 11.5204 3 11.2671 3 11.003V4.997Z"></path>
+        <path d="M6 5V11H7V5H6ZM9 5V11H10V5H9Z"></path>
+      </g>
+    </svg>
+  )
+};
+
+export const BacklogSVG = () => {
+  return (
+    <svg role="presentation" width="18" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#fff" fill-opacity=".01" d="M.5 0h24v24H.5z"></path>
+      <rect x="2.5" y="3" width="10" height="2" rx="1" fill="currentColor"></rect>
+      <rect x="4.5" y="7" width="10" height="2" rx="1" fill="currentColor"></rect>
+      <rect x="2.5" y="11" width="10" height="2" rx="1" fill="currentColor"></rect>
+      <rect x="4.5" y="15" width="10" height="2" rx="1" fill="currentColor"></rect>
+    </svg>
+  )
+}
