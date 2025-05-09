@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Avatar, Badge, Button, Empty, Flex, Input, Table, Tooltip} from "antd";
+import {Avatar, Button, Empty, Flex, Input, Table, Tooltip} from "antd";
 import {DataType} from "@/Pages/Dashboard/App/Mail/handlers/data";
 import {TableProps} from "antd/es/table/InternalTable";
 import {
@@ -96,8 +96,8 @@ const MailPartial: React.FC<MailPartialType> = (props) => {
       colSpan: 0,
       className: 'yid-mail-content',
       render: (_, elm) => (
-        <div className="yid-mail-content-msg">
-          <span className="font-semibold">{elm?.title}</span>
+        <div className="yid-mail-content-msg line-clamp-1">
+          <span className="font-pro-bold">{elm?.title}</span>
           <span className="mx-2"> - </span>
           <span className="p mb-0">{elm?.snippet}</span>
         </div>

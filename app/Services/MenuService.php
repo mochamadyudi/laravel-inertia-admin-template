@@ -71,32 +71,32 @@ class MenuService
           ],
           [
             'type' => 'submenu',
-            'key' => '@project',
+            'key' => route('dashboard.app.project.index'),
             'label' => 'Project',
             'icon' => 'BulbOutlined',
             'permissions' => [],
             'roles' => [],
             'children' => [
               [
-                'type' => 'submenu',
-                'key' => '@project/list',
+                'type' => 'item',
+                'key' => route('dashboard.app.project.index'),
                 'label' => 'List',
                 'icon' => 'UnorderedListOutlined',
                 'permissions' => [],
                 'roles' => []
               ],
               [
-                'type' => 'submenu',
-                'key' => '@project/kanban',
+                'type' => 'item',
+                'key' => route('dashboard.app.project.kanban'),
                 'label' => 'Kanban',
                 'icon' => 'UnorderedListOutlined',
                 'permissions' => [],
                 'roles' => []
               ],
               [
-                'type' => 'submenu',
-                'key' => '@project/scrumboard',
-                'label' => 'Scrumboard',
+                'type' => 'item',
+                'key' => route('dashboard.app.project.scrum.index'),
+                'label' => 'Scrum',
                 'icon' => 'UnorderedListOutlined',
                 'permissions' => [],
                 'roles' => []

@@ -16,7 +16,7 @@ Route::get('/', function () {
 
 
 Route::prefix('dashboard')
-  ->middleware(['auth'])
+  ->middleware(['web', 'auth','verified'])
   ->group(function () {
     require __DIR__ . '/dashboard/web.php';
   });

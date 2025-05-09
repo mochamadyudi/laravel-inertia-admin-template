@@ -66,6 +66,7 @@ return [
         'paddingInlineLG'=> 22,
         'paddingInlineSM'=> 12,
         'borderRadius' => 9,
+        'defaultBorderColor' => '#d1d1d1',
         'borderRadiusLG' => 13,
         'contentFontSize' => 14,
         'contentFontSizeLG' => 16,

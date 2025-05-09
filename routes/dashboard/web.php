@@ -28,6 +28,24 @@ Route::prefix('app')
         Route::get('/', [Dashboard\App\ChatController::class, 'index'])->name('dashboard.app.chat.index');
       });
 
+    Route::prefix('project')
+      ->group(function () {
+        Route::get('/kanban', [Dashboard\App\ProjectController::class, 'kanban'])->name('dashboard.app.project.kanban');
+
+        Route::prefix('scrum')
+          ->group(function () {
+            Route::get('/road-map', [Dashboard\App\ProjectController::class, 'scrumRoadMap'])->name('dashboard.app.project.scrum.roadmap');
+            Route::get('/backlog', [Dashboard\App\ProjectController::class, 'scrumBacklog'])->name('dashboard.app.project.scrum.backlog');
+            Route::get('/board', [Dashboard\App\ProjectController::class, 'scrumBoard'])->name('dashboard.app.project.scrum.board');
+            Route::get('/reports', [Dashboard\App\ProjectController::class, 'scrumReports'])->name('dashboard.app.project.scrum.reports');
+            Route::get('/settings', [Dashboard\App\ProjectController::class, 'scrumSetting'])->name('dashboard.app.project.scrum.setting');
+            Route::get('/overview', [Dashboard\App\ProjectController::class, 'scrumIndex'])->name('dashboard.app.project.scrum.overview');
+            Route::get('/', [Dashboard\App\ProjectController::class, 'scrumIndex'])->name('dashboard.app.project.scrum.index');
+          });
+
+        Route::get('/', [Dashboard\App\ProjectController::class, 'index'])->name('dashboard.app.project.index');
+      });
+//    Route::resource('project', Dashboard\App\ProjectController::class)->names('dashboard.app.project');
     Route::prefix('ecommerce')
       ->group(function () {
         Route::prefix('order')

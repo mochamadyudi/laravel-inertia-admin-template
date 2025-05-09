@@ -7,7 +7,7 @@ type commonProps = {
   hasContainer?: boolean;
 }
 export type InitializeState<T> = {
-  type: 'page';
+  type?: 'page';
   showMenu: Required<boolean>;
 } & Pick<commonProps, 'isFooter' | 'hasContainer' | 'isDesktop'> | {
   type: 'dashboard' | T ;

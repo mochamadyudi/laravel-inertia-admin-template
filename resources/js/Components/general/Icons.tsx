@@ -2,11 +2,11 @@ import * as IconsAntd from '@ant-design/icons';
 import Icon from "@ant-design/icons";
 import React from 'react';
 
-type IconType = {
+export type IconType = {
   type: string;
   [k: string]: any;
 };
-type CustomIconType = {
+export type CustomIconType = {
   svg: React.ReactNode | any;
   className?: string;
 };
