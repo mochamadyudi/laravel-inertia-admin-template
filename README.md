@@ -1,4 +1,5 @@
 # 🎨 Laravel + Ant Design + Inertia + React + Redux Theme Starter
+![logo](/presentation.png)
 
 Halo! 👋
 Ini adalah **starter theme** buat kamu yang lagi ngebangun project Laravel pakai kombinasi stack modern:
