@@ -12,7 +12,7 @@ import Animation from "@/assets/lotties/edit.json";
 import RegisterForm from "@/Components/data-entry/form/auth/register.form";
 import RedirectRegisterPartial from "@/Pages/Auth/register/partials/redirect-register.partial";
 
-const NavLeft = styled.div`
+const NavLeft = styled.nav`
   background: ${(props: any) => props?.theme === 'light' ? props?.light : props?.dark};
   height: 100%;
 `;
@@ -30,6 +30,16 @@ const Page = (props: any) => {
           onFinish(){
             // action
             form.resetFields();
+            if(typeof(props?.errors) !== 'undefined' && Object.keys(props?.errors).length > 0){
+              let fields: {name:string;errors:any}[]  = [];
+              Object.entries(props?.errors).map(([k, v]: [string, any])=>{
+                fields.push({
+                  name: k,
+                  errors: [ v ]
+                })
+              })
+              form.setFields(fields);
+            }
           },
           onError(e: any){
             form.setFields([
@@ -95,7 +105,7 @@ const Page = (props: any) => {
             <Flex className="h-full" align="center" justify="center">
               <div className="space-y-7 px-4 w-full max-w-[420px] xl:max-w-[540px] xl:px-0 xl:min-w-[480px]">
                 <div className="!space-y-2">
-                  <Typography.Title level={2} className="!text-3xl !m-0">Sign In</Typography.Title>
+                  <Typography.Title level={2} className="!text-3xl !m-0">Sign Up</Typography.Title>
                   <Flex gap={6}>
                     <Typography>Already have an account?</Typography>
                     <Link href={route('login')}>Sign In</Link>

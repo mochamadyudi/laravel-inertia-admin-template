@@ -1,18 +1,22 @@
 import React from 'react';
-import ScrumLayout from "@/Pages/Dashboard/App/Project/Scrum/partials/scrum.layout";
+import ScrumLayout, {ScrumLayoutContent} from "@/Pages/Dashboard/App/Project/Scrum/partials/scrum.layout";
+import TheLayout from "@/Components/layouts/DefaultLayout/TheLayout";
 const Page = (props: any) => {
   return (
-    <ScrumLayout.Content
+    <ScrumLayoutContent
       title="Roadmap"
       useBreadcrumb
     >
       <React.Fragment>
 
       </React.Fragment>
-    </ScrumLayout.Content>
+    </ScrumLayoutContent>
   )
 }
 
-Page.layout = (children: React.ReactNode) => <ScrumLayout  children={children} />;
+Page.layout = (children: React.ReactNode) => {
+  // @ts-ignore
+  return <TheLayout isFooter={false}><ScrumLayout children={children}/></TheLayout>
+};
 
 export default Page;

@@ -13,15 +13,19 @@ export interface InnerLayoutProps {
   children: React.ReactNode;
   menu: MenuProps;
   sideWidth?: number;
+  onChangeCollapsed?: (value: boolean)=> void;
   addonAfter?: ReactNode | ((options :{ isCollapse: boolean, isDesktop?: boolean }) => ReactNode);
   // @ts-ignore
   addonBefore?: ReactNode | ((options :{ isCollapse: boolean, isDesktop?: boolean}) => ReactNode);
   className?: string;
   useCollapse?: boolean;
+  defaultCollapsed?: boolean;
 }
 
 const InnerLayout: React.FC<InnerLayoutProps> = ({children, menu, sideWidth = 200, useCollapse = false, ...props}) => {
-  const [collapse, setCollapse] = useState<boolean>(false);
+  const [collapse, setCollapse] = useState<boolean>(()=> {
+    return props?.defaultCollapsed ?? false;
+  });
   const {currentTheme} = useSelector(({Theme}: any) => Theme);
   const isDesktop = Utils.getBreakPoints(useBreakpoint()).includes('lg')
   const [open, setOpen] = useState<boolean>(false);
@@ -34,7 +38,10 @@ const InnerLayout: React.FC<InnerLayoutProps> = ({children, menu, sideWidth = 20
   }, [_props, isDesktop]);
 
   const onChangeCollapse = () => {
-    setCollapse(prevState => !prevState);
+    if(typeof(props?.onChangeCollapsed) !== 'undefined' && typeof(props?.onChangeCollapsed) == 'function'){
+      props?.onChangeCollapsed(!collapse);
+      setCollapse(prevState => !prevState);
+    }
   }
   return (
     <React.Fragment>
@@ -43,7 +50,7 @@ const InnerLayout: React.FC<InnerLayoutProps> = ({children, menu, sideWidth = 20
           isDesktop && (
             <Layout.Sider width={sideWidth} collapsed={collapse} className={'inner-layout-sider relative'}>
               <Scrollbars autoHide className={'!m-0'}>
-                <div className="flex flex-col">
+                <div className="flex flex-col h-full">
                   {typeof(props?.addonBefore) !== 'undefined' ?
                     typeof(props?.addonBefore) == "function" ?
                       props?.addonBefore({ isCollapse : collapse, isDesktop: isDesktop }) :

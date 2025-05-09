@@ -21,13 +21,13 @@ class RegisteredUserController extends Controller
   public function create(): Response
   {
     $seo = $this->seo()
-      ->setTitle('Login | Authorization')
+      ->setTitle('Register | Authorization')
       ->go();
     $state = $this->state();
     $state->setCollections([]);
     $state->setMeta($seo);
     $state->setState([]);
-    return Inertia::render('Auth/register/register-2.page');
+    return Inertia::render('Auth/register/register-2.page', $state->go());
   }
 
   /**
@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
    *
    * @throws \Illuminate\Validation\ValidationException
    */
-  public function store(Request $request): RedirectResponse
+  public function store(Request $request)
   {
     $request->validate([
       'name' => 'required|string|max:255',
@@ -43,6 +43,8 @@ class RegisteredUserController extends Controller
       'password' => ['required', 'confirmed', Rules\Password::defaults()],
     ]);
 
+    $query = User::query();
+    $query->where("email", $request->email);
     $user = User::create([
       'name' => $request->name,
       'email' => $request->email,

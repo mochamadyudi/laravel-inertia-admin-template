@@ -73,11 +73,23 @@
   }
 }
 
-
 .bg{
   &-body{
     @include themify($themes){
       background: themed('body');
     }
+  }
+}
+
+.app{
+  &-fullscreen{
+    @apply flex flex-col h-full;
+
+    &.active{
+      @apply fixed left-0 top-0 w-full min-h-screen;
+      padding: $padding-content;
+      z-index: $zIndexDanger;
+    }
+
   }
 }

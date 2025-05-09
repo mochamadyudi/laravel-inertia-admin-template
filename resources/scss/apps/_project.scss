@@ -1,0 +1,55 @@
+.dark {
+  .project {
+    &-ticket {
+      &-item {
+        &-selected {
+          background: #3b4862;
+        }
+      }
+    }
+  }
+}
+
+.project {
+  &-ticket {
+    &-item {
+      @apply w-full flex items-center p-2.5 transition duration-200 relative;
+
+      &-selected {
+        background: var(--ant-color-primary-bg);
+
+        &:before {
+          @apply absolute top-0 left-0 w-1 h-full bg-primary;
+          content: "";
+          //position: absolute;
+          //top:0;
+          //left: 0;
+          //width: 2px;
+          //height: 100%;
+          //background: red;
+        }
+      }
+
+      &:hover {
+        background: var(--ant-color-primary-bg-hover);
+      }
+
+      &-left {
+        width: 40px;
+      }
+
+      &-middle {
+        @apply flex-1 flex items-center gap-2 cursor-pointer;
+      }
+
+      &-content {
+        @apply flex items-center gap-2;
+      }
+
+      &-right {
+        @apply w-auto ml-4;
+      }
+    }
+  }
+
+}

@@ -8,7 +8,7 @@ import Lotties from "@/Components/general/Lotties";
 import Animation from "@/assets/lotties/edit.json"
 import RegisterForm from "@/Components/data-entry/form/auth/register.form";
 
-const Page = () => {
+const Page = (props: any) => {
   const [form] = Form.useForm();
 
   function _onFinish() {
@@ -18,6 +18,16 @@ const Page = () => {
           onFinish(){
             // action
             form.resetFields();
+            if(typeof(props?.errors) !== 'undefined' && Object.keys(props?.errors).length > 0){
+              let fields: {name:string;errors:any}[]  = [];
+              Object.entries(props?.errors).map(([k, v]: [string, any])=>{
+                fields.push({
+                  name: k,
+                  errors: [ v ]
+                })
+              })
+              form.setFields(fields);
+            }
           },
           onError(e: any){
             form.setFields([

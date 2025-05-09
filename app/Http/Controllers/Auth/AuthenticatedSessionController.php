@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
     $state->setCollections([]);
     $state->setMeta($seo);
     $state->setState([]);
-    return Inertia::render('Auth/login/login-2.page', array_merge($state->go(), [
+    return Inertia::render('Auth/login/login-1.page', array_merge($state->go(), [
       'canResetPassword' => Route::has('password.request'),
       'status' => session('status'),
     ]));
